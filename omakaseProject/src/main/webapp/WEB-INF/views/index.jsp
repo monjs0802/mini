@@ -102,7 +102,7 @@ footer {
     <a class="nav-link active bi bi-house-heart fs-6 text-center" aria-current="page" href="#"> 브랜드 소개</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link bi bi-stopwatch fs-6 text-center " href="/omakaseProject/res/resForm"> 실시간 예약 그만하자</a>
+    <a class="nav-link bi bi-stopwatch fs-6 text-center " href="/omakaseProject/res/resForm"> 실시간 예약 하자</a>
   </li>
   <li class="nav-item">
     <a class="nav-link bi bi-calendar-check fs-6 text-center" href="/omakaseProject/res/resExp"> 예약 안내</a>
