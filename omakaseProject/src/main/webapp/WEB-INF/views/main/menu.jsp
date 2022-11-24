@@ -107,7 +107,7 @@ ul{
 <!-- 			                </div> -->
 			            </div>				            
 						<div class="gnb-menus">
-							<h3><a href="http://localhost:8080/omakaseProject/member/memberInfo" class="">관리자페이지</a></h3>								
+							<h3><a href="http://localhost:8080/omakaseProject/admin/adminRes" class="">관리자페이지</a></h3>								
 						</div>										
 				</div><!-- //gnb -->
 			</div><!-- //m-menu -->			

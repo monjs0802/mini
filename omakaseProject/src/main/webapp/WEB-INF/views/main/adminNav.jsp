@@ -13,9 +13,8 @@
 }
 </style>
 <div class="sideNav">	
-	<a href="/omakaseProject/member/memberInfo" style="font-size: 10pt;">나의 예약 정보</a><br><br>
-	<a href="/omakaseProject/member/memberUpdate" style="font-size: 10pt;">회원정보 수정</a><br><br>
-	<a href="#" style="font-size: 10pt;">회원 탈퇴</a>		
+	<a href="/omakaseProject/admin/adminRes" style="font-size: 10pt;">예약현황</a><br><br>
+	<a href="/omakaseProject/admin/adminSales" style="font-size: 10pt;">매출현황</a>	
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
