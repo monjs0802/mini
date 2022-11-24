@@ -112,7 +112,7 @@ footer {
   </li>
     <li class="nav-item">
     	<c:if test="${sessionScope.memId == null}">
-    		 <a class="nav-link bi bi-emoji-smile fs-6 text-center" href="/omakaseProject/member/loginForm"> 로그인</a>
+    		 <a class="nav-link bi bi-emoji-smile fs-6 text-center" href="/omakaseProject/member/loginForm"> ㅇㅇㅇㅇㅇㅇㅇㅇㅇ로그인</a>
 		</c:if>
 		
 		<c:if test="${memId !=null}">
