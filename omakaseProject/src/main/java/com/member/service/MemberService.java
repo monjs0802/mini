@@ -11,6 +11,8 @@ public interface MemberService {
 	public UserDTO getMember(String id);
 
 	public void delete(String id);
+
+	public void write(Map<String, Object> map);
 	
 
 }

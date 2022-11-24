@@ -32,4 +32,9 @@ public class UserDAOImpl implements UserDAO {
 		
 	}
 
+	@Override
+	public void write(Map<String, Object> map) {
+		sqlSession.insert("memberSQL.write", map);	
+	}
+
 }

@@ -12,7 +12,13 @@
 		<result property="tel" column="TEL" />
 		<result property="brith" column="BRITH" />
 	</resultMap>
-	
+	<insert id="write" parameterType="java.util.Map">
+		update omakaseM set name=#{name},
+							pwd=#{pwd },
+							email=#{email},
+							tel=#{tel},
+							birth=#{birth } 
+	</insert>
 	<update id="update" parameterType="java.util.Map">
 		update omakaseM set name=#{name},
 							pwd=#{pwd },

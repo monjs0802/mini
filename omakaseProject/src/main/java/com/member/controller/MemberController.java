@@ -29,7 +29,19 @@ public class MemberController {
 		model.addAttribute("id", id);
 		return "index2";
 	}
-	
+	//회원가입from
+		@RequestMapping(value="memberWrite", method=RequestMethod.GET)
+		public String memberWrite(Model model){
+			model.addAttribute("display", "member/memberWrite.jsp");
+			model.addAttribute("nav", "main/myPageNav.jsp");
+			
+			return "index2";
+		}
+	@PostMapping(value="update")   
+	@ResponseBody
+	public void write(@RequestParam Map<String, Object> map) {		
+		memberService.write(map);
+	}
 	
 	//로그인한 id로 dto얻어오기
 	@PostMapping(value="getMember") 
