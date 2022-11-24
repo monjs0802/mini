@@ -95,6 +95,8 @@ footer {
 </div>
 
 
+
+
 <!-- 내비 메뉴바 -->
 <nav>
 <ul class="nav justify-content-center bg-gradient bg-opacity-50">
@@ -116,7 +118,7 @@ footer {
 		</c:if>
 		
 		<c:if test="${memId !=null}">
-			 <a class="nav-link bi bi-emoji-smile fs-6 text-center" href="/omakaseProject/member/memberInfo"> 마이페이지</a>
+			 <a class="nav-link bi bi-emoji-smile fs-6 text-center" href="/omakaseProject/member/memberInfo"> 전체다다다아 마이페이지</a>
 		</c:if>
   </li>
   <!-- 관리자 계정만 보이게 할 예정-->
