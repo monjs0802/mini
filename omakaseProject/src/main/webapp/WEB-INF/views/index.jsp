@@ -101,7 +101,7 @@ footer {
 <nav>
 <ul class="nav justify-content-center bg-gradient bg-opacity-50">
   <li class="nav-item">
-    <a class="nav-link active bi bi-house-heart fs-6 text-center" aria-current="page" href="#"> 브랜드 소개</a>
+    <a class="nav-link active bi bi-house-heart fs-6 text-center" aria-current="page" href="#"> 브랜드 마지막 올리자아아아아 소개</a>
   </li>
   <li class="nav-item">
     <a class="nav-link bi bi-stopwatch fs-6 text-center " href="/omakaseProject/res/resForm"> 실시간 예약 하자</a>
