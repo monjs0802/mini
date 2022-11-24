@@ -135,7 +135,7 @@ body {
 <div id="footer">
 	<dl class="btmnav">
 		<dt class="blind">bottom navigation</dt>
-		<dd><a href="#">About</a></dd>
+		<dd><a href="#">About건드려</a></dd>
 		<dd><a href="#">Services</a></dd>
 		<dd><a href="#">Portfolio</a></dd>
 		<dd><a href="#">Contact us</a></dd>
