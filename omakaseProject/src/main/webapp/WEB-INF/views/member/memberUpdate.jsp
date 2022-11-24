@@ -7,23 +7,6 @@
 <title>Insert title here</title>
 <style type="text/css">
 
-/* .my_wrap { */
-/* 	margin-left: -200px; */
-/* 	margin-top: 100px; */
-/* } */
-
-/* .my_wrap > h4 { */
-/*     background: #fff; */
-/*     width: 250px; */
-/*     hight: 800px; */
-/* 	padding-bottom: 5px; */
-/* } */
-
-/* ul { */
-/* 	list-style-type: none; */
-/* 	overflow: auto; */
-/*   	/*position: fixed;*/ */
-/* } */
 
 div#container {
 	margin-top: -10px;
@@ -73,14 +56,7 @@ div#container {
 </head>
 <body>
 
-<!-- <div class="my_wrap"> -->
-<!-- 	<h4><span>마이페이지</span></h4> -->
-<!-- 	<ul> -->
-<!-- 		<li><a href="http://localhost:8080/omakaseProject/member/memberInfo" id="resInfo">나의 예약정보</a></li> -->
-<!-- 		<li><a href="http://localhost:8080/omakaseProject/member/memberUpdate">회원정보 수정</a></li> -->
-<!-- 		<li><a href="#" id="memberDelete">회원 탈퇴</a></li> -->
-<!-- 	</ul> -->
-<!-- </div> -->
+
 
 <div id="container">
 
@@ -89,58 +65,7 @@ div#container {
 	</div>
 		
 	<div class="contents_body">
-<!-- 
-	<form id="updateTable">
-		<table>
-			<tr>
-				<th>이름</th>
-				<td><input type="text" id="name" name="name" ></td>
-			</tr>
-			
-			<tr>
-				<th>아이디</th>
-				<td><input type="text" id="id" name="id" value="ho"></td>
-			</tr>
-			
-			<tr>
-				<th>현재 비밀번호</th>
-				<td><input type="password" id="pwd" name="ped"></td>
-			</tr>
-			
-			<tr>
-				<th>변경할 비밀번호</th>
-				<td><input type="password" id="repwd"></td>
-			</tr>
-			
-			<tr>
-				<th>이메일</th>
-				<td><input type="email" id="email" name="email"></td>
-			</tr>
-			
-			<tr>
-				<th>전화번호</th>
-				<td><input type="text" id="tel" name="tel"></td>
-			</tr>
-			
-			<tr>
-				<th>생년원일</th>
-				<td><input type="text" id="birth" name="birth"></td>
-			</tr>
-			
-			<span>마케팅 수신동의</span>
-			<input type="checkbox" id="emailMarketing">이메일
-			<input type="checkbox" id="telMarketing">문자 메시지
-		
 
-			<span>
-				<input type="button" id="updateBtn" value="저장하기">
-				<input type="button" id="resetBtn" value="다시작성">
-			</span>
-		
-		</table>
-	</form>
-
--->
 	<form id="updateTable">
 		<div id="table">
 			<span>이름</span>
@@ -243,9 +168,10 @@ $('#updateBtn').click(function(){
 				 //alert( $('#updateTable').serialize() ),
 										
 			success: function(){
-				alert('okok');
-				//alert("회원정보를 수정하였습니다.");
-				//location.href = "/omakaseProject/index";
+				//alert('okok');
+				alert("회원정보를 수정하였습니다.");
+				location.href = "/omakaseProject/index";
+				//세션값 얻어온거 초기화시키기
 			},
 			error: function(err){
 				console.log(err);
