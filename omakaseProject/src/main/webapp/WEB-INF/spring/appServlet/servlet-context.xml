@@ -29,6 +29,7 @@
 	<context:component-scan base-package="com.member.controller"></context:component-scan>
 	<context:component-scan base-package="com.res.controller"></context:component-scan>
 	<context:component-scan base-package="com.board.controller"></context:component-scan>
+	<context:component-scan base-package="com.admin.controller"></context:component-scan>
 	
 	
 	

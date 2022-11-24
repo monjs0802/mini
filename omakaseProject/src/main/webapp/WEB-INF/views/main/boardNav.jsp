@@ -2,17 +2,17 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style type="text/css">
-div a {
+.sideNav a {
 	text-decoration: none;
 	color: black;
 }
 
-div a:hover {
+.sideNav a:hover {
 	text-decoration: underline;
 	color: grey;
 }
 </style>
-<div>	
+<div class="sideNav">	
 	<a href="#" style="font-size: 10pt;">공지사항</a><br><br>
 	<a href="#" style="font-size: 10pt;">자주 묻는 질문</a><br><br>
 	<a href="#" style="font-size: 10pt;">1대1 문의 게시판</a>		
