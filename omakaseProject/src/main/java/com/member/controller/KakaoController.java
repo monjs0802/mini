@@ -22,7 +22,7 @@ public class KakaoController {
 
 		@RequestMapping(value="/kakaoLogin", method=RequestMethod.GET)
 		public String kakaoLogin(@RequestParam(value = "code", required = false) String code) throws Exception {
-			System.out.println("#########카카오문제" + code);
+			System.out.println("#########카카오문제 문제라고오오오오오" + code);
 			String access_Token = ms.getAccessToken(code);
 			HashMap<String, Object> userInfo = ms.getUserInfo(access_Token);
 			System.out.println("###access_Token#### : " + access_Token);
