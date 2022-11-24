@@ -37,7 +37,8 @@ public class MemberController {
 			
 			return "index2";
 		}
-	@PostMapping(value="update")   
+		
+	@PostMapping(value="write")   
 	@ResponseBody
 	public void write(@RequestParam Map<String, Object> map) {		
 		memberService.write(map);
@@ -68,14 +69,21 @@ public class MemberController {
 		memberService.update(map);
 	}
 	
+	
 	//회원탈퇴
+	@RequestMapping(value="memberDelete", method=RequestMethod.GET)
+	public String memberDelete(Model model){
+		model.addAttribute("display", "member/memberDelete.jsp");
+		model.addAttribute("nav", "main/myPageNav.jsp");
+		
+		return "index2";
+	}
+	
 	@RequestMapping(value="delete")
 	@ResponseBody
 	public void delete(@RequestParam String id) {
 		memberService.delete(id);
 	}
-	
-	
 	
 
 	

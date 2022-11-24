@@ -101,24 +101,24 @@ footer {
 <nav>
 <ul class="nav justify-content-center bg-gradient bg-opacity-50">
   <li class="nav-item">
-    <a class="nav-link active bi bi-house-heart fs-6 text-center" aria-current="page" href="#"> 브랜드 마지막 올리자아아아아 소개</a>
+    <a class="nav-link active bi bi-house-heart fs-6 text-center" aria-current="page" href="#">브랜드 소개</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link bi bi-stopwatch fs-6 text-center " href="/omakaseProject/res/resForm"> 실시간 예약 하자</a>
+    <a class="nav-link bi bi-stopwatch fs-6 text-center " href="/omakaseProject/res/resForm">실시간 예약</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link bi bi-calendar-check fs-6 text-center" href="/omakaseProject/res/resExp"> 예약 ㅁㄴㅇㄹ안내</a>
+    <a class="nav-link bi bi-calendar-check fs-6 text-center" href="/omakaseProject/res/resExp">예약 안내</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link bi bi-chat-left-text fs-6 text-center" href="/omakaseProject/board/noticeBoard"> 개게시판</a>
+    <a class="nav-link bi bi-chat-left-text fs-6 text-center" href="/omakaseProject/board/noticeBoard">게시판</a>
   </li>
     <li class="nav-item">
     	<c:if test="${sessionScope.memId == null}">
-    		 <a class="nav-link bi bi-emoji-smile fs-6 text-center" href="/omakaseProject/member/loginForm"> 로그아웃 아니고 로그인</a>
+    		 <a class="nav-link bi bi-emoji-smile fs-6 text-center" href="/omakaseProject/member/loginForm">로그인</a>
 		</c:if>
 		
 		<c:if test="${memId !=null}">
-			 <a class="nav-link bi bi-emoji-smile fs-6 text-center" href="/omakaseProject/member/memberInfo"> 전체다다다아 마이페이지</a>
+			 <a class="nav-link bi bi-emoji-smile fs-6 text-center" href="/omakaseProject/member/memberInfo">마이페이지</a>
 		</c:if>
   </li>
   <!-- 관리자 계정만 보이게 할 예정-->
