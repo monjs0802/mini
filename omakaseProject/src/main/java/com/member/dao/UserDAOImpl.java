@@ -37,4 +37,9 @@ public class UserDAOImpl implements UserDAO {
 		sqlSession.insert("memberSQL.write", map);	
 	}
 
+	@Override
+	public void login(Map<String, Object> map) {
+		sqlSession.selectOne("memberSQL.login", map);
+		
+	}
 }

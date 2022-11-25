@@ -72,7 +72,7 @@ div#container {
 			<div id="nameDiv"></div>
 			
 			<span>아이디</span>
-			<input type="text" id="id" name="id" value="ho" readonly> 
+			<input type="text" id="id" name="id"> 
 			
 			<span>비밀번호</span>
 			<input type="password" id="pwd" name="pwd">
@@ -138,15 +138,14 @@ $('#writeBtn').click(function(){
 		
 	}else{
 		$.ajax({
-			url: '/omakaseProject/member/write',
+			 url: '/omakaseProject/member/write',
 			type: 'post',
 			data: $('#writeTable').serialize(),
-				 //alert( $('#updateTable').serialize() ),
-										
+										 
 			success: function(){
-				alert('okok');
-				//alert("회원정보를 수정하였습니다.");
-				//location.href = "/omakaseProject/index";
+				//alert( $('#writeTable').serialize());
+				alert('회원가입이 완료되었습니다.');
+				location.href = "../memberInfo";
 			},
 			error: function(err){
 				console.log(err);

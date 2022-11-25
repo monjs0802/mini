@@ -30,13 +30,13 @@ public class MemberController {
 		return "index2";
 	}
 	//회원가입from
-		@RequestMapping(value="memberWrite", method=RequestMethod.GET)
-		public String memberWrite(Model model){
-			model.addAttribute("display", "member/memberWrite.jsp");
-			model.addAttribute("nav", "main/myPageNav.jsp");
-			
-			return "index2";
-		}
+	@RequestMapping(value="memberWrite", method=RequestMethod.GET)
+	public String memberWrite(Model model){
+		model.addAttribute("display", "member/memberWrite.jsp");
+		model.addAttribute("nav", "main/myPageNav.jsp");
+		
+		return "index2";
+	}
 		
 	@PostMapping(value="write")   
 	@ResponseBody
@@ -93,6 +93,11 @@ public class MemberController {
 		model.addAttribute("nav", "main/myPageNav.jsp");
 		
 		return "index2";
+	}
+	@PostMapping(value="login")   
+	@ResponseBody
+	public void login(@RequestParam Map<String, Object> map) {		
+		memberService.login(map);
 	}
 	
 	

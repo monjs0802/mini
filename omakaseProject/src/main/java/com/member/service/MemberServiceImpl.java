@@ -1,5 +1,6 @@
 package com.member.service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,27 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 
+	@Override
+	public void write(Map<String, Object> map) {
+		userDAO.write(map);
+	}
 
+	@Override
+	public HashMap<String, Object> getUserInfo(String access_Token) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
+	@Override
+	public String getAccessToken(String code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void login(Map<String, Object> map) {
+		userDAO.login(map);
+		
+	}
 
 }
