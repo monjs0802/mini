@@ -70,7 +70,7 @@ public class MemberController {
 	}
 	
 	
-	//회원탈퇴
+	//회원탈퇴form
 	@RequestMapping(value="memberDelete", method=RequestMethod.GET)
 	public String memberDelete(Model model){
 		model.addAttribute("display", "member/memberDelete.jsp");
