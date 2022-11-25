@@ -8,10 +8,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>한우마카세 | han"U"makase</title>
-<link rel="shortcut icon" href="http://localhost:8080/spring/img/icon.png">
+<link rel="shortcut icon" href="http://localhost:8080/omakaseProject/resources/img/icon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<link rel="stylesheet" href="http://localhost:8080/spring/resources/css/main_index.css">
+<link rel="stylesheet" href="http://localhost:8080/omakaseProject/resources/css/main_index.css">
 </head>
 <body>
 
@@ -25,25 +25,25 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img id="header" src="http://localhost:8080/spring/resources/img/header1.jpg" class="d-block w-100" alt="1번 헤더">
+      <img id="header" src="http://localhost:8080/omakaseProject/resources/img/header1.jpg" class="d-block w-100" alt="1번 헤더">
       <div class="carousel-caption d-none d-md-inline">
-      	<img src="http://localhost:8080/spring/resources/img/logo.png" width="300" alt="로고">
+      	<img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
         <h5>HAN U MAKASE</h5>
         <p>한우마카세에 방문하신 걸 환영합니다</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img id="header" src="http://localhost:8080/spring/resources/img/header2.jpg" class="d-block w-100" alt="2번 헤더">
+      <img id="header" src="http://localhost:8080/omakaseProject/resources/img/header2.jpg" class="d-block w-100" alt="2번 헤더">
       <div class="carousel-caption d-none d-md-inline">
-      <img src="http://localhost:8080/spring/img/logo.png" width="300" alt="로고">
+      <img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
         <h5>"오로지 당신을 위해"</h5>
         <p>소중한 당신을 위해 엄별히 선별한 신선한 재료로만 만듭니다</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img id="header" src="http://localhost:8080/spring/resources/img/header3.jpg" class="d-block w-100" alt="3번 헤더">
+      <img id="header" src="http://localhost:8080/omakaseProject/resources/img/header3.jpg" class="d-block w-100" alt="3번 헤더">
       <div class="carousel-caption d-none d-md-block">
-      <img src="http://localhost:8080/spring/img/logo.png" width="300" alt="로고">
+      <img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
         <h5>"맡겨주세요"</h5>
         <p>특별한 당신에게 걸맞는 식사시간</p>
       </div>
@@ -96,7 +96,7 @@
             <div id="brand" class="container py-5 px-4 px-lg-5 my-5">
                 <div class="row gx-5 gx-lg-5 align-items-center ">
                     <div class="col-md-6">
-                    <img id="brandImg" class="card-img-top p-3" src="http://localhost:8080/spring/resources/img/brand_img.jpg" alt="소개 이미지">
+                    <img id="brandImg" class="card-img-top p-3" src="http://localhost:8080/omakaseProject/resources/img/brand_img.jpg" alt="소개 이미지">
                     </div>
                     
                     <div class="col-md-6">
@@ -180,7 +180,7 @@
     	</p>
 
     <a href="#" class="col-md-4 d-flex align-items-center justify-content-around mb-0 mb-md-0 me-md-0 link-dark ">
-    <img src="http://localhost:8080/spring/resources/img/logo.png" width="300" alt="로고">
+    <img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
     </a>
 
     <ul class="nav col-md-3 justify-content-end">

@@ -11,7 +11,7 @@ body {
 	padding: 0;
 	height: 100%;
 	width: auto;
-	background-image: url('http://localhost:8080/spring/resources/img/body_bg.jpg');
+	background-image: url('http://localhost:8080/omakaseProject/resources/img/body_bg.jpg');
 	background-attachment:fixed;
 	background-size: cover;
 	font-family: georgia;
@@ -63,12 +63,12 @@ body {
 /* 메인 게시판 */
 
 #brand {
-	background-image: url('http://localhost:8080/spring/resources/img/article_bg.jpg');
+	background-image: url('http://localhost:8080/omakaseProject/resources/img/article_bg.jpg');
 	border-radius: 20px;
 }
 
 #gesipan {
-	background-image: url('http://localhost:8080/spring/resources/img/article_bg.jpg');
+	background-image: url('http://localhost:8080/omakaseProject/resources/img/article_bg.jpg');
 	border-radius: 20px;
 }
 #main2icon {
