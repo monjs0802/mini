@@ -27,26 +27,28 @@
     height: 50%;
 	position: relative;
 }
+.resBoard tr th{
+	width: 50px;
+}
 </style>
 </head>
 <body>
 <div id="adminResContainer">
 <input type="hidden" class="date">
 <div class="content1">
-
 	<div id="datepicker"></div>
-
 </div>
 <div class="content2">
 <table class="resBoard" border="1">
-	<tr>
-		<th width="50">번호</th>
-		<th width="50">아이디</th>
-		<th width="50">날짜</th>
-		<th width="50">시간</th>
-		<th width="50">성인</th>
-		<th width="50">아동</th>
-		<th width="50">총인원</th>
+	<tr class="resFrame">
+		<th>번호</th>
+		<th>날짜</th>
+		<th>시간</th>
+		<th>성인</th>
+		<th>아동</th>
+		<th>총인원</th>
+		<th>A코스</th>
+		<th>B코스</th>
 	</tr>
 </table>
 </div>
@@ -63,8 +65,32 @@ $(function(){
 		data: 'resDate=' + $('.date').val(),
 		success: function(data){
 			$.each(data, function(index, items){
-				
-			});
+				$('<tr/>').append($('<td/>',{
+						   align: 'center',
+						   text: items.resNum
+					   })).append($('<td/>',{
+					       align: 'center',
+						   text: items.resDate
+					   })).append($('<td/>',{
+						   align: 'center',
+						   text: items.resTime
+					   })).append($('<td/>',{
+						   align: 'center',
+						   text: items.resAdult
+					   })).append($('<td/>',{
+						   align: 'center',
+						   text: items.resKid
+					   })).append($('<td/>',{
+						   align: 'center',
+						   text: (items.resAdult + items.resKid)
+					   })).append($('<td/>',{
+						   align: 'center',
+						   text: items.resMenuA
+					   })).append($('<td/>',{
+						   align: 'center',
+						   text: items.resMenuB
+					   })).appendTo($('.resBoard'));		
+			});	//$.each
 		},
 		error: function(err){
 			console.log(err);
@@ -90,6 +116,44 @@ $(function(){
 	    ,onSelect: function() {           		
 	               		var date = $.datepicker.formatDate("yymmdd",$("#datepicker").datepicker("getDate"));
 	               		$('.date').val(date);
+	               		$('.resBoard tr').not($('.resBoard tr').eq(0)).remove();
+	               		$.ajax({
+	               			url: '/omakaseProject/res/getReserve',
+	               			type: 'post',
+	               			data: 'resDate=' + $('.date').val(),
+	               			success: function(data){
+	               				$.each(data, function(index, items){
+	               					$('<tr/>').append($('<td/>',{
+	         						   align: 'center',
+	         						   text: items.resNum
+	         					   })).append($('<td/>',{
+	         					       align: 'center',
+	         						   text: items.resDate
+	         					   })).append($('<td/>',{
+	         						   align: 'center',
+	         						   text: items.resTime
+	         					   })).append($('<td/>',{
+	         						   align: 'center',
+	         						   text: items.resAdult
+	         					   })).append($('<td/>',{
+	         						   align: 'center',
+	         						   text: items.resKid
+	         					   })).append($('<td/>',{
+	         						   align: 'center',
+	         						   text: (items.resAdult + items.resKid)
+	         					   })).append($('<td/>',{
+	         						   align: 'center',
+	         						   text: items.resMenuA
+	         					   })).append($('<td/>',{
+	         						   align: 'center',
+	         						   text: items.resMenuB
+	         					   })).appendTo($('.resBoard'));		
+	               				});	//$.each
+	               			},
+	               			error: function(err){
+	               				console.log(err);
+	               			}
+	               		});
 	      	        }	
 	});
 });
