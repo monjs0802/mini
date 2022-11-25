@@ -65,48 +65,44 @@ div#container {
 	</div>
 		
 	<div class="contents_body">
-
-	<form id="updateTable">
-		<div id="table">
-			<span>이름</span>
-			<input type="text" id="name" name="name">
-			<div id="nameDiv"></div>
+		<form id="updateTable">
+			<div id="table">
+				<span>이름</span>
+				<input type="text" id="name" name="name">
+				<div id="nameDiv"></div>
+				
+				<span>아이디</span>
+				<input type="text" id="id" name="id" value="ho" readonly> 
+				
+				<span>새로운 비밀번호</span>
+				<input type="password" id="pwd" name="pwd">
+				<div id="pwdDiv"></div>
+				
+				<span>비밀번호 재확인</span>
+				<input type="password" id="repwd">
+				<div id="repwdDiv"></div>
+			</div>
 			
-			<span>아이디</span>
-			<input type="text" id="id" name="id" value="ho" readonly> 
-			
-			<span>비밀번호</span>
-			<input type="password" id="pwd" name="pwd">
-			<div id="pwdDiv"></div>
-			
-			<span>비밀번호 재확인</span>
-			<input type="password" id="repwd">
-			<div id="repwdDiv"></div>
-		</div>
-		
-		<div id="table">
-			<span>이메일</span>
-			<input type="email" id="email" name="email">
-
-			<span>전화번호</span>
-			<input type="tel" id="tel" name="tel">
-
-			<span>생년원일</span>
-			<input type="text" id="birth" name="birth">
-			
-			<span>마케팅 수신동의</span>
-			<input type="checkbox" id="emailMarketing">이메일
-			<input type="checkbox" id="telMarketing">문자 메시지
-		</div>
-
-		<span>
-			<input type="button" id="updateBtn" value="저장하기">
-			<input type="button" id="resetBtn" value="다시작성">
-		</span>
-	</form>
-
-
+			<div id="table">
+				<span>이메일</span>
+				<input type="email" id="email" name="email">
 	
+				<span>전화번호</span>
+				<input type="tel" id="tel" name="tel">
+	
+				<span>생년원일</span>
+				<input type="text" id="birth" name="birth">
+				
+				<span>마케팅 수신동의</span>
+				<input type="checkbox" id="emailMarketing">이메일
+				<input type="checkbox" id="telMarketing">문자 메시지
+			</div>
+	
+			<span>
+				<input type="button" id="updateBtn" value="저장하기">
+				<input type="button" id="resetBtn" value="다시작성">
+			</span>
+		</form>
 	</div>
 </div>  
 
