@@ -58,7 +58,7 @@ input.button {
 		<table class="table">
 		<input type="text" id="id" value="ho"> 테스트아이디값. 숨길예정
 			<tr>
-				<th>번호</th>
+				<th>예약 번호로 변경하기 </th>
 				<th>1</th>
 			</tr>
 			<tr>
