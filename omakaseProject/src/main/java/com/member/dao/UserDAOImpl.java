@@ -2,6 +2,9 @@ package com.member.dao;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -38,8 +41,11 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void login(Map<String, Object> map) {
-		sqlSession.selectOne("memberSQL.login", map);
+	public UserDTO login(UserDTO userDTO) {
+		return sqlSession.selectOne("memberSQL.login", userDTO);
 		
 	}
+
+
+
 }

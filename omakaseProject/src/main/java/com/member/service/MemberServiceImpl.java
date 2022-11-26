@@ -3,6 +3,9 @@ package com.member.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -52,10 +55,34 @@ public class MemberServiceImpl implements MemberService {
 		return null;
 	}
 
+//	@Override
+//	public String login(Map<String, Object> map, HttpSession session) {
+//		String id = userDAO.login(map);
+//		
+//		if( id != null) {
+//			session.setAttribute("id", id);
+//		}else {
+//			session.setAttribute("id", null);
+//		}
+//		return id;
+//
+//	}
+	
 	@Override
-	public void login(Map<String, Object> map) {
-		userDAO.login(map);
+	public String login(UserDTO userDTO, HttpSession session) {
+		UserDTO userDTO2 = userDAO.login(userDTO);
+		
+		if(userDTO2 != null) {
+			session.setAttribute("memId", userDTO2.getId());
+			session.setAttribute("memDTO", userDTO2);
+			return "exist";
+		}else {
+			return "non_exist";
+		}		
 		
 	}
+	
+
+
 
 }

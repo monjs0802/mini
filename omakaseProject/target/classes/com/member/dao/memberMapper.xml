@@ -16,8 +16,8 @@
 			insert into omakaseM values(#{name}, #{id}, #{pwd }, #{email}, #{tel}, #{birth } )   
 	</insert>
 	
-	<select id="login" parameterType="java.util.Map" resultType="user">
-		select* into omakaseM where id=#{id} and pwd=#{pwd }
+	<select id="login" parameterType="user" resultType="user">
+		select * from omakaseM where id=#{id} and pwd=#{pwd }
 	</select>
 	
 	<update id="update" parameterType="java.util.Map">

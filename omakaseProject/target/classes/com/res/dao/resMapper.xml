@@ -13,12 +13,6 @@
  									  ,#{resMenuB})
  	</insert>
  	<select id="getReserve" parameterType="String" resultType="res">
- 		select * from reservation where resDate=#{resDate} order by resTime asc
- 	</select>
- 	
- 	<select id="getSales" parameterType="String" resultType="res">
- 		<![CDATA[		
- 		select * from reservation where resDate like #{resDate}||'%'
- 		]]>
+ 		select * from reservation where resDate=#{resDate}
  	</select>
   </mapper>

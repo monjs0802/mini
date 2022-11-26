@@ -24,11 +24,4 @@ public class ResServiceImpl implements ResService {
 	public List<ResDTO> getReserve(String resDate) {
 		return resDAO.getReserve(resDate);
 	}
-	
-	@Override
-	public List<ResDTO> getSales(String resDate) {
-		return resDAO.getSales(resDate);
-		
-		
-	}
 }

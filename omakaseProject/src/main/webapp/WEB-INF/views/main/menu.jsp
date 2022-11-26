@@ -71,8 +71,10 @@ ul{
 			<h1 class="logo"><a href="http://localhost:8080/omakaseProject/index"><img src="http://localhost:8080/omakaseProject/resources/img/SAMPLE LOGO.png" width="80" height="80" alt="로고"></a></h1>
 			<div class='l-menu'>
 				<ul class="list-unstyled header-util">
+				 
 					<li class="login"><a href="http://localhost:8080/omakaseProject/member/loginForm">login</a></li>
 					<li class="join"><a href="#">sign up</a></li>
+					<li class="logout"><a href="http://localhost:8080/omakaseProject/logout">logout</a></li>
 				</ul>
 			</div>
 			<div class="m-menu">

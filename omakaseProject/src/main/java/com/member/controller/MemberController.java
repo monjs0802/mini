@@ -2,6 +2,9 @@ package com.member.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.member.bean.UserDTO;
 import com.member.service.MemberService;
@@ -94,11 +98,17 @@ public class MemberController {
 		
 		return "index2";
 	}
-	@PostMapping(value="login")   
+	
+	@PostMapping(value="login")
 	@ResponseBody
-	public void login(@RequestParam Map<String, Object> map) {		
-		memberService.login(map);
+	public String login(@ModelAttribute UserDTO userDTO, HttpSession session) {		
+		
+		System.out.println(memberService.login(userDTO, session));
+		
+		return memberService.login(userDTO, session);
+   
 	}
+	
 	
 	
 }

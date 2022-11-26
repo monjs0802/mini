@@ -72,30 +72,32 @@ http://localhost:8080/omakaseProject/index&response_type=code">
 	<!-- 본인걸로 수정 시 띄어쓰기 절대 하지 마세요. 오류납니다. -->
 		<img src="/omakaseProject/resources/img/klogin.png" style="height:30px">
 	</a>
-		<form id="loginForm" name="loginForm">
+		<form id="loginForm" name="loginForm" action="/login">
 			<table border="1" cellpadding="5" cellspacing="0" >
 				<tr>
 					<td>
 						<input type="text" name="id" id="id" size="30" placeholder="아이디 입력">
+						<div id="idDiv" ></div>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<input type="password" name="pwd" id="pwd" size="40" placeholder="비밀번호 입력">
-						<div id="loginResult"/>
+						<div id="pwdDiv"></div>
 					</td>
 				</tr>
 		</table>
 				
 				<div id="container" class="container" >
 				 <h3 class="articleTitle"></h3>
-					<a href="#" id="loginBtn" title="Button fade orange" class="button btnFade btnOrange">로그인</a>
+				 
+					<a id="loginBtn" title="Button fade orange" class="button btnFade btnOrange">로그인</a>
 					<a href="memberWrite" title="Button fade purple" class="button btnFade btnPurple">회원가입</a>
-					 <div class="clear"></div>
+					 <div class="clear"></div> 
 				 </div>
-					<!-- <th colspan="5">
-						<button type="button" id="loginBtn">로그인</button>
-						<button type="button" onclick="#">회원가입</button>
+					<!--  <th colspan="5">
+						<button type="button" id="loginBtn" title="Button fade orange" class="button btnFade btnOrange">로그인</button>
+						<button type="button" onclick="#memberWrite" title="Button fade purple" class="button btnFade btnPurple">회원가입</button>
 					</th> -->
 				
 		<br><br>
@@ -108,8 +110,8 @@ http://localhost:8080/omakaseProject/index&response_type=code">
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 $('#loginBtn').click(function(){
-	$('#placeholder').empty();
-	$('#placeholder').empty();
+	$('#idDiv').empty();
+	$('#pwdDiv').empty();
 	
 	if($('#id').val() == ''){
 		$('#idDiv').text('아이디를 입력하세요');
@@ -124,22 +126,22 @@ $('#loginBtn').click(function(){
 			url: '/omakaseProject/member/login',
 			type: 'post',
 			data: 'id=' + $('#id').val() +'&pwd=' + $('#pwd').val(),
-			dataType: 'text',			
+			dataType: 'text',
 			success: function(data){
-				data = data.trim();
-	
-					if(data == 'ok'){
-						location.href='/index';
-					}else if(data == 'fail'){
-						$('#loginResult').text('아이디 또는 비밀번호가 맞지 않습니다.');
-						$('#loginResult').css('font-size', '12pt');
-					}
-					
-				},
-				error:function(err){
-					//alert(err);
-					console.log(err);
+				alert(data);
+				console.log(data);
+				if(data == 'exist'){
+					location.href='../index';
+				}else if(data == 'non_exist'){
+					$('#pwdDiv').text('아이디 또는 비밀번호가 맞지 않습니다.');
+					$('#pwdDiv').css('font-size', '12pt');
 				}
+					
+			},
+			error:function(err){
+				//alert(err);
+				console.log(err);
+			}
 		});
 	}
 		

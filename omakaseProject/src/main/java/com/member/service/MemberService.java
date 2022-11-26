@@ -3,6 +3,9 @@ package com.member.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import com.member.bean.UserDTO;
 
 public interface MemberService {
@@ -19,7 +22,9 @@ public interface MemberService {
 
 	public String getAccessToken(String code);
 
-	public void login(Map<String, Object> map);
+	public String login(UserDTO userDTO, HttpSession session);
+
+	
 
 
 

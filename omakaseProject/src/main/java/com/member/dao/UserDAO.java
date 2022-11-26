@@ -2,6 +2,8 @@ package com.member.dao;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.member.bean.UserDTO;
 
 public interface UserDAO {
@@ -13,6 +15,8 @@ public interface UserDAO {
 
 	public void delete(String id);
 
-	public void login(Map<String, Object> map);
+	public UserDTO login(UserDTO userDTO);
+
+	
 
 }
