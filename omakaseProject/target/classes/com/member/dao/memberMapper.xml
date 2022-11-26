@@ -13,12 +13,13 @@
 		<result property="brith" column="BRITH" />
 	</resultMap>
 	<insert id="write" parameterType="java.util.Map">
-		update omakaseM set name=#{name},
-							pwd=#{pwd },
-							email=#{email},
-							tel=#{tel},
-							birth=#{birth } 
+			insert into omakaseM values(#{name}, #{id}, #{pwd }, #{email}, #{tel}, #{birth } )   
 	</insert>
+	
+	<select id="login" parameterType="java.util.Map" resultType="user">
+		select* into omakaseM where id=#{id} and pwd=#{pwd }
+	</select>
+	
 	<update id="update" parameterType="java.util.Map">
 		update omakaseM set name=#{name},
 							pwd=#{pwd },
@@ -28,7 +29,7 @@
 		where id=#{id}		
 	</update>
 	
-	<select id="getMember" parameterType="String" resultType="com.member.bean.UserDTO">
+	<select id="getMember" parameterType="String" resultType="user">
 		select * from omakaseM where id = #{id}
 	</select>
 	
