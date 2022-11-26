@@ -55,7 +55,7 @@ div#container {
 		<form id="deleteTable">
 			<div id="table">
 				<span>이름</span>
-				<input type="text" id="name" name="name">
+				<input type="text" id="name" name="name" readonly>
 				<div id="nameDiv"></div>
 				
 				<span>아이디</span>
