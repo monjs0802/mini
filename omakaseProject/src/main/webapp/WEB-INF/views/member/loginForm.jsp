@@ -128,8 +128,6 @@ $('#loginBtn').click(function(){
 			data: 'id=' + $('#id').val() +'&pwd=' + $('#pwd').val(),
 			dataType: 'text',
 			success: function(data){
-				alert(data);
-				console.log(data);
 				if(data == 'exist'){
 					location.href='../index';
 				}else if(data == 'non_exist'){

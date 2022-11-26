@@ -42,6 +42,7 @@
 <table class="resBoard" border="1">
 	<tr class="resFrame">
 		<th>번호</th>
+		<th>아이디</th>
 		<th>날짜</th>
 		<th>시간</th>
 		<th>성인</th>
@@ -68,6 +69,9 @@ $(function(){
 				$('<tr/>').append($('<td/>',{
 						   align: 'center',
 						   text: items.resNum
+					   })).append($('<td/>',{
+						   align: 'center',
+						   text: items.resId
 					   })).append($('<td/>',{
 					       align: 'center',
 						   text: items.resDate
@@ -127,6 +131,9 @@ $(function(){
 	         						   align: 'center',
 	         						   text: items.resNum
 	         					   })).append($('<td/>',{
+	        						   align: 'center',
+	        						   text: items.resId
+	        					   })).append($('<td/>',{
 	         					       align: 'center',
 	         						   text: items.resDate
 	         					   })).append($('<td/>',{

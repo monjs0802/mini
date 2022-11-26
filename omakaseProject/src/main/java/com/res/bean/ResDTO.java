@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class ResDTO {
 	private int resNum;
+	private String resId;
 	private int resDate;
 	private int resTime;
 	private int resAdult;

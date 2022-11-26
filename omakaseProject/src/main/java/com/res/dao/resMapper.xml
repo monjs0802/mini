@@ -5,6 +5,7 @@
  <mapper namespace="resSQL">
 	<insert id="reserve" parameterType="res">
  		insert into reservation values(num_reservation.nextval
+ 									  ,#{resId}
  									  ,#{resDate}
  									  ,#{resTime}
  									  ,#{resAdult}

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,6 +87,9 @@ dt {
 <body>
 <div id="rescontainer">
 	<input type="hidden" class="date">
+	<c:if test="${not empty memId }">
+		<input type="hidden" class="memId" value=${memId }>
+	</c:if>
 	<div class="content1">
 		<div id="datepicker"></div>
 	</div>
@@ -237,6 +241,7 @@ dt {
 
 <div class="modal">
   <div class="modal_content">
+  	<p class="resId"></p>
   	<p class="resDate"></p>
   	<p class="resTime"></p>
   	<p class="maxNum"></p><br>
@@ -356,9 +361,13 @@ $(function(){
 
 
 $('.list_time a').click(function(){
-	if($(this).find('.seat strong').text() == 0){
+	if($('.memId').val() == null){
+		alert("로그인이 필요한 서비스입니다");
+	}
+	else if($(this).find('.seat strong').text() == 0){
 		alert('예약이 마감되었습니다')
 	}else{
+		$('.modal .resId').text($('.memId').val());
 		$('.modal .resDate').text($('.date').val());
 		$('.modal .resTime').text($(this).find('.time').prev().text());
 	 	$('.modal .maxNum').text($(this).find('.seat strong').text());
@@ -437,23 +446,29 @@ $('#menuB > .btn_min').click(function(){
 });
 
 $('#resBtn').click(function(){
-	$.ajax({
-		url: '/omakaseProject/res/reserve',
-		type: 'post',
-		data: 'resDate=' + $('.resDate').text() 
-			+ '&resTime=' + $('.resTime').text() 
-			+ '&resAdult=' + $('#adult > .text_num').text()
-			+ '&resKid=' + $('#kid > .text_num').text()
-			+ '&resMenuA=' + $('#menuA > .text_num').text()
-			+ '&resMenuB=' + $('#menuB > .text_num').text(),
-		success: function(){
-			alert("예약이 완료되었습니다");
-			location.href='/omakaseProject/index';
-		},
-		error: function(err){
-			console.log(err);
-		}	
-	});
+	if(($('#menuA > .text_num').text()*1 + $('#menuB > .text_num').text()*1) < 
+	   ($('#adult > .text_num').text()*1 + $('#Kid > .text_num').text()*1)){
+		alert("1인 1메뉴 이상 주문하셔야 예약 가능합니다")
+	}else{	
+		$.ajax({
+			url: '/omakaseProject/res/reserve',
+			type: 'post',
+			data: 'resDate=' + $('.resDate').text()
+				+ '&resId=' + $('.memId').val()
+				+ '&resTime=' + $('.resTime').text() 
+				+ '&resAdult=' + $('#adult > .text_num').text()
+				+ '&resKid=' + $('#kid > .text_num').text()
+				+ '&resMenuA=' + $('#menuA > .text_num').text()
+				+ '&resMenuB=' + $('#menuB > .text_num').text(),
+			success: function(){
+				alert("예약이 완료되었습니다");
+				location.href='/omakaseProject/index';
+			},
+			error: function(err){
+				console.log(err);
+			}	
+		});
+	}
 });
 </script>
 </body>
