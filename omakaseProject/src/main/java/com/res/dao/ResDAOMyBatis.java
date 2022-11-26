@@ -24,4 +24,11 @@ public class ResDAOMyBatis implements ResDAO {
 	public List<ResDTO> getReserve(String resDate) {
 		return sqlSession.selectList("resSQL.getReserve", resDate);
 	}
+	
+	@Override
+	public List<ResDTO> getSales(String resDate) {
+		return sqlSession.selectList("resSQL.getSales", resDate);
+		
+		
+	}
 }

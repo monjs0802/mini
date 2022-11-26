@@ -11,4 +11,6 @@ public interface ResDAO {
 
 	List<ResDTO> getReserve(String resDate);
 
+	List<ResDTO> getSales(String resDate);
+
 }
