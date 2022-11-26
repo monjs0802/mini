@@ -10,6 +10,4 @@ public interface ResService {
 
 	public List<ResDTO> getReserve(String resDate);
 
-	public List<ResDTO> getSales(String resDate);
-
 }
