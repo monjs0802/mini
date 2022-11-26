@@ -446,10 +446,17 @@ $('#menuB > .btn_min').click(function(){
 });
 
 $('#resBtn').click(function(){
-	if(($('#menuA > .text_num').text()*1 + $('#menuB > .text_num').text()*1) < 
-	   ($('#adult > .text_num').text()*1 + $('#Kid > .text_num').text()*1)){
+	var allP = $('#adult > .text_num').text()*1 + $('#kid > .text_num').text()*1;
+ 	var allM = $('#menuA > .text_num').text()*1 + $('#menuB > .text_num').text()*1;
+	
+	if(allP == 0){
+		alert('최소 한명 이상의 예약인원이 필요합니다')		
+	}else if(allM < allP){
 		alert("1인 1메뉴 이상 주문하셔야 예약 가능합니다")
-	}else{	
+	}else{
+// 		alert($('#adult > .text_num').text()+''+$('#kid > .text_num').text());
+// 		alert($('#menuA > .text_num').text()+''+$('#menuB > .text_num').text());
+// 		alert(allP + '' + allM);
 		$.ajax({
 			url: '/omakaseProject/res/reserve',
 			type: 'post',
