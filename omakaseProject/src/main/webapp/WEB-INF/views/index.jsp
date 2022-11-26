@@ -1,58 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insert title here</title>
+<title>한우마카세 | han"U"makase</title>
+<link rel="shortcut icon" href="http://localhost:8080/omakaseProject/resources/img/icon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<style type="text/css">
-
-html {
-	overflow-y: scroll;
-}
-
-body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: auto;
-}
-
-.justify-content-center {
-	width: auto;
-	height: 100px;
-	background-color:#f57404;
-}
-
-.justify-content-center .nav-item,
-.justify-content-center .nav-link {
-	font-size: 15px;
-    color: #691f01;
-    margin: auto;
-}
-
-.btn-success {
-	margin: 5px;
-	float: right;
-}
-
-footer {
-	margin: 0;
-	padding: 0;
-}
-</style> 
-
+<link rel="stylesheet" href="http://localhost:8080/omakaseProject/resources/css/main_index.css">
 </head>
 <body>
 
 
 <!-- 캐러셀 헤더 -->
-<header>
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -60,27 +25,27 @@ footer {
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="resources/img/header.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-      	<img src="resources/img/SAMPLE LOGO.png" width="100" height="100" alt="로고">
-        <h5>1번 사진 제목</h5>
-        <p>1번 사진 설명</p>
+      <img id="header" src="http://localhost:8080/omakaseProject/resources/img/header1.jpg" class="d-block w-100" alt="1번 헤더">
+      <div class="carousel-caption d-none d-md-inline">
+      	<img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
+        <h5>HAN U MAKASE</h5>
+        <p>한우마카세에 방문하신 걸 환영합니다</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="resources/img/header.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-      <img src="resources/img/SAMPLE LOGO.png" width="100" height="100" alt="로고">
-        <h5>2번 사진 제목</h5>
-        <p>2번 사진 설명</p>
+      <img id="header" src="http://localhost:8080/omakaseProject/resources/img/header2.jpg" class="d-block w-100" alt="2번 헤더">
+      <div class="carousel-caption d-none d-md-inline">
+      <img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
+        <h5>"오로지 당신을 위해"</h5>
+        <p>소중한 당신을 위해 엄별히 선별한 신선한 재료로만 만듭니다</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="resources/img/header.jpg" class="d-block w-100" alt="...">
+      <img id="header" src="http://localhost:8080/omakaseProject/resources/img/header3.jpg" class="d-block w-100" alt="3번 헤더">
       <div class="carousel-caption d-none d-md-block">
-      <img src="resources/img/SAMPLE LOGO.png" width="100" height="100" alt="로고">
-        <h5>3번 사진 제목</h5>
-        <p>3번 사진 설명</p>
+      <img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
+        <h5>"맡겨주세요"</h5>
+        <p>특별한 당신에게 걸맞는 식사시간</p>
       </div>
     </div>
   </div>
@@ -95,56 +60,55 @@ footer {
 </div>
 
 
-
-
 <!-- 내비 메뉴바 -->
-<nav>
-<ul class="nav justify-content-center bg-gradient bg-opacity-50">
+<div id="navDiv">
+<nav id="navi">
+<ul class="nav justify-content-around bg-gradient">
   <li class="nav-item">
-    <a class="nav-link active bi bi-house-heart fs-6 text-center" aria-current="page" href="#">브랜드 소개</a>
+    <a id="menu" class="nav-link active bi bi-house-heart" aria-current="page" href="#brandImg"> BRAND</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link bi bi-stopwatch fs-6 text-center " href="/omakaseProject/res/resForm">실시간 예약</a>
+    <a id="menu" class="nav-link bi bi-stopwatch" href="./resForm.jsp"> RESERVATION</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link bi bi-calendar-check fs-6 text-center" href="/omakaseProject/res/resExp">예약 안내</a>
+    <a id="menu" class="nav-link bi bi-calendar-check" href="#"> INFORMATION</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link bi bi-chat-left-text fs-6 text-center" href="/omakaseProject/board/noticeBoard">게시판</a>
+    <a id="menu" class="nav-link bi bi-chat-left-text " href="#gesipan"> NOTICE BOARD</a>
   </li>
     <li class="nav-item">
-    	<c:if test="${sessionScope.memId == null}">
-    		 <a class="nav-link bi bi-emoji-smile fs-6 text-center" href="/omakaseProject/member/loginForm">로그인</a>
-		</c:if>
-		
-		<c:if test="${memId !=null}">
-			 <a class="nav-link bi bi-emoji-smile fs-6 text-center" href="/omakaseProject/member/memberInfo">마이페이지</a>
-		</c:if>
+    <a id="menu" class="nav-link bi bi-emoji-smile" href="#"> MYPAGE</a>
   </li>
-  <!-- 관리자 계정만 보이게 할 예정-->
-<!--     <li class="nav-item"> -->
-<!--     <a class="nav-link bi bi-emoji-sunglasses-fill fs-6 text-center" href="#"> 관리자 페이지</a> -->
-<!--   </li> -->
+  
+<!--   관리자 계정만 보이게 할 예정
+    <li class="nav-item">
+    <a id="menu" class="nav-link bi bi-emoji-sunglasses-fill text-center" href="#"> 관리자 페이지</a>
+  </li> -->
+  
 </ul>
 </nav>
+</div>
 
-</header>
+
 <!-- 메인1 -->
 <section>
-<article class="py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="resources/img/sogae.jpg" alt="소개 이미지"></div>
+<article id="main1" class="px-2 py-5">
+            <div id="brand" class="container py-5 px-4 px-lg-5 my-5">
+                <div class="row gx-5 gx-lg-5 align-items-center ">
+                    <div class="col-md-6">
+                    <img id="brandImg" class="card-img-top p-3" src="http://localhost:8080/omakaseProject/resources/img/brand_img.jpg" alt="소개 이미지">
+                    </div>
+                    
                     <div class="col-md-6">
                         <div class="small mb-1">브랜드 소개</div>
-                        <h1 class="display-6 fw-bolder">아무거나 오마카세</h1>
+                        <h1 class="display-6 fw-bolder">"한우마카세"</h1>
                         <div class="fs-5 mb-5">
                             <span class="text-decoration-line-through fs-6">수입산 소고기</span>
                             <span class="fw-bolder">" A++ 최고급 한우"</span>
                         </div>
-                        <p class="lead">육즙이 어찌고 저찌고</p>
+                        <p class="lead">세상에 이런 한우 오마카세는 없다. <br> 잊을 수 없는 시간을 만들어드리겠습니다.</p>
                         <div class="d-flex">
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="location.href='/omakase/res/resForm'">
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
                                 <i class="bi-calendar-event me-1"></i>
                                 예약하기
                             </button>
@@ -155,42 +119,45 @@ footer {
        </article>
 
 <!-- 메인2 -->
-<article>
-	<div class="container py-5 px-4 " >
-   	 <h2 class="pb-2 fw-bold">공지사항
-    	<a href="#" class="btn btn btn-outline-danger btn-sm text-right">+</a>
-    </h2>
-   	<hr>
-
-    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+<article class="px-2 py-5">
+	<div id="gesipan" class="container px-4 py-5" >
+   	 	<h2 class="pb-2 fw-bold">공지사항
+    	<a href="#" class="btn btn-outline-danger btn-sm text-right">+</a>
+   		 </h2>
+   		<hr>
+   	
+	<!-- 공지 게시판 미니 -->
+    <div class="row row-cols-0 row-cols-md-2 align-items-center g-5">
       <div class="d-flex flex-column align-items-start gap-2">
         <h3 class="fw-bold">공지 게시판</h3>
-        <p class="text-muted">게시글 1</p>
-        <p class="text-muted">게시글 2</p>
-        <p class="text-muted">게시글 3</p>
-        <p class="text-muted">게시글 4</p>
-        
+        <br>
+        <p class="text">게시글 1</p>
+        <p class="text">게시글 2</p>
+        <p class="text">게시글 3</p>
+        <p class="text">게시글 4</p>
       </div>
-      <div class="row row-cols-1 row-cols-sm-2 g-4">
+      
+      <!-- 자주 묻는 질문 미니 -->
+      <div class="row row-cols-0 row-cols-sm-2 g-1  my-3">
         <div class="d-flex flex-column gap-2">
-          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-body bg-gradient fs-4 rounded-3">
-            <svg class="bi" width="1em" height="1em">
+          <div id="main2icon" class="feature-icon-small m-3 d-inline-flex align-items-center justify-content-center bg-gradient fs-1 rounded-3">
+            <svg class="bi" width="3em" height="3em">
               <use xlink:href="#collection"></use>
             </svg>
           </div>
-          
-          <h4 class="fw-semibold mb-0">자주 묻는 질문</h4>
-          <p class="text-muted">궁금하신게 있으신가요? 블라리블라더</p>
+          <h4 class="fw-semibold p-3 mb-0">자주 묻는 질문</h4>
+          <p class="text p-3">궁금하신게 있으신가요? 블라리블라더</p>
         </div>
-
-        <div class="d-flex flex-column gap-2">
-          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-body bg-gradient fs-4 rounded-3">
-            <svg class="bi" width="1em" height="1em">
-              <use xlink:href="#gear-fill"></use>
+        
+	 	<!-- 고객 센터 미니 -->
+        <div class="d-flex flex-column gap-2">        
+          <div id="main2icon" class="feature-icon-small m-3 d-inline-flex align-items-center justify-content-center bg-gradient fs-1 rounded-3">
+            <svg class="bi" width="3em" height="3em">
+             <use xlink:href="#gear-fill"></use>
             </svg>
           </div>
-          <h4 class="fw-semibold mb-0">고객센터</h4>
-          <p class="text-muted">1:1 문의가 필요하신가요? 랄라리랄라</p>
+          <h4 class="fw-semibold p-3 mb-0">고객센터</h4>
+          <p class="text p-3">1:1 문의가 필요하신가요? 랄라리랄라</p>
         </div>
       </div>
     </div>
@@ -200,37 +167,35 @@ footer {
 
 <!-- 푸터 -->
 
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-3 mb-0 ml-auto text-muted"> &nbsp; © 2022 miniproject <br><br>
-    	&nbsp; 서울 강남구 강남대로94길 20 삼오빌딩 6층<br>
-    	&nbsp; bitcamp@bit603.com<br>
-    	&nbsp; 02-000-0000
+<div id="footer">
+<footer class="d-flex flex-wrap justify-content-around align-items-center border-top p-2">
+    <p class="col-md-4 mb-0 ml-auto text">
+    	© 2022 miniproject han U makase<br><br>
+    	서울 강남구 강남대로94길 20 삼오빌딩 6층<br>
+    	bitcamp@bit603.com<br>
+    	02-1121-1209<br><br>
+
+    	MJS / YAR / JJY / KMS / PMH
+    	
     	</p>
 
-    <a href="#" class="col-md-4 d-flex align-items-center justify-content-center mb-0 mb-md-0 me-md-5 link-dark ">
-    <img src="resources/img/SAMPLE LOGO.png" width="100" height="100" alt="로고">
+    <a href="#" class="col-md-4 d-flex align-items-center justify-content-around mb-0 mb-md-0 me-md-0 link-dark ">
+    <img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
     </a>
 
     <ul class="nav col-md-3 justify-content-end">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">고객센터</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">개인정보처리방침</a></li>
-      <li class="nav-item"><a href="" class="nav-link px-2 text-muted"></a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">고객센터</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">개인정보처리방침</a></li>
     </ul>
+    
+    <a id="topBtn" href="#" class="col-md-1 d-flex justify-content-end">
+    <button type="button" class="btn btn-outline-light btn-sm">맨 위로</button>
+    </a>
   </footer>
-  
-   <footer>
-   <p>
-    <button type="button" class="btn btn-success btn-sm">맨위로</button>
-   </p>
-  </footer>
+ </div>
    
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<script type="text/javascript">
-// ( x좌표 - 가로 , y좌표 - 세로 )
-// option { left, top, behvior }
-window.scrollTo({ left:0, top:0, behavior:"smooth"  });
 
-</script>
 </body>
 </html>

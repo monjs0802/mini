@@ -82,14 +82,15 @@ http://localhost:8080/omakaseProject/index&response_type=code">
 				<tr>
 					<td>
 						<input type="password" name="pwd" id="pwd" size="40" placeholder="비밀번호 입력">
+						<div id="loginResult"/>
 					</td>
 				</tr>
 		</table>
 				
 				<div id="container" class="container" >
 				 <h3 class="articleTitle"></h3>
-					<a href="#" title="Button fade orange" class="button btnFade btnOrange">로그인</a>
-					<a href="#" title="Button fade purple" class="button btnFade btnPurple">회원가입</a>
+					<a href="#" id="loginBtn" title="Button fade orange" class="button btnFade btnOrange">로그인</a>
+					<a href="memberWrite" title="Button fade purple" class="button btnFade btnPurple">회원가입</a>
 					 <div class="clear"></div>
 				 </div>
 					<!-- <th colspan="5">
@@ -120,27 +121,25 @@ $('#loginBtn').click(function(){
 		
 	}else{
 		$.ajax({
-			url: '/miniProject_MVC/member/login.do',
+			url: '/omakaseProject/member/login',
 			type: 'post',
 			data: 'id=' + $('#id').val() +'&pwd=' + $('#pwd').val(),
-			//data: { 'id': $('#id').val(), 'pwd': $('#pwd').val() }
 			dataType: 'text',			
 			success: function(data){
 				data = data.trim();
-				
-				if(data == 'ok'){
-					/* location.href='../index.jsp'; */
+	
+					if(data == 'ok'){
+						location.href='/index';
+					}else if(data == 'fail'){
+						$('#loginResult').text('아이디 또는 비밀번호가 맞지 않습니다.');
+						$('#loginResult').css('font-size', '12pt');
+					}
 					
-				}else if(data == 'fail'){
-					$('#loginResult').text('아이디 또는 비밀번호가 맞지 않습니다.');
-					$('#loginResult').css('font-size', '12pt');
+				},
+				error:function(err){
+					//alert(err);
+					console.log(err);
 				}
-				
-			},
-			error:function(err){
-				//alert(err);
-				console.log(err);
-			}
 		});
 	}
 		

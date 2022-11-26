@@ -12,4 +12,7 @@ public interface UserDAO {
 	public UserDTO getMember(String id);
 
 	public void delete(String id);
+
+	public void login(Map<String, Object> map);
+
 }

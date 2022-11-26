@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+
+html {
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: auto;
+	background-image: url('http://localhost:8080/omakaseProject/resources/img/body_bg.jpg');
+	background-attachment:fixed;
+	background-size: cover;
+	font-family: georgia;
+}
+
+/* 상단 캐러셀 */
+.carousel-item {
+  height: 400px;
+}
+
+.carousel-item #header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+}
+
+/* 내비게이션 */
+#navDiv{
+	width: 100%;
+  	min-width: 500px;
+  	over-flow-x: auto;
+}
+
+#navi {
+	
+	height: 90px;
+	background-color: rgba(200, 50, 0, 0.8);
+}
+
+#navi ul li #menu {
+	list-style: none;
+	text-align: center;
+	line-height: 70px;
+	font-size: 20px;
+    color: Khaki;
+    margin: auto;
+    position: relative;
+    display: inline-block;
+}
+
+#navi ul li #menu:hover {
+	color: DarkOliveGreen;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+/* 메인 게시판 */
+
+#brand {
+	background-image: url('http://localhost:8080/omakaseProject/resources/img/article_bg.jpg');
+	border-radius: 20px;
+}
+
+#gesipan {
+	background-image: url('http://localhost:8080/omakaseProject/resources/img/article_bg.jpg');
+	border-radius: 20px;
+}
+#main2icon {
+	background-color: Linen;
+}
+
+/* 푸터 */
+#footer {
+	background-color: rgba(188, 153, 101, 0.6);
+	color: white;
+	font-size: 7px;
+}
+
+#topBtn {
+	float: right;
+	text-decoration: none;
+}
+
