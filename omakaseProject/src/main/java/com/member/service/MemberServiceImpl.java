@@ -44,14 +44,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public HashMap<String, Object> getUserInfo(String access_Token) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public String getAccessToken(String code) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

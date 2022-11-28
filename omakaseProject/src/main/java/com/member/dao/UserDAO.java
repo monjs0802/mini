@@ -17,6 +17,6 @@ public interface UserDAO {
 
 	public UserDTO login(UserDTO userDTO);
 
-	
+	public UserDTO getAccessToken(String code);
 
 }

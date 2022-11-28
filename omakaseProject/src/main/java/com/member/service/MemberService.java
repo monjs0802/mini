@@ -18,8 +18,6 @@ public interface MemberService {
 
 	public void write(Map<String, Object> map);
 
-	public HashMap<String, Object> getUserInfo(String access_Token);
-
 	public String getAccessToken(String code);
 
 	public String login(UserDTO userDTO, HttpSession session);
