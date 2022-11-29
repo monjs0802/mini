@@ -6,5 +6,7 @@
 	<typeAliases>
 		<typeAlias type="com.res.bean.ResDTO" alias="res"/>
 		<typeAlias type="com.member.bean.UserDTO" alias="user"/>
+		<typeAlias type="com.board.bean.NoticeDTO" alias="notice"/>
+		<typeAlias type="com.member.bean.KakaoDTO" alias="kakao"/>
 	</typeAliases>
 </configuration>

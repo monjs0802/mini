@@ -103,8 +103,6 @@ public class MemberController {
 	@ResponseBody
 	public String login(@ModelAttribute UserDTO userDTO, HttpSession session) {		
 		
-		System.out.println(memberService.login(userDTO, session));
-		
 		return memberService.login(userDTO, session);
    
 	}

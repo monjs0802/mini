@@ -88,7 +88,7 @@ dt {
 <div id="rescontainer">
 	<input type="hidden" class="date">
 	<c:if test="${not empty memId }">
-		<input type="hidden" class="memId" value=${memId }>
+		<input type="hidden" class="memId" value="${memId }">
 	</c:if>
 	<div class="content1">
 		<div id="datepicker"></div>

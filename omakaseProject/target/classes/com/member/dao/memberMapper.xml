@@ -36,6 +36,14 @@
 	<delete id="delete" parameterType="String">
 		delete omakaseM where id=#{id}
 	</delete>
+	<select id="findKakao" parameterType="java.util.HashMap" resultType="kakao">
+		select * from kakao_table where k_name=#{nickname} and k_email=#{email}
+	</select>
+	<insert id="kakaoInsert" parameterType="java.util.HashMap">
+		insert into kakao_table(k_name, k_email)
+			values(#{nickname}, #{email})
+	</insert>
+	
 
 
 </mapper>

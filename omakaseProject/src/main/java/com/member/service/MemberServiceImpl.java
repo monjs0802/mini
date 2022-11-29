@@ -48,19 +48,7 @@ public class MemberServiceImpl implements MemberService {
       return null;
    }
 
-//   @Override
-//   public String login(Map<String, Object> map, HttpSession session) {
-//      String id = userDAO.login(map);
-//      
-//      if( id != null) {
-//         session.setAttribute("id", id);
-//      }else {
-//         session.setAttribute("id", null);
-//      }
-//      return id;
-//
-//   }
-   
+
    @Override
    public String login(UserDTO userDTO, HttpSession session) {
       UserDTO userDTO2 = userDAO.login(userDTO);
