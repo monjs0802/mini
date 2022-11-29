@@ -16,4 +16,26 @@
  	<select id="getReserve" parameterType="String" resultType="res">
  		select * from reservation where resDate=#{resDate}
  	</select>
+ 	
+ 	<select id="getResInfo" parameterType="String" resultType="res">
+ 		select * from reservation where resId=#{resId}
+ 	</select>
+ 	
+ 	<select id="getOneRes" parameterType="String" resultType="res">
+ 		select * from reservation where resNum=#{resNum}
+ 	</select>
+ 	
+ 	<update id="resUpdate" parameterType="res">
+ 		update reservation set  resDate=#{resDate}
+								 ,resTime=#{resTime}
+								 ,resAdult=#{resAdult}
+								 ,resKid=#{resKid}
+								 ,resMenuA=#{resMenuA}
+								 ,resMenuB=#{resMenuB}
+ 		 where resNum= #{resNum}
+ 	</update>
+ 	
+ 	<delete id="resCancel" parameterType="String">
+ 		delete reservation where resNum=#{resNum}
+ 	</delete>
   </mapper>

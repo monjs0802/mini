@@ -24,4 +24,26 @@ public class ResServiceImpl implements ResService {
 	public List<ResDTO> getReserve(String resDate) {
 		return resDAO.getReserve(resDate);
 	}
+
+	@Override
+	public List<ResDTO> getResInfo(String resId) {
+		return resDAO.getResInfo(resId);
+	}
+
+	@Override
+	public ResDTO getOneRes(String resNum) {
+		return resDAO.getOneRes(resNum);
+	}
+
+	@Override
+	public void resUpdate(ResDTO resDTO) {
+		resDAO.resUpdate(resDTO);
+		
+	}
+
+	@Override
+	public void resCancel(String resNum) {
+		resDAO.resCancel(resNum);
+		
+	}
 }

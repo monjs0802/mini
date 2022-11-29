@@ -61,9 +61,9 @@ div#container {
 <div id="container">
 
 	<div class="contents_header">
-	<h3>회원정보 수정</h3>
+	<h3> <strong>${memId}</strong> 님의 회원정보</h3>
 	</div>
-		
+	
 	<div class="contents_body">
 		<form id="updateTable">
 			<div id="table">
@@ -72,14 +72,14 @@ div#container {
 				<div id="nameDiv"></div>
 				
 				<span>아이디</span>
-				<input type="text" id="id" name="id" value="ho" readonly> 
+				<input type="text" id="id" name="id" readonly> 
 				
 				<span>새로운 비밀번호</span>
-				<input type="password" id="pwd" name="pwd">
+				<input type="new-password" id="pwd" name="pwd">
 				<div id="pwdDiv"></div>
 				
 				<span>비밀번호 재확인</span>
-				<input type="password" id="repwd">
+				<input type="new-password" id="repwd">
 				<div id="repwdDiv"></div>
 			</div>
 			
@@ -113,7 +113,7 @@ $(function(){
 	$.ajax({
 		type: 'post' ,
 		url: '/omakaseProject/member/getMember',
-		data : 'id=' + $('#id').val() ,
+		data : 'id=' + '${memId}' ,
 		dataType: 'json' ,
 		success: function(data){
 			//alert(JSON.stringify(data));
@@ -126,7 +126,7 @@ $(function(){
 		},
 		error: function(err){
 			console.log(err)
-		} 			
+		} 		 		
 	});//ajax
 	
 });

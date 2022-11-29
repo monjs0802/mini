@@ -17,72 +17,62 @@ import com.member.dao.UserDAO;
 @Service
 @Transactional
 public class MemberServiceImpl implements MemberService {
-	@Autowired
-	private UserDAO userDAO;
-	
-	@Override
-	public void update(Map<String, Object> map) {
-			//db
-			userDAO.update(map);
-	}
+   @Autowired
+   private UserDAO userDAO;
+   
+   @Override
+   public void update(Map<String, Object> map) {
+         //db
+         userDAO.update(map);
+   }
 
-	@Override
-	public UserDTO getMember(String id) {
-		//db
-		return userDAO.getMember(id);
-	}
+   @Override
+   public UserDTO getMember(String id) {
+      //db
+      return userDAO.getMember(id);
+   }
 
-	@Override
-	public void delete(String id) {
-		userDAO.delete(id);
-		
-	}
+   @Override
+   public void delete(String id) {
+      userDAO.delete(id);
+      
+   }
 
-	@Override
-	public void write(Map<String, Object> map) {
-		userDAO.write(map);
-	}
+   @Override
+   public void write(Map<String, Object> map) {
+      userDAO.write(map);
+   }
 
-	@Override
-	public HashMap<String, Object> getUserInfo(String access_Token) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+   @Override
+   public String getAccessToken(String code) {
+      return null;
+   }
 
-	@Override
-	public String getAccessToken(String code) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-//	@Override
-//	public String login(Map<String, Object> map, HttpSession session) {
-//		String id = userDAO.login(map);
-//		
-//		if( id != null) {
-//			session.setAttribute("id", id);
-//		}else {
-//			session.setAttribute("id", null);
-//		}
-//		return id;
+//   @Override
+//   public String login(Map<String, Object> map, HttpSession session) {
+//      String id = userDAO.login(map);
+//      
+//      if( id != null) {
+//         session.setAttribute("id", id);
+//      }else {
+//         session.setAttribute("id", null);
+//      }
+//      return id;
 //
-//	}
-	
-	@Override
-	public String login(UserDTO userDTO, HttpSession session) {
-		UserDTO userDTO2 = userDAO.login(userDTO);
-		
-		if(userDTO2 != null) {
-			session.setAttribute("memId", userDTO2.getId());
-			session.setAttribute("memDTO", userDTO2);
-			return "exist";
-		}else {
-			return "non_exist";
-		}		
-		
-	}
-	
-
-
+//   }
+   
+   @Override
+   public String login(UserDTO userDTO, HttpSession session) {
+      UserDTO userDTO2 = userDAO.login(userDTO);
+      
+      if(userDTO2 != null) {
+         session.setAttribute("memId", userDTO2.getId());
+         session.setAttribute("memDTO", userDTO2);
+         return "exist";
+      }else {
+         return "non_exist";
+      }      
+      
+   }
 
 }
