@@ -87,6 +87,7 @@ dt {
 <body>
 <div id="rescontainer">
 	<input type="hidden" class="date">
+	<input type="hidden" class="resNum" value=${param.resNum }>
 	<c:if test="${not empty memId }">
 		<input type="hidden" class="memId" value=${memId }>
 	</c:if>
@@ -480,7 +481,8 @@ $('#resUpdateBtn').click(function(){
 		$.ajax({
 			url: '/omakaseProject/res/resUpdate',
 			type: 'post',
-			data: 'resDate=' + $('.resDate').text()
+			data: 'resNum=' + $('.resNum').val()
+				+ '&resDate=' + $('.resDate').text()
 				+ '&resTime=' + $('.resTime').text() 
 				+ '&resAdult=' + $('#adult > .text_num').text()
 				+ '&resKid=' + $('#kid > .text_num').text()
