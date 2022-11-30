@@ -319,8 +319,10 @@ dt {
   <div class="resModal_content">
   	<p class="resId"></p>
   	<p class="resDate"></p>
-  	<p class="resTime"></p>
-  	<p class="maxNum"></p><br>
+  	<input type="hidden" class="resTime">
+  	<p class="resTime2"></p>
+  	<input type="hidden" class="maxNum">
+  	<p class="maxNum2"></p><br>
   	<div id="adult">성인
   		<button type="button" class="btn_min" id="btn_min">-</button>
   		<div class="text_num">0</div>
@@ -445,8 +447,10 @@ $('.list_time a').click(function(){
 	}else{
 		$('.resModal .resId').text($('.memId').val() + '님');
 		$('.resModal .resDate').text($('.date').val());
-		$('.resModal .resTime').text($(this).find('.time').prev().text() + '' + '시');
-	 	$('.resModal .maxNum').text('잔여석 : ' + $(this).find('.seat strong').text());
+		$('.resModal .resTime').val($(this).find('.time').prev().text());
+		$('.resModal .resTime2').text($(this).find('.time').prev().text() + '' + '시');
+		$('.resModal .maxNum').val($(this).find('.seat strong').text());
+	 	$('.resModal .maxNum2').text('잔여석 : ' + $(this).find('.seat strong').text());
 		$('#adult > .text_num').text(0);
 		$('#kid > .text_num').text(0);
 		$('.resModal').fadeIn();
@@ -460,7 +464,7 @@ $("#modal_close_btn").click(function(){
 $('#adult > .btn_plus').click(function(){
 	var num = $('#adult > .text_num').text();
 	num *=1;
-	if(($('#adult > .text_num').text()*1 + $('#kid > .text_num').text()*1) >= $('.maxNum').text()){
+	if(($('#adult > .text_num').text()*1 + $('#kid > .text_num').text()*1) >= $('.maxNum').val()){
 		alert('최대 정원을 초과했습니다')
  	}else{
 		$('#adult > .text_num').text(num+1);
@@ -478,7 +482,7 @@ $('#adult > .btn_min').click(function(){
 $('#kid > .btn_plus').click(function(){
 	var num = $('#kid > .text_num').text();
 	num *=1;
- 	if(($('#kid > .text_num').text()*1 + $('#adult > .text_num').text()*1) >= $('.maxNum').text()){
+ 	if(($('#kid > .text_num').text()*1 + $('#adult > .text_num').text()*1) >= $('.maxNum').val()){
 		alert('최대 정원을 초과했습니다')
  	}else{
 		$('#kid > .text_num').text(num+1);
@@ -530,15 +534,12 @@ $('#resBtn').click(function(){
 	}else if(allM < allP){
 		alert("1인 1메뉴 이상 주문하셔야 예약 가능합니다")
 	}else{
-// 		alert($('#adult > .text_num').text()+''+$('#kid > .text_num').text());
-// 		alert($('#menuA > .text_num').text()+''+$('#menuB > .text_num').text());
-// 		alert(allP + '' + allM);
 		$.ajax({
 			url: '/omakaseProject/res/reserve',
 			type: 'post',
 			data: 'resDate=' + $('.resDate').text()
 				+ '&resId=' + $('.memId').val()
-				+ '&resTime=' + $('.resTime').text() 
+				+ '&resTime=' + $('.resTime').val() 
 				+ '&resAdult=' + $('#adult > .text_num').text()
 				+ '&resKid=' + $('#kid > .text_num').text()
 				+ '&resMenuA=' + $('#menuA > .text_num').text()
