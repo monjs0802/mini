@@ -172,7 +172,7 @@ dt {
 	</div>
 	<div class="content2">
 		<div class="time_select">
-			<ul class="list_time">
+			<ul class="list_time" style="list-style:none;">
 				<li>
 					<a role="button" href="#none">
 						<dl>
