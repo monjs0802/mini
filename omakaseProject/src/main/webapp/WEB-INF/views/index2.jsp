@@ -5,57 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인화면</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한우마카세 | han"U"makase</title>
+<link rel="shortcut icon" href="http://localhost:8080/omakaseProject/resources/img/icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href="http://localhost:8080/omakaseProject/resources/css/sub_index.css">
+
 <style type="text/css">
-html{
-   overflow-y: scroll;
-}
-
-body {
-   margin: 0;
-   padding: 0;
-   height: 100%;
-}
-
-#wrapper{
-	width: 1100px;
-	margin: auto;
-}
-
-#header {
-   /* width: 1700px; */
-   height: 10%;
-   text-align: center;
-}
-
-#container {
-   margin: auto;
-   /* width: 1700px; */
-   height: 500px;
-}
-
-#container:after {
-   content: '';
-   display: block;
-   clear: both;
-   float: none;
-}
-
-#nav {
-   margin-left: 10px;
-   width: 20%;
-   height: 100%;
-   float: left;
-}
-
-#section {
-   width: 70%;
-   height: 100%;
-   float: left;
-   margin: auto;
-}
-
-.button {
+/* .button {
   background-color: white;
   border: solid black 1px;
   color: black;
@@ -78,75 +36,34 @@ body {
   font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
-}
-/* footer start */
-#footer{
-	border-top: 1px solid #cccccc;
-	padding: 18px 30px 40px 20px;
-	color: #666;
-	font-size: 0.9em;
-}
-#footer:after{
-	content: '';
-	display: block;
-	clear: both;
-}
-.btmnav{
-	float: right;
-}
-.btmnav dd{
-	float: left;
-}
-.btmnav dd:after{
-	content: '|';
-	padding: 0 0.7em;
-	color: #999;
-}
-.btmnav dd:last-child:after{
-	content: '';
-	padding: 0 0;
-}
-.copy{
-	line-height: 1.8;
-}
-/* footer end */
+} */
 
 
 </style>
 </head>
 <body>
+
 <div id="wrapper">
-<div id="header">
-	<jsp:include page="./main/menu.jsp" />
-</div>
 
-<div id="container">
+	<div id="header">
+		<jsp:include page="./main/menu.jsp" />
+	</div>
 
-<div id="nav">
-	<jsp:include page="${nav }" />
-</div>
-
-<div id="section">
-	<jsp:include page="${display }"/>
-</div>
-
-</div>
-
-<div id="footer">
-	<dl class="btmnav">
-		<dt class="blind">bottom navigation</dt>
-		<dd><a href="#">About건드려</a></dd>
-		<dd><a href="#">Services</a></dd>
-		<dd><a href="#">Portfolio</a></dd>
-		<dd><a href="#">Contact us</a></dd>
-		<dd><a href="#">Location</a></dd>		
-	</dl>
+	<div id="container">
 	
-	<p class="copy">
-		Copyright &copy; COMPANY Design<br>
-		Powered by Webazit, e-mail : <a href="mailto:webmaster@company.com">webmaster@company.com</a>
-	</p>
-</div><!-- footer -->
+		<div id="nav">
+			<jsp:include page="${nav }" />
+		</div>
+		
+		<div id="index2_section">
+			<jsp:include page="${display }"/>
+		</div>
+	
+	</div>
+
+	<div id="footer">
+		<jsp:include page="./main/footer.jsp" />
+	</div><!-- footer -->
 
 </div>
 </body>

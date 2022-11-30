@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+html {
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: auto;
+	background-image: url('http://localhost:8080/omakaseProject/resources/img/body_bg.jpg');
+	background-attachment:fixed;
+	background-size: cover;
+	font-family: georgia;
+}
+
+/* l-menu */
+
+ul{
+	list-style:none;
+}
+.l-menu{
+	position: absolute;
+	right: 35px;
+	top: 18px;
+}
+.l-menu ul li{
+	float: left;
+	padding-right: 11px;
+	margin-right: 10px;
+	background: url(http://localhost:8080/omakaseProject/resources/img/bg_topnav.png) no-repeat 100% 50%;
+}
+.l-menu ul li:last-child{
+	padding-right: 0;
+	margin-right: 0;
+	background: none;
+}
+.l-menu ul li a{
+	color: white;
+	font-size: 10px;
+	text-decoration: none;
+}
+.l-menu ul li a:hover{
+	color: green;
+	text-decoration: underline;
+}
+
+/* header */
+
+#header {
+	border: 3px solid white;
+	height: 10%;
+	text-align: center;
+}
+#index2_menu {
+	background-color: rgba(200, 50, 0, 0.8);
+}
+
+
+/* nav */
+
+#nav {
+	border: 3px solid yellow;
+	background-color: rgba(188, 153, 101, 0.7);
+	/* width: 400px; */
+	width: 15%;
+	height: 100%;
+	float: left;
+	color: white;
+}
+
+#sideNav ul li:hover {
+	color: green;
+}
+
+/* container */
+
+#wrap {
+	border: 3px solid grey;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#container {
+	position: relative;
+	border: 3px solid magenta;
+	margin: auto;
+	height: 800px;
+}
+
+#container:after {
+	content: '';
+	display: block;
+	clear: both;
+	float: none;
+}
+
+
+/* section */
+
+#index2_section {
+	background-color: rgba(233, 211, 179, 0.9);
+	border: 3px solid cyan;
+/* 	width: 70%; */
+	height: 100%;
+	display: flex;
+}
+
+
+/* footer */
+
+#footer {
+	border: 3px solid blue;
+	background-color: rgba(188, 153, 101, 0.6);
+	color: white;
+	font-size: 7px;
+}
+
+#topBtn {
+	float: right;
+	text-decoration: none;
+}

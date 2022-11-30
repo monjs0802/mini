@@ -37,7 +37,6 @@ body {
 }
 
 #navi {
-	
 	height: 90px;
 	background-color: rgba(200, 50, 0, 0.8);
 }
@@ -75,8 +74,13 @@ body {
 	background-color: Linen;
 }
 
+#mini {
+	text-decoration: none;
+	color: black;
+}
+
 /* 푸터 */
-#footer {
+#footer1 {
 	background-color: rgba(188, 153, 101, 0.6);
 	color: white;
 	font-size: 7px;
@@ -86,4 +90,3 @@ body {
 	float: right;
 	text-decoration: none;
 }
-
