@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="customerSQL">
+	<select id="getCustomer" parameterType="String" resultType="customer"> <!-- 1대1 문의에서 내가 문의한 글 확인하기 -->
+ 		select * from customer_board where id=#{id}
+ 	</select>
+ 	
+ </mapper>

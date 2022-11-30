@@ -18,17 +18,17 @@ form[name="noticeWriteForm"] div {
 	<form name="noticeWriteForm" id="noticeWriteForm">
 		<table border="1" cellpadding="5" cellspacing="0">
 			<tr>
-				<th align="center" width="70">제목</td>
+				<th>제목</th>
 				<td>
-					<input type="text" name="noticeSubject" id="noticeSubject" placeholder="제목입력">
+					<input type="text" name="subject" id="subject" style="width: 200px;" placeholder="제목입력">
 					<div id="subjectDiv"></div>
 				</td>
 			</tr>
 			<tr>
-				<th align="center">내용</td>
+				<th>내용</th>
 				<td>
-					<textarea name="noticeContent" id="noticeContent" cols="90" rows="23" maxlength="500" placeholder="내용입력" style="white-space:pre-wrap; resize: none;"></textarea>
-				<div id="contentDiv"></div>
+					<textarea rows="5" cols="40" name="content" id="content" style="white-space: pre-wrap;" placeholder="내용입력"></textarea>
+					<div id="contentDiv"></div>
 				</td>
 			</tr>
 			<tr>
@@ -41,7 +41,42 @@ form[name="noticeWriteForm"] div {
 	</form>
 	
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
-<script type="text/javascript" src="../../resources/js/noticeWrite.js"></script>
+<script type="text/javascript">
+//글작성
+$('#noticeWriteBtn').click(function(){
+	$('#subjectDiv').empty();
+	$('#contentDiv').empty();
+	
+	if($('#subject').val() == ''){
+		$('#subjectDiv').text('제목을 입력하세요');
+		$('#subject').focus();
+		
+	} else if ($('#content').val() == ''){
+		$('#contentDiv').text('내용을 입력하세요');
+		$('#content').focus();
+		
+	} else {
+		//서버로 요청하고 제자리로 돌아와라
+		$.ajax({
+			url: '/omakaseProject/board/notice/noticeWrite',
+			type: 'post',
+			data: $('#noticeWriteForm').serialize(),
+			//또는 data: 'subject=' + $('#subject').val() + "&content=" + $('#content').val()
+			//또는 data: {
+			//	'subject': $('#subject').val(),
+			//	'content': $('#content').val()
+			//},
+			success: function() {
+				alert("공지사항 작성 완료!");
+				location.href = "/omakaseProject/board/notice/noticeList";
+			},
+			error: function(err){
+				console.log(err);
+			}
+		}); //$.ajax
+	}
+});
+</script>
 
 </body>
 </html>

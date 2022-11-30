@@ -43,7 +43,6 @@
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
-<script type="text/javascript" src="resources/js/noticeView.js"></script>
 <script type="text/javascript">
 <!-- 관리자 아이디로 로그인했을 시, 수정과 삭제버튼이 뜨게~! -->
 //글삭제
@@ -61,6 +60,33 @@ $('#noticeDeleteBtn').click(function(){
 		error: function(err){
 			console.log(err);
 		}
+	}); //$.ajax
+});
+
+$(document).ready(function(){
+	$.ajax({
+		url: '/miniProject_MVC/board/getBoardView.do',
+		type: 'post',
+		data: 'seq=' + $('#seq').val(),
+		dataType: 'json',
+		success: function(data) {
+			//alert(JSON.stringify(data));
+			
+			$('#subjectSpan').text(data.subject);
+			$('#seqSpan').text(data.seq);
+			$('#idSpan').text(data.id);
+			$('#hitSpan').text(data.hit);
+			$('#contentSpan').text(data.content);
+			
+			if($('#memId').val() == data.id) {
+				$('#boardViewSpan').show();
+			} else {
+				$('#boardViewSpan').hide();
+			}
+		},
+			error: function(err){
+				console.log(err);
+			}
 	}); //$.ajax
 });
 </script>

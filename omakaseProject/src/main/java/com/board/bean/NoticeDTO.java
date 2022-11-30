@@ -8,9 +8,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class NoticeDTO {
-	private int noticeSeq;
-	private String noticeSubject;
-	private String noticeContent;
-	private int noticeHit;
-	private Date noticeLogTime;
+	private int notSeq;
+	private String notSubject;
+	private String notContent;
+	private int notHit;
+	private Date notLogtime;
 }
