@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 
-#container {
+/* #container {
 	margin-left: -10px;
 	width: 90%;
 	padding: 30px 0;
@@ -18,8 +18,8 @@
 .contents_header {
 	margin-top: -20px;
 }
-
-
+*/
+/* 
 .table tr th:first-child {
     background-color: #fb7d10;
     border-color: #8F1D1D;
@@ -46,7 +46,7 @@ button {
     border-radius:10px;   /* 테두리둥글게 */
     padding: 5px;   /* 버튼의 위, 아래, 오른쪽, 왼쪽에 padding */
 
-}
+} */
 </style>
 </head>
 <body>

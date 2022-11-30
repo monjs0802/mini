@@ -11,6 +11,80 @@
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <style type="text/css">
+
+.ui-widget-header { border: 0px solid #dddddd; background: #fff; } 
+
+.ui-datepicker-calendar>thead>tr>th { font-size: 14px !important; } 
+
+.ui-datepicker .ui-datepicker-header { position: relative; padding: 10px 0; } 
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background-color: transparent; font-weight: normal; color: #454545; text-align: center; } 
+
+.ui-datepicker .ui-datepicker-title { margin: 0 0em; line-height: 16px; text-align: center; font-size: 14px; padding: 0px; font-weight: bold; } 
+
+.ui-datepicker { display: none; background-color: #fff; border-radius: 4px; margin-top: 10px; margin-left: 0px; margin-right: 0px; padding: 20px; padding-bottom: 10px; width: 300px; box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.1); } 
+
+.ui-widget.ui-widget-content { border: 1px solid #eee; } 
+
+#datepicker:focus>.ui-datepicker { display: block; } 
+
+.ui-datepicker-prev,
+.ui-datepicker-next { cursor: pointer; } 
+
+.ui-datepicker-next { float: right; } 
+
+.ui-state-disabled { cursor: auto; color: hsla(0, 0%, 80%, 1); } 
+
+.ui-datepicker-title { text-align: center; padding: 10px; font-weight: 100; font-size: 20px; } 
+
+.ui-datepicker-calendar { width: 100%; } 
+
+.ui-datepicker-calendar>thead>tr>th { padding: 5px; font-size: 20px; font-weight: 400; } 
+
+.ui-datepicker-calendar>tbody>tr>td>a { color: #000; font-size: 12px !important; font-weight: bold !important; text-decoration: none;}
+
+.ui-datepicker-calendar>tbody>tr>.ui-state-disabled:hover { cursor: auto; background-color: #fff; } 
+
+.ui-datepicker-calendar>tbody>tr>td { border-radius: 100%; width: 44px; height: 30px; cursor: pointer; padding: 5px; font-weight: 100; text-align: center; font-size: 12px; } 
+
+.ui-datepicker-calendar>tbody>tr>td:hover { background-color: transparent; opacity: 0.6; } 
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus { border: 0px solid #cccccc; background-color: transparent; font-weight: normal; color: #2b2b2b; } 
+
+.ui-widget-header .ui-icon { background-image: url('http://localhost:8080/omakaseProject/resources/img/btns.png'); } 
+
+.ui-icon-circle-triangle-e { background-position: -20px 0px; background-size: 36px; } 
+
+.ui-icon-circle-triangle-w { background-position: -0px -0px; background-size: 36px; } 
+
+.ui-datepicker-calendar>tbody>tr>td:first-child a { color: red !important; } 
+
+.ui-datepicker-calendar>tbody>tr>td:last-child a { color: #0099ff !important; } 
+
+.ui-datepicker-calendar>thead>tr>th:first-child { color: red !important; } 
+
+.ui-datepicker-calendar>thead>tr>th:last-child { color: #0099ff !important; } 
+
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight { border: 0px; background: #f1f1f1; border-radius: 50%; padding-top: 10px; padding-bottom: 10px; } 
+
+.inp { padding: 10px 10px; background-color: #f1f1f1; border-radius: 4px; border: 0px; } 
+
+.inp:focus { outline: none; background-color: #eee; } 
+ 
 /* container start */
 #rescontainer{
 	width: 900px;
@@ -52,32 +126,34 @@ dt {
 /*   line-height:15px; cursor:pointer; */
 /* } */
 
-.modal{ 
+.resModal{ 
   position:absolute; width:100%; height:100%; background: rgba(0,0,0,0.8); top:0; left:0; display:none;
 }
 
-.modal_content{
+.resModal_content{
   width:400px; height:400px;
   background:#fff; border-radius:10px;
   position:relative; top:30%; left:50%;
   margin-top:-100px; margin-left:-200px;
   text-align:center;
   box-sizing:border-box; padding:74px 0;
-  line-height:23px;
+  line-height:13px;
 }
 
-.modal .btn_min {
+.resModal .btn_min {
 	display:inline-block;
-    width:15px;
-    height:15px;
+    width:25px;
+    height:25px;
+    border-style: none;
 }
 
-.modal .btn_plus {
+.resModal .btn_plus {
 	display:inline-block;
-	width:15px;
-    height:15px;
+	width:25px;
+    height:25px;
+    border-style: none;
 }
-.modal .text_num {
+.resModal .text_num {
 	display:inline-block;
 }
 
@@ -96,7 +172,7 @@ dt {
 	</div>
 	<div class="content2">
 		<div class="time_select">
-			<ul class="list_time">
+			<ul class="list_time" style="list-style:none;">
 				<li>
 					<a role="button" href="#none">
 						<dl>
@@ -240,12 +316,14 @@ dt {
 </div> <!-- container -->
 
 
-<div class="modal">
-  <div class="modal_content">
+<div class="resModal">
+  <div class="resModal_content">
   	<p class="resId"></p>
   	<p class="resDate"></p>
-  	<p class="resTime"></p>
-  	<p class="maxNum"></p><br>
+  	<input type="hidden" class="resTime">
+  	<p class="resTime2"></p>
+  	<input type="hidden" class="maxNum">
+  	<p class="maxNum2"></p><br>
   	<div id="adult">성인
   		<button type="button" class="btn_min" id="btn_min">-</button>
   		<div class="text_num">0</div>
@@ -368,24 +446,26 @@ $('.list_time a').click(function(){
 	else if($(this).find('.seat strong').text() == 0){
 		alert('예약이 마감되었습니다')
 	}else{
-		$('.modal .resId').text($('.memId').val());
-		$('.modal .resDate').text($('.date').val());
-		$('.modal .resTime').text($(this).find('.time').prev().text());
-	 	$('.modal .maxNum').text($(this).find('.seat strong').text());
+		$('.resModal .resId').text($('.memId').val() + '님');
+		$('.resModal .resDate').text($('.date').val());
+		$('.resModal .resTime').val($(this).find('.time').prev().text());
+		$('.resModal .resTime2').text($(this).find('.time').prev().text() + '' + '시');
+		$('.resModal .maxNum').val($(this).find('.seat strong').text());
+	 	$('.resModal .maxNum2').text('잔여석 : ' + $(this).find('.seat strong').text());
 		$('#adult > .text_num').text(0);
 		$('#kid > .text_num').text(0);
-		$('.modal').fadeIn();
+		$('.resModal').fadeIn();
 	}
 });
 	  
 $("#modal_close_btn").click(function(){
-	$(".modal").fadeOut();
+	$(".resModal").fadeOut();
 });
 	  
 $('#adult > .btn_plus').click(function(){
 	var num = $('#adult > .text_num').text();
 	num *=1;
-	if(($('#adult > .text_num').text()*1 + $('#kid > .text_num').text()*1) >= $('.maxNum').text()){
+	if(($('#adult > .text_num').text()*1 + $('#kid > .text_num').text()*1) >= $('.maxNum').val()){
 		alert('최대 정원을 초과했습니다')
  	}else{
 		$('#adult > .text_num').text(num+1);
@@ -403,7 +483,7 @@ $('#adult > .btn_min').click(function(){
 $('#kid > .btn_plus').click(function(){
 	var num = $('#kid > .text_num').text();
 	num *=1;
- 	if(($('#kid > .text_num').text()*1 + $('#adult > .text_num').text()*1) >= $('.maxNum').text()){
+ 	if(($('#kid > .text_num').text()*1 + $('#adult > .text_num').text()*1) >= $('.maxNum').val()){
 		alert('최대 정원을 초과했습니다')
  	}else{
 		$('#kid > .text_num').text(num+1);
@@ -483,7 +563,7 @@ $('#resUpdateBtn').click(function(){
 			type: 'post',
 			data: 'resNum=' + $('.resNum').val()
 				+ '&resDate=' + $('.resDate').text()
-				+ '&resTime=' + $('.resTime').text() 
+				+ '&resTime=' + $('.resTime').val() 
 				+ '&resAdult=' + $('#adult > .text_num').text()
 				+ '&resKid=' + $('#kid > .text_num').text()
 				+ '&resMenuA=' + $('#menuA > .text_num').text()

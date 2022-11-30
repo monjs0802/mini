@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <style type="text/css">
-body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
+/* body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
    margin: 0;
    padding: 0;
 }
@@ -16,34 +16,7 @@ body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
 	padding-bottom: 10px;
 	border-bottom: 1px solid #cccccc;
 }
-ul{
-	list-style:none;
-}
-.l-menu{
-	position: absolute;
-	right: 35px;
-	top: 18px;
-}
-.l-menu ul li{
-	float: left;
-	padding-right: 11px;
-	margin-right: 10px;
-	background: url(http://localhost:8080/omakaseProject/resources/img/bg_topnav.png) no-repeat 100% 50%;
-}
-.l-menu ul li:last-child{
-	padding-right: 0;
-	margin-right: 0;
-	background: none;
-}
-.l-menu ul li a{
-	color: black;
-	font-size: 0.9em;
-	text-decoration: none;
-}
-.l-menu ul li a:hover{
-	color: #660000;
-	text-decoration: underline;
-}
+
 .m-menu{
 	width: 900px;
 	height: 50px;
@@ -63,56 +36,47 @@ ul{
 .gnb-menus h3 a:hover{
 	color: gray;
 	text-decoration: underLine;
-}
+} */
 </style>
+
 <div id="header" class="header">
-	<div class="container">
-		<div class="row">								
-			<h1 class="logo"><a href="http://localhost:8080/omakaseProject/index"><img src="http://localhost:8080/omakaseProject/resources/img/SAMPLE LOGO.png" width="80" height="80" alt="로고"></a></h1>
+
+      		<!-- l-menu -->
 			<div class='l-menu'>
 				<ul class="list-unstyled header-util">
-				 
-					<li class="login"><a href="http://localhost:8080/omakaseProject/member/loginForm">login</a></li>
-					<li class="join"><a href="#">sign up</a></li>
-					<li class="logout"><a href="http://localhost:8080/omakaseProject/logout">logout</a></li>
+					<li class="login"><a href="http://localhost:8080/omakaseProject/member/loginForm">로그인</a></li>
+					<li class="join"><a href="http://localhost:8080/omakaseProject/member/memberWrite">회원가입</a></li>
+					<li class="logout"><a href="http://localhost:8080/omakaseProject/logout">로그아웃</a></li>
 				</ul>
 			</div>
-			<div class="m-menu">
-				<div id="gnb" class="gnb">
-					<!--gnb all-menu-->
-					<h2 class="sr-only"><!-- 주메뉴 --></h2>				            
-						<div class="gnb-menus">
-							<h3><a href="http://localhost:8080/omakaseProject/res/resForm" class="">예약하기</a></h3>								
-<!-- 							<div class="gnb-submenu menu-type1"> -->
-<!-- 								<ul> -->
-<!-- 									<li><a href="#">예약</a></li> -->
-<!-- 									<li><a href="#">예약안내</a></li> -->
-<!-- 			                	</ul> -->
-<!-- 			                </div> -->
-			            </div>				            
-						<div class="gnb-menus">
-							<h3><a href="http://localhost:8080/omakaseProject/board/noticeBoard" class="">고객센터</a></h3>								
-<!-- 							<div class="gnb-submenu menu-type1"> -->
-<!-- 								<ul> -->
-<!-- 									<li><a href="#">공지사항</a></li> -->
-<!-- 									<li><a href="#">자주묻는 질문</a></li> -->
-<!-- 									<li><a href="#">고객센터</a></li> -->
-<!-- 			                	</ul> -->
-<!-- 			                </div> -->
-			            </div>				            
-						<div class="gnb-menus">
-							<h3><a href="http://localhost:8080/omakaseProject/member/memberInfo" class="">마이페이지</a></h3>								
-<!-- 							<div class="gnb-submenu menu-type1"> -->
-<!-- 								<ul> -->
-<!-- 									<li><a href="#">예약조회</a></li>               		                	 -->
-<!-- 			                	</ul> -->
-<!-- 			                </div> -->
-			            </div>				            
-						<div class="gnb-menus">
-							<h3><a href="http://localhost:8080/omakaseProject/admin/adminRes" class="">관리자페이지</a></h3>								
-						</div>										
-				</div><!-- //gnb -->
-			</div><!-- //m-menu -->			
-		</div><!-- //row -->
-	</div> <!-- //container -->
+			
+	<!-- index2 메뉴바 -->		
+			
+    <div id="index2_menu" class="px-3 py-2 bg-gradient">
+      <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center">
+      		<h1 class="logo">
+      		<a href="http://localhost:8080/omakaseProject/index">
+      		<img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="200" alt="로고"></a></h1>
+      
+          <a href="" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          </a> <!-- 공간용 a태그 -->
+
+          <ul class="nav col-lg-auto my-4 text-small">
+            <li>
+              <a href="../res/resForm" class="nav-link text-white">예약하기</a>
+            </li>
+            <li>
+              <a href="../board/noticeBoard" class="nav-link text-white">게시판</a>
+            </li>
+            <li>
+              <a href="../member/memberInfo" class="nav-link text-white">마이페이지</a>
+            </li>
+            <li>
+              <a href="../admin/adminRes" class="nav-link text-white">관리자페이지</a>
+            </li>
+          </ul>
+        </div>
+      </div> <!-- container -->
+    </div> <!-- index2_menu -->
 </div> <!-- header -->
