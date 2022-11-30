@@ -126,32 +126,34 @@ dt {
 /*   line-height:15px; cursor:pointer; */
 /* } */
 
-.modal{ 
+.resModal{ 
   position:absolute; width:100%; height:100%; background: rgba(0,0,0,0.8); top:0; left:0; display:none;
 }
 
-.modal_content{
+.resModal_content{
   width:400px; height:400px;
   background:#fff; border-radius:10px;
   position:relative; top:30%; left:50%;
   margin-top:-100px; margin-left:-200px;
   text-align:center;
   box-sizing:border-box; padding:74px 0;
-  line-height:23px;
+  line-height:13px;
 }
 
-.modal .btn_min {
+.resModal .btn_min {
 	display:inline-block;
-    width:15px;
-    height:15px;
+    width:25px;
+    height:25px;
+    border-style: none;
 }
 
-.modal .btn_plus {
+.resModal .btn_plus {
 	display:inline-block;
-	width:15px;
-    height:15px;
+	width:25px;
+    height:25px;
+    border-style: none;
 }
-.modal .text_num {
+.resModal .text_num {
 	display:inline-block;
 }
 
@@ -313,8 +315,8 @@ dt {
 </div> <!-- container -->
 
 
-<div class="modal">
-  <div class="modal_content">
+<div class="resModal">
+  <div class="resModal_content">
   	<p class="resId"></p>
   	<p class="resDate"></p>
   	<p class="resTime"></p>
@@ -341,8 +343,8 @@ dt {
   		<button type="button" class="btn_plus" id="btn_plus">+</button>
   	</div>
     <br>
-  	<button type="button" id="resBtn">예약</button>
-  	<button type="button" id="modal_close_btn">취소</button>
+  	<button type="button" id="resBtn" style="border-style: none;">예약</button>
+  	<button type="button" id="modal_close_btn" style="border-style: none;">취소</button>
   </div>
 </div>
 
@@ -441,18 +443,18 @@ $('.list_time a').click(function(){
 	else if($(this).find('.seat strong').text() == 0){
 		alert('예약이 마감되었습니다')
 	}else{
-		$('.modal .resId').text($('.memId').val());
-		$('.modal .resDate').text($('.date').val());
-		$('.modal .resTime').text($(this).find('.time').prev().text());
-	 	$('.modal .maxNum').text($(this).find('.seat strong').text());
+		$('.resModal .resId').text($('.memId').val() + '님');
+		$('.resModal .resDate').text($('.date').val());
+		$('.resModal .resTime').text($(this).find('.time').prev().text() + '' + '시');
+	 	$('.resModal .maxNum').text('잔여석 : ' + $(this).find('.seat strong').text());
 		$('#adult > .text_num').text(0);
 		$('#kid > .text_num').text(0);
-		$('.modal').fadeIn();
+		$('.resModal').fadeIn();
 	}
 });
 	  
 $("#modal_close_btn").click(function(){
-	$(".modal").fadeOut();
+	$(".resModal").fadeOut();
 });
 	  
 $('#adult > .btn_plus').click(function(){
