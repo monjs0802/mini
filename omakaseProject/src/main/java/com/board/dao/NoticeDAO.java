@@ -10,11 +10,11 @@ public interface NoticeDAO {
 
 	public List<NoticeDTO> getNoticeList();
 
-	/* public NoticeDTO getNotice(String id); */
-
 	public void update(NoticeDTO noticeDTO);
 
 	public void delete(String id);
+
+	public NoticeDTO getNoticeView(int notSeq);
 
 	
 

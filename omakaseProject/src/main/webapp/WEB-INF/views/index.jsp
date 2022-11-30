@@ -74,7 +74,7 @@
     <a id="menu" class="nav-link bi bi-calendar-check" href="./res/resExp"> INFORMATION</a>
   </li>
   <li class="nav-item">
-    <a id="menu" class="nav-link bi bi-chat-left-text " href="/omakaseProject/board/notice/noticeList"> NOTICE BOARD</a>
+    <a id="menu" class="nav-link bi bi-chat-left-text " href="/omakaseProject/board/notice/noticeList?pg=1"> NOTICE BOARD</a>
   </li>
     <li class="nav-item">
     <a id="menu" class="nav-link bi bi-emoji-smile" href="./member/memberInfo"> MYPAGE</a>

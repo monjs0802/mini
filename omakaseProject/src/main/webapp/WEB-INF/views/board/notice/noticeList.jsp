@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>공지사항</title>
 <style type="text/css">
 
@@ -20,7 +19,7 @@
 	Sans-Serif;
 }
 
-.Header {
+.header {
   font-size: 40px;
   font-weight: bold;
   color: black;
@@ -62,12 +61,12 @@ a.subjectA:active { color: black; text-decoration: none; }
 </head>
 <body>
 <input type="text" id="memId" value="${ memId }">
-<input type="text" id="pg" value="1">
+<input type="text" id="pg" value="${ pg }">
     
 <div class="container">
   <header class="blog-header lh-1 py-3">
       <div class="col-12 text-center">
-        <a class="Header" href="#">NOTICE</a>
+        <a class="header" href="#">NOTICE</a>
       </div>
   </header>
 
@@ -89,6 +88,8 @@ a.subjectA:active { color: black; text-decoration: none; }
       <td scope="col" style="width: 200px">작성시간</td>
     </tr>
   </thead>
+  <tbody class="noticeBody">
+  </tbody>
 </table>
 	
 	<!-- 동적처리 -->
@@ -96,9 +97,9 @@ a.subjectA:active { color: black; text-decoration: none; }
 		<div id="pagingDiv"></div>
 	</div>
 	
-	<button type="button" onclick="location.href='/omakaseProject/board/notice/noticeWriteForm'">Write</button>
-	<button type="submit">Update</button>
-	<button type="button">Delete</button>
+	<button type="button" class="noticeListBtn" onclick="location.href='/omakaseProject/board/notice/noticeWriteForm'">Write</button>
+	<button type="submit" class="noticeListBtn">Update</button>
+	<button type="button" class="noticeListBtn">Delete</button>
 
 <script type="text/javascript">
 function boardPaging(pg) {
@@ -109,6 +110,10 @@ function boardPaging(pg) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
 <script type="text/javascript">
+function boardPaging(pg) {
+	location.href = "noticeList.do?pg=" + pg;
+}
+
 //$(function(){});
 $(document).ready(function(){ /* window.onload=function(){} 의 jquery문 형식!!! */
 	//DB에서 1페이지당 5개씩 가져오기
@@ -122,25 +127,25 @@ $(document).ready(function(){ /* window.onload=function(){} 의 jquery문 형식
 			//alert(data.list[0].id)
 			
 			$.each(data.list, function(index, items){ // 자바 for(NoticeDTO items : data.list)의 json For문 // jstl 형식은 <c:forEach var="items" items="${data.list}">
-				console.log(index, items.seq, items.subject, items.hit, items.logtime);
+				console.log(index, items.notSeq, items.notSubject, items.notHit, items.notLogtime);
 				
 				$('<tr/>').append($('<td/>', { //$(A).append(B).append(C).append(D)~~ 메소드 체인방식
 					align: 'center',
-					text: items.seq
+					text: items.notSeq
 				})).append($('<td/>', {
 					
 					}).append($('<a/>', {
-						href: '#',
-						text: items.subject,
+						href: '/board/notice/noticeView?notSeq=' + items.notSeq,
+						text: items.notSubject,
 						class: 'subjectA'
 					}))
 				).append($('<td/>', {
 					align: 'center',
-					text: items.hit
+					text: items.notHit
 				})).append($('<td/>', {
 					align: 'center',
-					text: items.logtime
-				})).appendTo($('#noticeListTable'));
+					text: items.notLogtime
+				})).appendTo($('.noticeBody'));
 				
 			}); //$.each
 			
@@ -165,6 +170,13 @@ $(document).ready(function(){ /* window.onload=function(){} 의 jquery문 형식
 			console.log(err);
 		}
 	}); //$.ajax
+	
+	
+	if($('#memId').val()=='admin') {
+		$('.noticeListBtn').show();
+	} else {
+		$('.noticeListBtn').hide();
+	}
 });
 </script>
 </body>

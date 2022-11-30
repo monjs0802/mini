@@ -26,12 +26,6 @@ public class NoticeServiceImpl implements NoticeService {
 		return noticeDAO.getNoticeList();
 	}
 
-//	@Override
-//	public NoticeDTO getNotice(String id) {
-//		//DB
-//		return noticeDAO.getNotice(id);
-//	}
-
 	@Override
 	public void update(NoticeDTO noticeDTO) {
 		//DB
@@ -42,6 +36,12 @@ public class NoticeServiceImpl implements NoticeService {
 	public void delete(String id) {
 		//DB
 		noticeDAO.delete(id);
+	}
+
+	@Override
+	public NoticeDTO getNoticeView(int notSeq) {
+		//DB
+		return noticeDAO.getNoticeView(notSeq);
 	}
 	
 }

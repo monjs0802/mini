@@ -11,16 +11,20 @@
 							  	      ,sysdate)
  	</insert>
  	
- 	<select id="getNoticeList" resultMap="noticeResult">
- 		select * from notice_board
+ 	<select id="getNoticeList" resultType="notice">
+ 		select * from noticeBoard
+ 	</select>
+ 	
+ 	<select id="getNoticeView" parameterType="int" resultType="notice">
+ 		select * from noticeBoard where notSeq=#{notSeq}
  	</select>
  	
  	<update id="update" parameterType="java.util.Map">
- 		update notice_board set subject=#{subject}, content=#{content} where id=#{id}
+ 		update noticeBoard set notSubject=#{notSubject}, notContent=#{notContent} where notSeq=#{notSeq}
  	</update>
  	
  	<delete id="delete" parameterType="String">
- 		delete notice_board where id=#{id}
+ 		delete noticeBoard where notSeq=#{notSeq}
  	</delete>
  	
 </mapper>

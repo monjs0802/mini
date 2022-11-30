@@ -34,9 +34,10 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/noticeList", method=RequestMethod.GET)
-	public String noticeList(Model model) {
+	public String noticeList(Model model, @RequestParam int pg) {
 		model.addAttribute("display", "board/notice/noticeList.jsp");
 		model.addAttribute("nav", "main/boardNav.jsp");
+		model.addAttribute("pg", pg);
 		return "index2";
 	}
 
@@ -45,12 +46,6 @@ public class BoardController {
 	public List<NoticeDTO> getNoticeList() {
 		return noticeService.getNoticeList();
 	}
-	
-//	@PostMapping(value = "/getNotice")
-//	@ResponseBody
-//	public NoticeDTO getNotice(@RequestParam String id) {
-//		return noticeService.getNotice(id);
-//	}
 	
 	@GetMapping(value = "/noticeUpdateForm")
 	public String noticeUpdateForm() {
@@ -68,10 +63,23 @@ public class BoardController {
 		return "/board/notice/noticeDeleteForm";
 	}
 	
-	@PostMapping(value = "/delete")
+	@PostMapping(value = "/noticeDelete")
 	@ResponseBody
 	public void delete(@RequestParam String id) {
 		noticeService.delete(id);
 	}
 	
+	@RequestMapping(value = "/noticeView")
+	public String noticeView(Model model, @RequestParam int notSeq) {
+		model.addAttribute("display", "board/notice/noticeView.jsp");
+		model.addAttribute("nav", "main/boardNav.jsp");
+		model.addAttribute("notSeq", notSeq);
+		return "index2";
+	}
+	
+	@PostMapping(value = "/getNoticeView")
+	@ResponseBody
+	public NoticeDTO getNoticeView(@RequestParam int notSeq) {
+		return noticeService.getNoticeView(notSeq);
+	}
 }

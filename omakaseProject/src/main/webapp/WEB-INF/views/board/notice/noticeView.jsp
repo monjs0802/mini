@@ -8,7 +8,7 @@
 </head>
 <body>
 <form>
-	<input type="hidden" id="seq" value="${ seq }" />
+	<input type="text" id="notSeq" value="${ notSeq }" />
 	<input type="hidden" id="memId" value="${ memId }" />
 	
 	<h2>공지사항</h2>
@@ -49,7 +49,7 @@
 $('#noticeDeleteBtn').click(function(){
 	//서버로 요청하고 제자리로 돌아와라
 	$.ajax({ // == jquery.ajax();
-		/omakaseProject/board/notice/getNoticeList
+	//	/omakaseProject/board/notice/getNoticeList
 		url: '/omakaseProject/board/notice/noticeDelete',
 		type: 'post',
 		data: 'seq=' + $('#seq').val(),
@@ -65,23 +65,20 @@ $('#noticeDeleteBtn').click(function(){
 
 $(document).ready(function(){
 	$.ajax({
-		url: '/miniProject_MVC/board/getBoardView.do',
+		url: '/omakaseProject/board/notice/getNoticeView',
 		type: 'post',
-		data: 'seq=' + $('#seq').val(),
+		data: 'notSeq=' + $('#notSeq').val(),
 		dataType: 'json',
 		success: function(data) {
-			//alert(JSON.stringify(data));
+			alert(JSON.stringify(data));
 			
-			$('#subjectSpan').text(data.subject);
-			$('#seqSpan').text(data.seq);
-			$('#idSpan').text(data.id);
-			$('#hitSpan').text(data.hit);
+			$('#subjectSpan').text(data.notSubject);
 			$('#contentSpan').text(data.content);
 			
-			if($('#memId').val() == data.id) {
-				$('#boardViewSpan').show();
+			if($('#memId').val() == 'admin') {
+				$('#noticeViewSpan').show();
 			} else {
-				$('#boardViewSpan').hide();
+				$('#noticeViewSpan').hide();
 			}
 		},
 			error: function(err){
