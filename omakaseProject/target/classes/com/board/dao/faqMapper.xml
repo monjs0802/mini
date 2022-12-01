@@ -1,1 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="faqSQL">
+ 
+ 	<resultMap type="com.board.bean.FaqDTO" id="faqResult">
+		<!-- property="DTO의 필드명" column="테이블의 컬럼명" / 강제맞추기   -->
+		<result property="faqSeq" column="FAQSEQ" />
+		<result property="faqQuestionType" column="FAQQUESTIONTYPE" />
+		<result property="faqSubject" column="FAQSUBJECT" />
+		<result property="faqContent" column="FAQCONTENT" />
+		<result property="faqLogtime" column="FAQLOGTIME" />
+	</resultMap>
+	
+	<insert id="faqWrite" parameterType="java.util.Map">
+		insert into faqBoard(faqseq,faqQuestionType, faqSubject,faqContent) 
+					values(seq_faq.NEXTVAL
+									, #{faqQuestionType}
+									, #{faqSubject}
+									, #{faqContent})   	      						  	      
+ 	</insert>
+ 	
+ 	 <select id="getFaqList" resultType="faq">
+ 		select * from faqBoard 
+ 		
+ 		<!-- select * from (
+			 	select rownum rnum, seq_faq, faqQuestionType,faqSubject,faqContent,sysdate
+			 		from (
+			 			select seq_faq, faqQuestionType,faqSubject,faqContent,sysdate
+			 			faqBoard 
+			 			order by no desc
+ 						)  
+ 		)
+ 		where rnum between #{startRow} and #{endRow} -->
+ 		  
+ 	</select>
+ 	
+ 	<select id="getFaqseq" parameterType="java.lang.Integer" resultType="faq">
+ 		select * from faqBoard where faqSeq=#{faqSeq}
+ 	</select>
+ 	
+ 	<select id="getCount" resultType="java.lang.Integer">
+ 		select count(*) from faqBoard
+ 	</select>
+ 	
+ 	<insert id="faqUpdate" parameterType="java.util.Map">
+		update faqBoard set faqQuestionType =#{faqQuestionType}
+								, faqSubject =#{faqSubject}
+								,faqContent =#{faqContent}
+		where faqseq=#{faqseq}
+ 	</insert>
+ 	
+ 	<delete id="faqDelete" parameterType="java.lang.Integer">
+ 		delete faqBoard where faqSeq=#{faqSeq}
+ 	</delete>
+ 	
+ 	
+</mapper>
