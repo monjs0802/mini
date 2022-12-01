@@ -76,9 +76,23 @@
   <li class="nav-item">
     <a id="menu" class="nav-link bi bi-chat-left-text " href="/omakaseProject/board/notice/noticeList?pg=1"> NOTICE BOARD</a>
   </li>
-    <li class="nav-item">
-    <a id="menu" class="nav-link bi bi-emoji-smile" href="./member/memberInfo"> MYPAGE</a>
-  </li>
+    <c:choose>
+  	<c:when test="${sessionScope.memId != null}">
+	  	<li class="nav-item">
+			<a id="menu" class="nav-link bi bi-emoji-smile" href="./member/memberInfo"> MYPAGE</a>
+		</li>
+	</c:when>
+	<c:when test="${sessionScope.kakaoN !=null}">
+		<li class="nav-item">
+			<a id="menu" class="nav-link bi bi-emoji-smile" href="./member/memberInfo"> MYPAGE</a>
+		</li>
+	</c:when>
+	<c:otherwise>
+		<li class="nav-item">
+		<a id="menu" class="nav-link bi bi-emoji-smile" href="./member/loginForm"> 로그인</a>
+		</li>
+	</c:otherwise>
+  </c:choose>
   
 <!--   관리자 계정만 보이게 할 예정
     <li class="nav-item">

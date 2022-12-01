@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kakaoSQL">
+	<!-- <resultMap type="com.member.bean.KakaoDTO" id="memberResult">
+		property="DTO의 필드명" column="테이블의 컬럼명" / 강제맞추기. db list전체 불러오기할때 사용할예정 
+		<result property="k_name" column="K_NAME" />
+		<result property="k_email" column="K_EMAIL" />
+	</resultMap> -->
+	<select id="findKakao" parameterType="Map" resultType="kakao">
+		select * from kakao_table where k_name=#{nickname} and k_email=#{email}
+	</select>
+	<insert id="kakaoInsert" parameterType="Map">
+		insert into kakao_table(k_name, k_email)
+			values(#{nickname}, #{email})
+	</insert>
+	
+
+
+</mapper>

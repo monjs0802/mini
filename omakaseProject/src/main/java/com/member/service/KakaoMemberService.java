@@ -8,6 +8,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class KakaoMemberService {
 	@Autowired
 	private KakaoMemberRepository mr;
 
-	public String getAccessToken (String authorize_code) {
+	public String getAccessToken (String code) {
 		String access_Token = "";
 		String refresh_Token = "";
 		String reqURL = "https://kauth.kakao.com/oauth/token";
@@ -36,8 +37,8 @@ public class KakaoMemberService {
 			StringBuilder sb = new StringBuilder();
 			sb.append("grant_type=authorization_code");
 			sb.append("&client_id=d5eefc288eb394a4aab977f7c47a36e2"); //본인이 발급받은 key
-			sb.append("&redirect_uri=http://localhost:8080/omakaseProject/index"); // 본인이 설정한 주소
-			sb.append("&code=" + authorize_code);
+			sb.append("&redirect_uri=http://localhost:8080/omakaseProject/member/kakaoLogin"); // 본인이 설정한 주소
+			sb.append("&code=" + code);
 			bw.write(sb.toString());
 			bw.flush();
 			int responseCode = conn.getResponseCode();
@@ -64,7 +65,8 @@ public class KakaoMemberService {
 	}
     
 	public KakaoDTO getUserInfo(String access_Token) {
-		HashMap<String, Object> userInfo = new HashMap<String, Object>();
+		Map<String, Object> userInfo = new HashMap<String, Object>();
+		KakaoDTO dto = new KakaoDTO();
 		String reqURL = "https://kapi.kakao.com/v2/user/me";
 		try {
 			URL url = new URL(reqURL);
@@ -88,9 +90,12 @@ public class KakaoMemberService {
 			String email = kakao_account.getAsJsonObject().get("email").getAsString();
 			userInfo.put("nickname", nickname);
 			userInfo.put("email", email);
+			dto.setK_name(nickname);
+			dto.setK_email(email);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		KakaoDTO result = mr.findkakao(userInfo);
 		// 위 코드는 먼저 정보가 저장되있는지 확인하는 코드.
 		System.out.println("S:" + result);
@@ -105,6 +110,6 @@ public class KakaoMemberService {
 			return result;
 			// 정보가 이미 있기 때문에 result를 리턴함.
 		}
-
+	
 	}
 }

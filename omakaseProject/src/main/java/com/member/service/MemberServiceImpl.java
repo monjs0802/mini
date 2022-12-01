@@ -43,11 +43,6 @@ public class MemberServiceImpl implements MemberService {
       userDAO.write(map);
    }
 
-   @Override
-   public String getAccessToken(String code) {
-      return null;
-   }
-
 
    @Override
    public String login(UserDTO userDTO, HttpSession session) {
