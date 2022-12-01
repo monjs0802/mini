@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 
-/* #container {
+/* #container { 
 	margin-left: -10px;
 	width: 90%;
 	padding: 30px 0;

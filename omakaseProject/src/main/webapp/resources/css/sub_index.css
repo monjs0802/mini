@@ -88,7 +88,7 @@ ul{
 	position: relative;
 	border: 3px solid magenta;
 	margin: auto;
-	height: 700px;
+	height: 700px; 
 }
 
 #container:after {

@@ -83,8 +83,8 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 
 .inp { padding: 10px 10px; background-color: #f1f1f1; border-radius: 4px; border: 0px; } 
 
-.inp:focus { outline: none; background-color: #eee; } 
- 
+.inp:focus { outline: none; background-color: #eee;}
+    
 /* container start */
 
 #rescontainer{
@@ -94,7 +94,7 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 	left: 100px;
 }
 .content1{
-    width: 50%;
+    width: 50%;   
     height: 50%;
 	position: relative;
 }

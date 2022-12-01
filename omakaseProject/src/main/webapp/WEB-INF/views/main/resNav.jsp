@@ -18,7 +18,7 @@
       
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-bold text-light collapsed" data-bs-toggle="collapse" data-bs-target="#yeyak" aria-controls="yeyak" aria-expanded="false">
           예약하기
-        </button>
+        </button> 
         
         <div class="collapse show" id="yeyak">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">

@@ -6,7 +6,7 @@
 <footer class="d-flex flex-wrap justify-content-around align-items-center border-top p-2">
     <p class="col-md-4 mb-0 ml-auto text">
     	© 2022 miniproject han U makase<br><br>
-    	서울 강남구 강남대로94길 20 삼오빌딩 6층<br>
+    	서울 강남구 강남대로94길 20 삼오빌딩 6층<br> 
     	bitcamp@bit603.com<br>
     	02-1121-1209<br><br>
 

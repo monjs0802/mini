@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<div id="header" class="header">
+<div id="header" class="header"> 
 
       		<!-- l-menu -->
 			<div class='l-menu'>

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!--<style type="text/css">
+<!--<style type="text/css"> 
 
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700);
 
@@ -65,6 +65,7 @@ a.button {
 </head>
 
 <body>
+<<<<<<< HEAD
 
 <div id="wrap">
 	
@@ -83,6 +84,19 @@ a.button {
 				<table border="1" cellpadding="5" cellspacing="0" >
 					<tr>
 						<td>
+=======
+<a class="p-2" href="https://kauth.kakao.com/oauth/authorize?client_id=d5eefc288eb394a4aab977f7c47a36e2
+&redirect_uri=	
+http://localhost:8080/omakaseProject/member/kakaoLogin&response_type=code">
+	<!-- REST_API키 및 REDIRECT_URI는 본인걸로 수정하세요 -->
+	<!-- 본인걸로 수정 시 띄어쓰기 절대 하지 마세요. 오류납니다. -->
+		<img src="/omakaseProject/resources/img/klogin.png" style="height:30px">
+	</a>
+		<form id="loginForm" name="loginForm" action="/login">
+			<table border="1" cellpadding="5" cellspacing="0" >
+				<tr>
+					<td>
+>>>>>>> branch 'main' of https://github.com/monjs0802/mini.git
 						<input type="text" name="id" id="id" size="30" placeholder="아이디 입력">
 						<div id="idDiv" ></div>
 						</td>

@@ -4,7 +4,7 @@
 
 <div class="sideNav">	
 
-<!-- 마이페이지 내비 -->
+<!-- 마이페이지 내비 --> 
 
 <div class="flex-shrink-0 p-3">
     <a href="../res/resForm" class="d-flex align-items-center link-dark pb-3 mb-3 text-decoration-none border-bottom">

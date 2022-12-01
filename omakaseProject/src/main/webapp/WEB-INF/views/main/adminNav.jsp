@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div id="sideNav">
+<div id="sideNav"> 
 
 <!-- 관리자 페이지 내비 -->
 
