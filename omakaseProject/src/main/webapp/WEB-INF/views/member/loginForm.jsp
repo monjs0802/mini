@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
+<!--<style type="text/css">
 
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700);
 
@@ -61,52 +61,58 @@ a.button {
 .btnFade.btnPurple:hover {
   background: #6D184B;
 }
-</style>
+</style> -->
 </head>
-<h2>로그인</h2>
+
 <body>
-<a class="p-2" href="https://kauth.kakao.com/oauth/authorize?client_id=d5eefc288eb394a4aab977f7c47a36e2
-&redirect_uri=	
-http://localhost:8080/omakaseProject/index&response_type=code">
-	<!-- REST_API키 및 REDIRECT_URI는 본인걸로 수정하세요 -->
-	<!-- 본인걸로 수정 시 띄어쓰기 절대 하지 마세요. 오류납니다. -->
-		<img src="/omakaseProject/resources/img/klogin.png" style="height:30px">
-	</a>
-		<form id="loginForm" name="loginForm" action="/login">
-			<table border="1" cellpadding="5" cellspacing="0" >
-				<tr>
-					<td>
+
+<div id="wrap">
+	
+	<div id="section">
+		<h2>로그인</h2>
+		
+		<!-- 카카오 로그인 -->
+		<a class="p-2" href="https://kauth.kakao.com/oauth/authorize?client_id=d5eefc288eb394a4aab977f7c47a36e2
+		&redirect_uri=	
+		http://localhost:8080/omakaseProject/index&response_type=code">
+		<!-- REST_API키 및 REDIRECT_URI는 본인걸로 수정하세요 -->
+		<!-- 본인걸로 수정 시 띄어쓰기 절대 하지 마세요. 오류납니다. -->
+			<img src="/omakaseProject/resources/img/klogin.png" style="height:30px">
+		</a>
+			<form id="loginForm" name="loginForm" action="/login">
+				<table border="1" cellpadding="5" cellspacing="0" >
+					<tr>
+						<td>
 						<input type="text" name="id" id="id" size="30" placeholder="아이디 입력">
 						<div id="idDiv" ></div>
-					</td>
-				</tr>
-				<tr>
-					<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
 						<input type="password" name="pwd" id="pwd" size="40" placeholder="비밀번호 입력">
 						<div id="pwdDiv"></div>
-					</td>
-				</tr>
-		</table>
+						</td>
+					</tr>
+				</table>
 				
-				<div id="container" class="container" >
-				 <h3 class="articleTitle"></h3>
-				 
+				
+					<h3 class="articleTitle"></h3>
+					 
 					<a id="loginBtn" title="Button fade orange" class="button btnFade btnOrange">로그인</a>
 					<a href="memberWrite" title="Button fade purple" class="button btnFade btnPurple">회원가입</a>
-					 <div class="clear"></div> 
-				 </div>
-					<!--  <th colspan="5">
-						<button type="button" id="loginBtn" title="Button fade orange" class="button btnFade btnOrange">로그인</button>
-						<button type="button" onclick="#memberWrite" title="Button fade purple" class="button btnFade btnPurple">회원가입</button>
-					</th> -->
+					<div class="clear"></div> 
 				
-		<br><br>
-		
-		<div id="loginResult"></div>	
+						<!--  <th colspan="5">
+							<button type="button" id="loginBtn" title="Button fade orange" class="button btnFade btnOrange">로그인</button>
+							<button type="button" onclick="#memberWrite" title="Button fade purple" class="button btnFade btnPurple">회원가입</button>
+						</th> -->
+					
+			<br><br>
+			
+			<div id="loginResult"></div>	
+			</div>
 		</form>
-	</div>
-</div>
-
+</div><!-- wrap -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 $('#loginBtn').click(function(){

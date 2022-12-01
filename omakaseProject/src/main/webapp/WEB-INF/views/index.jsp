@@ -24,7 +24,7 @@
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active" data-bs-interval="2000">
       <img id="header" src="http://localhost:8080/omakaseProject/resources/img/header1.jpg" class="d-block w-100" alt="1번 헤더">
       <div class="carousel-caption d-none d-md-inline">
       	<img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
@@ -32,7 +32,7 @@
         <p>한우마카세에 방문하신 걸 환영합니다</p>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" data-bs-interval="2000">
       <img id="header" src="http://localhost:8080/omakaseProject/resources/img/header2.jpg" class="d-block w-100" alt="2번 헤더">
       <div class="carousel-caption d-none d-md-inline">
       <img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
@@ -40,7 +40,7 @@
         <p>소중한 당신을 위해 엄별히 선별한 신선한 재료로만 만듭니다</p>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" data-bs-interval="2000">
       <img id="header" src="http://localhost:8080/omakaseProject/resources/img/header3.jpg" class="d-block w-100" alt="3번 헤더">
       <div class="carousel-caption d-none d-md-block">
       <img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">

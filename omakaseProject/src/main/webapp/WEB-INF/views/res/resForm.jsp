@@ -86,37 +86,40 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 .inp:focus { outline: none; background-color: #eee; } 
  
 /* container start */
+
 #rescontainer{
 	width: 900px;
 	height: 600px;
+	position: relative;
+	left: 100px;
 }
 .content1{
-    float: left;
     width: 50%;
     height: 50%;
 	position: relative;
 }
 
 .content2{
-    float: right;
     width: 50%;
     height: 50%;
 	position: relative;
 }
+
 dt {
 	display: none;
 }
 
-
-.list_time a {
-	display: inline-block;
-	border: 1px solid black;
+.list_time a{
+	background-color: transparent;
+	display: block;
 	float: left;
 	margin-right: 10px;
+	margin-bottom: 10px;
 	text-decoration: none;
 	color: black;
-	font-size: 14px;
+	font-size: 10px;
 }
+
 .list_time a:after{
 	clear: both;
 }
@@ -130,7 +133,7 @@ dt {
   position:absolute; width:100%; height:100%; background: rgba(0,0,0,0.8); top:0; left:0; display:none;
 }
 
-.resModal_content{
+.resModal_content {
   width:400px; height:400px;
   background:#fff; border-radius:10px;
   position:relative; top:30%; left:50%;
@@ -158,22 +161,31 @@ dt {
 }
 
 /* container end */
+
 </style>
 </head>
 <body>
-<div id="rescontainer">
+<div id="wrap">
+<div id="rescontainer" class="d-flex justify-content-center p-5">
 	<input type="hidden" class="date">
 	<c:if test="${not empty memId }">
 		<input type="hidden" class="memId" value="${memId }">
 	</c:if>
-	<div class="content1">
+	
+	<!-- 달력 -->
+	<div class="content1 p-3 m-3 ">
 		<div id="datepicker"></div>
 	</div>
-	<div class="content2">
+	
+	<!-- 타임 테이블 -->
+	<div class="content2 p-5 m-3">
 		<div class="time_select">
-			<ul class="list_time">
+			<ul class="list_time bg-transparent">
+				
 				<li>
-					<a role="button" href="#none">
+					<a href="#none">
+					<button type="button" class="btn btn-warning"
+					style="--bs-btn-font-size: 7pt;">
 						<dl>
 							<dt>11</dt>
 							<dd class="time">
@@ -185,10 +197,14 @@ dt {
 							 / 8
 							</dd>
 						</dl>
+					</button>
 					</a>
 				</li>
+
 				<li>
 					<a role="button" href="#none">
+					<button type="button" class="btn btn-warning"
+					style="--bs-btn-font-size: 7pt;">
 						<dl>
 							<dt>12</dt>
 							<dd class="time">
@@ -200,10 +216,14 @@ dt {
 							 / 8
 							</dd>
 						</dl>
+					</button>
 					</a>
 				</li>
+				
 				<li>
 					<a role="button" href="#none">
+					<button type="button" class="btn btn-warning"
+					style="--bs-btn-font-size: 7pt;">
 						<dl>
 							<dt>13</dt>
 							<dd class="time">
@@ -215,10 +235,14 @@ dt {
 							 / 8
 							</dd>
 						</dl>
+					</button>
 					</a>
 				</li>
+				
 				<li>
 					<a role="button" href="#none">
+					<button type="button" class="btn btn-warning"
+					style="--bs-btn-font-size: 7pt;">
 						<dl>
 							<dt>14</dt>
 							<dd class="time">
@@ -230,11 +254,14 @@ dt {
 							 / 8
 							</dd>
 						</dl>
+					</button>
 					</a>
 				</li>
-				<br><br><br><br>
+				
 				<li>
 					<a role="button" href="#none">
+					<button type="button" class="btn btn-warning"
+					style="--bs-btn-font-size: 7pt;">
 						<dl>
 							<dt>17</dt>
 							<dd class="time">
@@ -246,10 +273,14 @@ dt {
 							 / 8
 							</dd>
 						</dl>
+						</button>
 					</a>
 				</li>
+				
 				<li>
 					<a role="button" href="#none">
+					<button type="button" class="btn btn-warning"
+					style="--bs-btn-font-size: 7pt;">
 						<dl>
 							<dt>18</dt>
 							<dd class="time">
@@ -261,10 +292,14 @@ dt {
 							 / 8
 							</dd>
 						</dl>
+					</button>
 					</a>
 				</li>
+				
 				<li>
 					<a role="button" href="#none">
+					<button type="button" class="btn btn-warning"
+					style="--bs-btn-font-size: 7pt;">
 						<dl>
 							<dt>19</dt>
 							<dd class="time">
@@ -276,10 +311,14 @@ dt {
 							 / 8
 							</dd>
 						</dl>
+					</button>
 					</a>
 				</li>
+				
 				<li>
 					<a role="button" href="#none">
+					<button type="button" class="btn btn-warning"
+					style="--bs-btn-font-size: 7pt;">
 						<dl>
 							<dt>20</dt>
 							<dd class="time">
@@ -291,10 +330,13 @@ dt {
 							 / 8
 							</dd>
 						</dl>
+					</button>
 					</a>
 				</li>
 				<li>
 					<a role="button" href="#none">
+					<button type="button" class="btn btn-warning"
+					style="--bs-btn-font-size: 7pt;">
 						<dl>
 							<dt>21</dt>
 							<dd class="time">
@@ -306,14 +348,17 @@ dt {
 							 / 8
 							</dd>
 						</dl>
+					</button>	
 					</a>
 				</li>
-				
 			</ul>
 		</div>
-	</div>
+	</div><!-- 타임테이블 -->
 </div> <!-- container -->
+</div>
 
+
+<!-- 모달 -->
 
 <div class="resModal">
   <div class="resModal_content">
@@ -346,7 +391,7 @@ dt {
   	</div>
     <br>
   	<button type="button" id="resBtn" style="border-style: none;">예약</button>
-  	<button type="button" id="modal_close_btn" style="border-style: none;">취소</button>
+  	<button type="button" id="modal_close_btn" style="background-color: transparent; border-style: none;">취소</button>
   </div>
 </div>
 
@@ -360,7 +405,7 @@ $(function(){
 	
 	for(var i=0; i<9; i++){
 		$('#rescontainer .content2 li .seat strong:eq(' + i + ')').text(8);
-		$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "white", "color": "black"});	
+		$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "transparent", "color": "black"});	
 	}
 	
 	$.ajax({
