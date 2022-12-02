@@ -44,11 +44,7 @@ public class UserDAOImpl implements UserDAO {
 	public UserDTO login(UserDTO userDTO) {
 		return sqlSession.selectOne("memberSQL.login", userDTO);
 	}
-	@Override
-	public UserDTO getAccessToken(String code) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 
 

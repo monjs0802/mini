@@ -44,5 +44,4 @@
  		delete faqBoard where faqSeq=#{faqSeq}
  	</delete>
  	
- 	
 </mapper>

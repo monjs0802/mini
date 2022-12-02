@@ -57,7 +57,20 @@
 <script type="text/javascript">
 $(function(){
 	var date = new Date();
-	var today = date.getFullYear() + '' + (date.getMonth()+1) + '' + date.getDate();
+	
+	if(date.getMonth()+1<10) {
+		var Month = '0' + date.getMonth()+1;
+	}else{
+		Month = date.getMonth()+1;
+	}
+	
+	if(date.getDate()<10) {
+		var Day = '0' + date.getDate();
+	}else{
+		Day = date.getDate();
+	}
+	
+	var today = date.getFullYear() + '' + Month + '' + Day;
 	$('.date').val(today);
 	
 	$.ajax({

@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<style>
+#menu_nav {
+	color: Khaki;
+}
+</style>
 
 <div id="header" class="header"> 
 
@@ -23,21 +27,21 @@
       		<a href="http://localhost:8080/omakaseProject/">
       		<img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="200" alt="로고"></a></h1>
       
-          <a href="" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          <a href="" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-decoration-none">
           </a> <!-- 공간용 a태그 -->
 
-          <ul class="nav col-lg-auto my-4 text-small">
+          <ul id="menu_nav" class="nav col-lg-auto my-4 text-small">
             <li>
-              <a href="../res/resForm" class="nav-link text-white">예약하기</a>
+              <a href="/omakaseProject/res/resForm" class="nav-link">RESERVATION</a>
             </li>
             <li>
-              <a href="../board/notice/noticeList?pg=1" class="nav-link text-white">게시판</a>
+              <a href="/omakaseProject/board/notice/noticeList?pg=1" class="nav-link">NOTICE BOARD</a>
             </li>
             <li>
-              <a href="../member/memberInfo" class="nav-link text-white">마이페이지</a>
+              <a href="/omakaseProject/member/memberInfo" class="nav-link">MY PAGE</a>
             </li>
             <li>
-              <a href="../admin/adminRes" class="nav-link text-white">관리자페이지</a>
+              <a href="/omakaseProject/admin/adminRes" class="nav-link">ADMIN BOARD</a>
             </li>
           </ul>
         </div>
