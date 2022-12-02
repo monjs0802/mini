@@ -43,8 +43,7 @@
 					</tr>
 				</thead>
 			</table>
-		 
-	
+			
 			
 			<!-- 동적처리  -->
 			<div style="display: inline-block;">
@@ -60,9 +59,9 @@
 			<c:if test="${memId == 'admin'}">
 				<button type="button" onclick="location.href='/omakaseProject/board/faq/faqWriteForm'" class="wbtn">Write</button>
 			</c:if>
-	
 		 	  
   		</div>
+
 	</div>		
 
 
@@ -106,6 +105,7 @@ $(function(){
 	})
 	
 });
+
 </script>
 </body>
 </html>

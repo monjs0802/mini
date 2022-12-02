@@ -45,19 +45,12 @@ public class FaqServiceImpl implements FaqService {
 		
 	}
 
+	/* 게시물 총 갯수 */
+	@Override
+	public int getTotal() {
+		return faqDAO.getTotal();
+	}
 
 
-
-
-
-
-
-	
-//	@Override
-//	public ModelAndView getFaqList() {
-//		List<FaqDTO> list = faqDAO.getFaqList();
-//		ModelAndView mav = new ModelAndView();
-//		mav.addObject("list" , list);
-//		return mav;
 
 }

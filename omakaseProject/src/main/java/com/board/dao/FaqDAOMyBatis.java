@@ -39,5 +39,11 @@ public class FaqDAOMyBatis implements FaqDAO {
 		sqlSession.delete("faqSQL.faqDelete" ,faqSeq);
 		
 	}
+	@Override
+	public int getTotal() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 }

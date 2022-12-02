@@ -126,7 +126,7 @@ $(document).ready(function(){ /* window.onload=function(){} 의 jquery문 형식
 			alert(JSON.stringify(data));
 			//alert(data.list[0].id)
 			
-			$.each(data.list, function(index, items){ // 자바 for(NoticeDTO items : data.list)의 json For문 // jstl 형식은 <c:forEach var="items" items="${data.list}">
+			$.each(data.list, function(index, items){
 				console.log(index, items.notSeq, items.notSubject, items.notHit, items.notLogtime);
 				
 				$('<tr/>').append($('<td/>', { //$(A).append(B).append(C).append(D)~~ 메소드 체인방식

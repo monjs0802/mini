@@ -44,5 +44,9 @@
  		delete faqBoard where faqSeq=#{faqSeq}
  	</delete>
  	
+ 	<select id="getTotal" resultType="int">
+ 		select count(*) from faqBoard
+ 	</select>
+ 	
  	
 </mapper>

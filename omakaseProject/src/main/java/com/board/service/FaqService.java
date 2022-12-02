@@ -21,6 +21,9 @@ public interface FaqService {
 	public void faqUpdate(Map<String, Object> map);
 	
 	public void faqDelete(int faqSeq);
+	
+	//게시판 총 갯수
+	public int getTotal();
 
 
 }

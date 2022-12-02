@@ -99,53 +99,62 @@ button {
 //id로 검색해서 내 모든 예약정보 모두 가져오기
 $(function(){
 	//alert($('#memId').val());
-	
-	$.ajax({
-		url: '/omakaseProject/res/getResInfo',
-		type: 'post',
-		data: 'resId=' + $('#memId').val(),
-		success: function(data){
-			//alert(JSON.stringify(data));
-			if( JSON.stringify(data) === '[]'){ //배열값이 없을때
-				$('#table').append( $('<tr/>').html('예약 내용이 없습니다.'))
+	if($('#memId').val() == ''){
+		alert('로그인이 필요한 서비스 입니다.')
+		location.href="/omakaseProject/index"
+	}else{
+		
+		$.ajax({
+			url: '/omakaseProject/res/getResInfo',
+			type: 'post',
+			data: 'resId=' + $('#memId').val(),
+			success: function(data){
+				//alert(JSON.stringify(data));
+				if( JSON.stringify(data) === '[]'){ //배열값이 없을때
+					$('#table').append( $('<tr/>').html('예약 내용이 없습니다.'))
+				}
+				
+				else{ //배열값이 있을 때 */
+					for(var i=0; i<data.length; i++){
+						
+						var resNum = data[i].resNum;
+						var resDate= data[i].resDate;
+						var resTime= data[i].resTime;
+						var resAdult= data[i].resAdult;
+						var resKid= data[i].resKid;
+						
+						$('#table').append( $('<tr/>')
+										.append( $('<th/>').html('예약번호'))
+										.append( $('<th/>').html(resNum)))
+						 		   .append( $('<tr/>')	
+						 				.append( $('<th/>').html('예약일'))
+						 				.append( $('<th/>').html(resDate))) 
+						 		   .append( $('<tr/>')
+						 				 .append( $('<th/>').html('예약시간'))
+						 				 .append( $('<th/>').html(resTime))) 
+						 		   .append( $('<tr/>')
+						 				 .append( $('<th/>').html('예약인원'))
+						 				 .append( $('<th/>').html('총'+ (resAdult+resKid) +'명 (성인: ' +resAdult+ '명, 소아: '+resKid+'명)'))) 
+						 		   .append( $('<tr/>')
+						 				 .append( $('<th/>').html('예약수정'))
+						 				 .append( $('<th/>').append($('<span>').append($('<button id="change'+i+'" onclick="resUpdate(\''+resNum+'\')">' ).html('예약변경')) )
+						 									.append($('<span>').append($('<button id="cancel'+i+'" onclick="resCancel(\''+resNum+'\')">' ).html('예약취소')) ) ))
+						 		   .append( $('<hr>'));		   
+					}//for	
+	 			} 
+
+
+			},
+			error: function(err){
+				console.log(err);
 			}
-			
-			else{ //배열값이 있을 때 */
-				for(var i=0; i<data.length; i++){
-					
-					var resNum = data[i].resNum;
-					var resDate= data[i].resDate;
-					var resTime= data[i].resTime;
-					var resAdult= data[i].resAdult;
-					var resKid= data[i].resKid;
-					
-					$('#table').append( $('<tr/>')
-									.append( $('<th/>').html('예약번호'))
-									.append( $('<th/>').html(resNum)))
-					 		   .append( $('<tr/>')	
-					 				.append( $('<th/>').html('예약일'))
-					 				.append( $('<th/>').html(resDate))) 
-					 		   .append( $('<tr/>')
-					 				 .append( $('<th/>').html('예약시간'))
-					 				 .append( $('<th/>').html(resTime))) 
-					 		   .append( $('<tr/>')
-					 				 .append( $('<th/>').html('예약인원'))
-					 				 .append( $('<th/>').html('총'+ (resAdult+resKid) +'명 (성인: ' +resAdult+ '명, 소아: '+resKid+'명)'))) 
-					 		   .append( $('<tr/>')
-					 				 .append( $('<th/>').html('예약수정'))
-					 				 .append( $('<th/>').append($('<span>').append($('<button id="change'+i+'" onclick="resUpdate(\''+resNum+'\')">' ).html('예약변경')) )
-					 									.append($('<span>').append($('<button id="cancel'+i+'" onclick="resCancel(\''+resNum+'\')">' ).html('예약취소')) ) ))
-					 		   .append( $('<hr>'));		   
-				}//for	
- 			} 
 
-
-		},
-		error: function(err){
-			console.log(err);
-		}
-
-	})//ajax
+		})//ajax
+		
+	}
+		
+		
+	
 }); //$(function()
 	
 
@@ -162,7 +171,7 @@ function resCancel(resNum){
 	//alert(resNum);
  	window.open("/omakaseProject/res/resCancelForm?resNum="+resNum,
 				"/omakaseProject/res/resCancelForm",               
-				"width=900, height=500, scrollbars=no, toolbar=no, menubar=no, status=no, location=no"); 
+				"width=600, height=400, scrollbars=no, toolbar=no, menubar=no, status=no, location=no"); 
 }
 
 
