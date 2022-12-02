@@ -110,24 +110,32 @@ div#container {
 <script type="text/javascript">
 //기존정보 끌어오기
 $(function(){
-	$.ajax({
-		type: 'post' ,
-		url: '/omakaseProject/member/getMember',
-		data : 'id=' + '${memId}' ,
-		dataType: 'json' ,
-		success: function(data){
-			//alert(JSON.stringify(data));
-			
- 			$('#name').val(data.name);
-			$('#id').val(data.id);
-			$('#email').val(data.email);
-			$('#tel').val(data.tel);
-			$('#birth').val(data.birth); 
-		},
-		error: function(err){
-			console.log(err)
-		} 		 		
-	});//ajax
+	
+	if( ${memId == null} ){
+		alert('로그인이 필요한 서비스 입니다.')
+		location.href="/omakaseProject/index"
+	}else{
+		$.ajax({
+			type: 'post' ,
+			url: '/omakaseProject/member/getMember',
+			data : 'id=' + '${memId}' ,
+			dataType: 'json' ,
+			success: function(data){
+				//alert(JSON.stringify(data));
+				
+	 			$('#name').val(data.name);
+				$('#id').val(data.id);
+				$('#email').val(data.email);
+				$('#tel').val(data.tel);
+				$('#birth').val(data.birth); 
+			},
+			error: function(err){
+				console.log(err)
+			} 		 		
+		});//ajax
+		
+	}
+	
 	
 });
 

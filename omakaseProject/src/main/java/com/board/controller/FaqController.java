@@ -60,7 +60,7 @@ public class FaqController {
 	@ResponseBody
 	public List<FaqDTO> getFaqList() {
 		return faqService.getFaqList();
-	}
+	}	
 	
 	//faq 내용조회
 	@GetMapping(value = "/faqViewForm")
@@ -97,6 +97,5 @@ public class FaqController {
 		faqService.faqDelete(faqSeq);
 		
 	}
-	
 
 }

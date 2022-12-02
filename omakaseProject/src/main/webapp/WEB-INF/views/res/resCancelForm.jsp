@@ -5,37 +5,47 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-	<span>
-	 아래 예약내용 확은 후 하단 취소버튼을 눌러주세요.
-	</span>
-	<form id="resForm">
-	<table class="resTable" id="resTable">
- 			 <tr>
-				<th>예약 번호 </th>
-				<th >${param.resNum}</th>
+<div class="container">
+	<h2>예약취소하기</h2>
+	<br>    
+	<p>아래 예약내용 확은 후 하단 취소버튼을 눌러주세요.</p>     
+	<br>
+	<table class="table table-striped">
+	  
+		<tbody>
+			<tr>
+				<td>예약 번호</td>
+				<td>${param.resNum}</td>
 			</tr>
 			<tr>
-				<th>예약일</th>
-				<th id="resDate"></th>
+				<td>예약일</td>
+				<td id="resDate"></td>
 			</tr>
 			<tr>
-				<th>예약시간</th>
-				<th id="resTime"></th>
+				<td>예약시간</td>
+				<td  id="resTime"></td>
 			</tr>
 			<tr>
-				<th>인원</th>	
-				<th id="resCount"></th>
-			</tr>   
+				<td>인원</td>
+				<td id="resCount"></td>
+			</tr>
+		</tbody>
 	</table>
-	</form>
-	
-	
+	<br>
 	<span>
 		<input type="button" value="예약취소" id="cancelCheck">
 	</span>
+</div>
+
+	
+
 	
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>	
@@ -49,7 +59,7 @@ $(function(){
 			//alert(JSON.stringify(data));
 			//$('#id').text(data.resId);
 			$('#resDate').text(data.resDate);
-			$('#resTime').text(data.resTime);
+			$('#resTime').text(data.resTime +'시');
 			var resNum = data.resNum;
 			var resTot = data.resAdult + data.resKid ;
 			var resAdult = data.resAdult;
