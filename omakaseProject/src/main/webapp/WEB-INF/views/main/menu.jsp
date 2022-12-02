@@ -32,16 +32,16 @@
 
           <ul id="menu_nav" class="nav col-lg-auto my-4 text-small">
             <li>
-              <a href="../res/resForm" class="nav-link">RESERVATION</a>
+              <a href="/omakaseProject/res/resForm" class="nav-link">RESERVATION</a>
             </li>
             <li>
-              <a href="../board/notice/noticeList?pg=1" class="nav-link">NOTICE BOARD</a>
+              <a href="/omakaseProject/board/notice/noticeList?pg=1" class="nav-link">NOTICE BOARD</a>
             </li>
             <li>
-              <a href="../member/memberInfo" class="nav-link">MY PAGE</a>
+              <a href="/omakaseProject/member/memberInfo" class="nav-link">MY PAGE</a>
             </li>
             <li>
-              <a href="../admin/adminRes" class="nav-link">ADMIN BOARD</a>
+              <a href="/omakaseProject/admin/adminRes" class="nav-link">ADMIN BOARD</a>
             </li>
           </ul>
         </div>

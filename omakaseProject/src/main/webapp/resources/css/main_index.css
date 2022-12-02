@@ -51,7 +51,7 @@ body {
     position: relative;
     display: inline-block;
 }
-
+ 
 #navi ul li #menu:hover {
 	color: DarkOliveGreen;
 	font-size: 20px;

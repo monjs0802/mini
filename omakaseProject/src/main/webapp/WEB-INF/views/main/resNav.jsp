@@ -6,7 +6,7 @@
 <div class="sideNav">	
 
 <!-- 예약하기 내비 -->
-
+ 
 <div class="flex-shrink-0 p-3 bg-gradient">
     <a href="../res/resForm" class="d-flex align-items-center link-dark pb-3 mb-3 text-decoration-none border-bottom">
       <svg class="bi pe-none me-2" width="13" height="24"><use xlink:href="#bootstrap"></use></svg>

@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="http://localhost:8080/omakaseProject/resources/css/main_index.css">
 </head>
 <body>
-
+ 
 
 <!-- 캐러셀 헤더 -->
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">

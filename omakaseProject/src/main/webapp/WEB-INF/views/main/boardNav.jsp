@@ -22,8 +22,8 @@
         
         <div class="collapse" id="yeyak">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="../res/resForm" class="link-dark d-inline-flex text-decoration-none rounded">예약</a></li>
-            <li><a href="../res/resExp" class="link-dark d-inline-flex text-decoration-none rounded">예약안내</a></li>
+            <li><a href="../../res/resForm" class="link-dark d-inline-flex text-decoration-none rounded">예약</a></li>
+            <li><a href="../../res/resExp" class="link-dark d-inline-flex text-decoration-none rounded">예약안내</a></li>
           </ul>
         </div>
       </li>
@@ -38,6 +38,9 @@
             <li><a href="../notice/noticeList?pg=1" class="link-dark d-inline-flex text-decoration-none rounded">공지사항</a></li>
             <li><a href="../faq/faqList" class="link-dark d-inline-flex text-decoration-none rounded">자주 묻는 질문</a></li>
             <li><a href="../noticeBoard" class="link-dark d-inline-flex text-decoration-none rounded">고객 센터</a></li>
+            <li><a href="../board/notice/noticeList?pg=1" class="link-dark d-inline-flex text-decoration-none rounded">공지사항</a></li>
+            <li><a href="../faq/faqList" class="link-dark d-inline-flex text-decoration-none rounded">자주 묻는 질문</a></li>
+            <li><a href="../board/noticeBoard" class="link-dark d-inline-flex text-decoration-none rounded">고객 센터</a></li>
           </ul>
         </div>
       </li>
@@ -48,9 +51,9 @@
         </button>
         <div class="collapse" id="my-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="../member/memberInfo" class="link-dark d-inline-flex text-decoration-none rounded">예약현황</a></li>
-            <li><a href="../member/memberUpdate" class="link-dark d-inline-flex text-decoration-none rounded">회원정보수정</a></li>
-            <li><a href="../member/memberDelete" class="link-dark d-inline-flex text-decoration-none rounded">회원탈퇴</a></li>
+            <li><a href="../../member/memberInfo" class="link-dark d-inline-flex text-decoration-none rounded">예약현황</a></li>
+            <li><a href="../../member/memberUpdate" class="link-dark d-inline-flex text-decoration-none rounded">회원정보수정</a></li>
+            <li><a href="../../member/memberDelete" class="link-dark d-inline-flex text-decoration-none rounded">회원탈퇴</a></li>
           </ul>
         </div>
       </li>
@@ -63,8 +66,8 @@
         </button>
         <div class="collapse" id="admin-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="../admin/adminSales" class="link-dark d-inline-flex text-decoration-none rounded">매출 현황</a></li>
-            <li><a href="../admin/adminRes" class="link-dark d-inline-flex text-decoration-none rounded">예약 현황</a></li>
+            <li><a href="../../admin/adminSales" class="link-dark d-inline-flex text-decoration-none rounded">매출 현황</a></li>
+            <li><a href="../../admin/adminRes" class="link-dark d-inline-flex text-decoration-none rounded">예약 현황</a></li>
             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">메뉴 관리</a></li>
           </ul>
         </div>
