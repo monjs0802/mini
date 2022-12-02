@@ -22,8 +22,8 @@
         
         <div class="collapse" id="yeyak">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="../res/resForm" class="link-dark d-inline-flex text-decoration-none rounded">예약</a></li>
-            <li><a href="../res/resExp" class="link-dark d-inline-flex text-decoration-none rounded">예약안내</a></li>
+            <li><a href="../../res/resForm" class="link-dark d-inline-flex text-decoration-none rounded">예약</a></li>
+            <li><a href="../../res/resExp" class="link-dark d-inline-flex text-decoration-none rounded">예약안내</a></li>
           </ul>
         </div>
       </li>
@@ -48,9 +48,9 @@
         </button>
         <div class="collapse" id="my-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="../member/memberInfo" class="link-dark d-inline-flex text-decoration-none rounded">예약현황</a></li>
-            <li><a href="../member/memberUpdate" class="link-dark d-inline-flex text-decoration-none rounded">회원정보수정</a></li>
-            <li><a href="../member/memberDelete" class="link-dark d-inline-flex text-decoration-none rounded">회원탈퇴</a></li>
+            <li><a href="../../member/memberInfo" class="link-dark d-inline-flex text-decoration-none rounded">예약현황</a></li>
+            <li><a href="../../member/memberUpdate" class="link-dark d-inline-flex text-decoration-none rounded">회원정보수정</a></li>
+            <li><a href="../../member/memberDelete" class="link-dark d-inline-flex text-decoration-none rounded">회원탈퇴</a></li>
           </ul>
         </div>
       </li>

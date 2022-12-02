@@ -28,16 +28,16 @@
 
           <ul class="nav col-lg-auto my-4 text-small">
             <li>
-              <a href="../res/resForm" class="nav-link text-white">예약하기</a>
+              <a href="/omakaseProject/res/resForm" class="nav-link text-white">예약하기</a>
             </li>
             <li>
-              <a href="../board/notice/noticeList?pg=1" class="nav-link text-white">게시판</a>
+              <a href="/omakaseProject/board/notice/noticeList?pg=1" class="nav-link text-white">게시판</a>
             </li>
             <li>
-              <a href="../member/memberInfo" class="nav-link text-white">마이페이지</a>
+              <a href="/omakaseProject/member/memberInfo" class="nav-link text-white">마이페이지</a>
             </li>
             <li>
-              <a href="../admin/adminRes" class="nav-link text-white">관리자페이지</a>
+              <a href="/omakaseProject/admin/adminRes" class="nav-link text-white">관리자페이지</a>
             </li>
           </ul>
         </div>
