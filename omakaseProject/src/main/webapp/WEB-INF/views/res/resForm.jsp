@@ -83,10 +83,6 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 
 .inp { padding: 10px 10px; background-color: #f1f1f1; border-radius: 4px; border: 0px; } 
 
-<<<<<<< HEAD
-.inp:focus { outline: none; background-color: #eee; } 
- 
-=======
 .inp:focus { outline: none; background-color: #eee;}
     
 .ui-datepicker-calendar .ui-state-active {
@@ -99,7 +95,6 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
   margin: -1px;
 }
     
->>>>>>> branch 'main' of https://github.com/monjs0802/mini.git
 /* container start */
 #rescontainer{
 	width: 900px;
@@ -173,10 +168,6 @@ dt {
 }
 
 /* container end */
-<<<<<<< HEAD
-=======
- 
->>>>>>> branch 'main' of https://github.com/monjs0802/mini.git
 </style>
 </head>
 <body>
