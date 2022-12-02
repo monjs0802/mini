@@ -38,9 +38,6 @@
             <li><a href="../notice/noticeList?pg=1" class="link-dark d-inline-flex text-decoration-none rounded">공지사항</a></li>
             <li><a href="../faq/faqList" class="link-dark d-inline-flex text-decoration-none rounded">자주 묻는 질문</a></li>
             <li><a href="../noticeBoard" class="link-dark d-inline-flex text-decoration-none rounded">고객 센터</a></li>
-            <li><a href="../board/notice/noticeList?pg=1" class="link-dark d-inline-flex text-decoration-none rounded">공지사항</a></li>
-            <li><a href="../faq/faqList" class="link-dark d-inline-flex text-decoration-none rounded">자주 묻는 질문</a></li>
-            <li><a href="../board/noticeBoard" class="link-dark d-inline-flex text-decoration-none rounded">고객 센터</a></li>
           </ul>
         </div>
       </li>

@@ -28,15 +28,11 @@ public class NoticeDAOMyBatis implements NoticeDAO {
 
 	@Override
 	public NoticeDTO getNoticeView(int notSeq) {
-		System.out.println(notSeq);
 		return sqlSession.selectOne("noticeSQL.getNoticeView", notSeq);
 	}
 	
 	@Override
 	public void getNoticeUpdate(NoticeDTO noticeDTO) {
-		System.out.println(noticeDTO.getNotSubject());
-		System.out.println(noticeDTO.getNotContent());
-		System.out.println(noticeDTO.getNotSeq());
 		sqlSession.update("noticeSQL.getNoticeUpdate", noticeDTO);
 	}
 
