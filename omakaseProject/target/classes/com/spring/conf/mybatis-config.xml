@@ -2,19 +2,12 @@
 <!DOCTYPE configuration
  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
-
 <configuration>
-	<settings>
-        <setting name="cacheEnabled" value="false" />
-        <setting name="jdbcTypeForNull" value="NULL" />
-    </settings>
-    <typeAliases>
+	<typeAliases>
 		<typeAlias type="com.res.bean.ResDTO" alias="res"/>
 		<typeAlias type="com.member.bean.UserDTO" alias="user"/>
 		<typeAlias type="com.board.bean.NoticeDTO" alias="notice"/>
 		<typeAlias type="com.board.bean.FaqDTO" alias="faq"/>
 		<typeAlias type="com.board.bean.CustomerDTO" alias="customer"/>
-		<typeAlias type="com.member.bean.KakaoDTO" alias="kakao"/>
 	</typeAliases>
 </configuration>
-

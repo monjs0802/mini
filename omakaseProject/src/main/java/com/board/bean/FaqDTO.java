@@ -12,5 +12,5 @@ public class FaqDTO {
 	private String faqQuestionType;
 	private String faqSubject;
 	private String faqContent;
-	private String faqLogtime;
+	private Date faqLogtime;
 }

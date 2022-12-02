@@ -8,6 +8,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.member.bean.KakaoDTO;
+import com.member.bean.UserDTO;
 import com.omakase.repository.KakaoMemberRepository;
 
 @Service
@@ -36,7 +37,7 @@ public class KakaoMemberService {
 			StringBuilder sb = new StringBuilder();
 			sb.append("grant_type=authorization_code");
 			sb.append("&client_id=d5eefc288eb394a4aab977f7c47a36e2"); //본인이 발급받은 key
-			sb.append("&redirect_uri=http://localhost:8080/omakaseProject/index"); // 본인이 설정한 주소
+			sb.append("&redirect_uri=http://localhost:8080/omakaseProject/member/kakaoLogin"); // 본인이 설정한 주소
 			sb.append("&code=" + authorize_code);
 			bw.write(sb.toString());
 			bw.flush();
@@ -63,8 +64,8 @@ public class KakaoMemberService {
 		return access_Token;
 	}
     
-	public KakaoDTO getUserInfo(String access_Token) {
-		HashMap<String, Object> userInfo = new HashMap<String, Object>();
+	public UserDTO getUserInfo(String access_Token) {
+		Map<String, Object> userInfo = new HashMap<String, Object>();
 		String reqURL = "https://kapi.kakao.com/v2/user/me";
 		try {
 			URL url = new URL(reqURL);
@@ -86,12 +87,14 @@ public class KakaoMemberService {
 			JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
 			String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 			String email = kakao_account.getAsJsonObject().get("email").getAsString();
+			
 			userInfo.put("nickname", nickname);
 			userInfo.put("email", email);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		KakaoDTO result = mr.findkakao(userInfo);
+		UserDTO result = mr.findkakao(userInfo);
 		// 위 코드는 먼저 정보가 저장되있는지 확인하는 코드.
 		System.out.println("S:" + result);
 		if(result==null) {

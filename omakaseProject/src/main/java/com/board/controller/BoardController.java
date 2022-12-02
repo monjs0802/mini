@@ -82,5 +82,4 @@ public class BoardController {
 	public NoticeDTO getNoticeView(@RequestParam int notSeq) {
 		return noticeService.getNoticeView(notSeq);
 	}
-
 }

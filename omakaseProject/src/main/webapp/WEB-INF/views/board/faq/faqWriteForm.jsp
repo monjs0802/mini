@@ -4,91 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FAQ작성</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<title>Insert title here</title>
 </head>
 <body>
-<div class="container">
-	<h2>FAQ 작성</h2>
-	<br>
-	  
-	<form name="faqWriteForm" id="faqWriteForm">	
-		    
-		<div class="form-group">
-			<label for="faqSubject">제목 :</label>
-		<!-- 	<input type="text" class="form-control"  name="faqSubject" id="faqSubject"> -->
-			<textarea class="form-control" rows="1"  name="faqSubject" id="faqSubject" ></textarea>
-			<div id="faqSubjectDiv"></div>
-		</div>
-		<br>
-		
-		<div class="form-group">
-			<label for="faqType">문의유형 :</label>
-			<div> 
-				<label><input type="radio" name="faqQuestionType" id="faqQuestionType" checked value="예약관련 문의"> 예약관련 문의</label>
-				<label><input type="radio" name="faqQuestionType" id="faqQuestionType" value="결제 문의"> 결제 문의</label>
-				<label><input type="radio" name="faqQuestionType" id="faqQuestionType" value="업무시간 관련문의"> 업무시간 관련문의</label>
-			</div>
-		</div>
-		
-		
-		<div class="form-group">
-			<label for="faqcontent">내용:</label>
-			<textarea class="form-control" rows="10"  name="faqContent" id="faqContent" ></textarea>
-			<div id="faqContentDiv"></div>  
-		</div>
-		<br>
-	    
-		<div class="form-group">        
-			<!-- <div class="col-sm-offset-2 col-sm-10"> -->
-				<button type="button" id="faqWriteBtn">작성하기</button>
-			<!-- </div> -->
-		</div>
-	    
-	</form>
-</div>
-
-	
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
-<script type="text/javascript">
-//글작성
-$('#faqWriteBtn').click(function(){
-	
-	$('#faqSubjectDiv').empty();
-	$('#faqContentDiv').empty();
-	
-	
-	if($('#faqSubject').val() == ''){
-		$('#faqSubjectDiv').text('제목을 입력하세요');
-		$('#faqSubject').focus();
-		
-	} else if ($('#faqContent').val() == ''){
-		$('#faqContentDiv').text('내용을 입력하세요');
-		$('#faqContent').focus();
-		
-	} else {
-		
- 		$.ajax({
-			url: '/omakaseProject/board/faq/faqWrite',
-			type: 'post',
-			data: $('#faqWriteForm').serialize(),
-			success: function() {
-				alert("FAQ 작성이 완료 되었습니다.");
-				location.href = "/omakaseProject/board/faq/faqList";
-			},
-			error: function(err){
-				console.log(err);
-			}
-		}); //$.ajax
-		 
-	}
-});
-</script>
 
 </body>
 </html>
