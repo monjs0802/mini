@@ -17,7 +17,7 @@ public class NoticeDAOMyBatis implements NoticeDAO {
 	
 	@Override
 	public void noticeWrite(NoticeDTO noticeDTO) {
-		sqlSession.insert("noticeSQL.write", noticeDTO);
+		sqlSession.insert("noticeSQL.noticeWrite", noticeDTO);
 	}
 	
 	@Override
@@ -26,19 +26,19 @@ public class NoticeDAOMyBatis implements NoticeDAO {
 	}
 
 	@Override
-	public void update(NoticeDTO noticeDTO) {
-		sqlSession.update("noticeSQL.update", noticeDTO);
-	}
-
-	@Override
-	public void delete(String id) {
-		sqlSession.delete("noticeSQL.delete", id);
-	}
-
-	@Override
 	public NoticeDTO getNoticeView(int notSeq) {
 		return sqlSession.selectOne("noticeSQL.getNoticeView", notSeq);
 	}
 	
+	@Override
+	public void getNoticeUpdate(int notSeq) {
+		sqlSession.update("noticeSQL.getNoticeUpdate", notSeq);
+	}
+
+	@Override
+	public void noticeDelete(int notSeq) {
+		sqlSession.delete("noticeSQL.noticeDelete", notSeq);
+	}
 	
+
 }

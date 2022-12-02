@@ -14,20 +14,20 @@ form[name="noticeWriteForm"] div {
 </style>
 </head>
 <body>
-<h2>공지사항 작성</h2>
 	<form name="noticeWriteForm" id="noticeWriteForm">
+	<h2>공지사항 작성</h2>
 		<table border="1" cellpadding="5" cellspacing="0">
 			<tr>
 				<th>제목</th>
 				<td>
-					<input type="text" name="subject" id="subject" style="width: 200px;" placeholder="제목입력">
+					<input type="text" name="notSubject" id="notSubject" style="width: 200px;" placeholder="제목입력">
 					<div id="subjectDiv"></div>
 				</td>
 			</tr>
 			<tr>
 				<th>내용</th>
 				<td>
-					<textarea rows="5" cols="40" name="content" id="content" style="white-space: pre-wrap;" placeholder="내용입력"></textarea>
+					<textarea rows="5" cols="40" name="notContent" id="notContent" style="white-space: pre-wrap;" placeholder="내용입력"></textarea>
 					<div id="contentDiv"></div>
 				</td>
 			</tr>
@@ -47,13 +47,13 @@ $('#noticeWriteBtn').click(function(){
 	$('#subjectDiv').empty();
 	$('#contentDiv').empty();
 	
-	if($('#subject').val() == ''){
+	if($('#notSubject').val() == ''){
 		$('#subjectDiv').text('제목을 입력하세요');
-		$('#subject').focus();
+		$('#notSubject').focus();
 		
-	} else if ($('#content').val() == ''){
+	} else if ($('#notContent').val() == ''){
 		$('#contentDiv').text('내용을 입력하세요');
-		$('#content').focus();
+		$('#notContent').focus();
 		
 	} else {
 		//서버로 요청하고 제자리로 돌아와라

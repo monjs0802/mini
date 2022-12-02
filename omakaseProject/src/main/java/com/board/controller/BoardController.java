@@ -22,9 +22,11 @@ public class BoardController {
 	@Autowired
 	private NoticeService noticeService;
 	
-	@GetMapping(value = "/noticeWriteForm")
-	public String noticeWriteForm() {
-		return "/board/notice/noticeWriteForm";
+	@RequestMapping(value = "/noticeWriteForm")
+	public String noticeWriteForm(Model model) {
+		model.addAttribute("display", "board/notice/noticeWriteForm.jsp");
+		model.addAttribute("nav", "main/boardNav.jsp");
+		return "index2";
 	}
 
 	@PostMapping(value = "/noticeWrite")
@@ -33,7 +35,7 @@ public class BoardController {
 		noticeService.noticeWrite(noticeDTO);
 	}
 
-	@RequestMapping(value = "/noticeList", method=RequestMethod.GET)
+	@RequestMapping(value = "/noticeList")
 	public String noticeList(Model model, @RequestParam int pg) {
 		model.addAttribute("display", "board/notice/noticeList.jsp");
 		model.addAttribute("nav", "main/boardNav.jsp");
@@ -45,28 +47,6 @@ public class BoardController {
 	@ResponseBody
 	public List<NoticeDTO> getNoticeList() {
 		return noticeService.getNoticeList();
-	}
-	
-	@GetMapping(value = "/noticeUpdateForm")
-	public String noticeUpdateForm() {
-		return "/board/notice/noticeUpdateForm";
-	}
-	
-	@PostMapping(value = "/update")
-	@ResponseBody
-	public void update(@ModelAttribute NoticeDTO noticeDTO) {
-		noticeService.update(noticeDTO);
-	}
-	
-	@GetMapping(value = "/noticeDeleteForm")
-	public String noticeDeleteForm() {
-		return "/board/notice/noticeDeleteForm";
-	}
-	
-	@PostMapping(value = "/noticeDelete")
-	@ResponseBody
-	public void delete(@RequestParam String id) {
-		noticeService.delete(id);
 	}
 	
 	@RequestMapping(value = "/noticeView")
@@ -82,4 +62,25 @@ public class BoardController {
 	public NoticeDTO getNoticeView(@RequestParam int notSeq) {
 		return noticeService.getNoticeView(notSeq);
 	}
+	
+	@RequestMapping(value = "/noticeUpdateForm")
+	public String noticeUpdateForm(Model model, @RequestParam int notSeq) {
+		model.addAttribute("display", "board/notice/noticeUpdateForm.jsp");
+		model.addAttribute("nav", "main/boardNav.jsp");
+		model.addAttribute("notSeq", notSeq);
+		return "index2";
+	}
+	
+	@PostMapping(value = "/getNoticeUpdate")
+	@ResponseBody
+	public void getNoticeUpdate(@RequestParam int notSeq) {
+		noticeService.getNoticeUpdate(notSeq);
+	}
+	
+	@PostMapping(value = "/noticeDelete")
+	@ResponseBody
+	public void noticeDelete(@RequestParam int notSeq) {
+		noticeService.noticeDelete(notSeq);
+	}
+	
 }

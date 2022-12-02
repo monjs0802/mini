@@ -12,5 +12,5 @@ public class NoticeDTO {
 	private String notSubject;
 	private String notContent;
 	private int notHit;
-	private Date notLogtime;
+	private String notLogtime;
 }

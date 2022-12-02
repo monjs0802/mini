@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class FaqDTO {
 	private int faqSeq;
-	private String faqQuestionType;
+	private String faqCategory;
 	private String faqSubject;
 	private String faqContent;
 	private Date faqLogtime;

@@ -8,7 +8,7 @@
 </head>
 <body>
 <form>
-	<input type="text" id="notSeq" value="${ notSeq }" />
+	<input type="hidden" id="notSeq" value="${ notSeq }" />
 	<input type="hidden" id="memId" value="${ memId }" />
 	
 	<h2>공지사항</h2>
@@ -30,14 +30,14 @@
 		</tr>
 	</table>
 	<div style="margin-top: 3px;">
-		<input type="button" value="목록보기" 
-		onclick="location.href='/omakaseProject/board/notice/noticeList'" />
+		<input type="button" value="Back to List" 
+		onclick="location.href='/omakaseProject/board/notice/noticeList?pg=1'" />
 		
 		<!-- 관리자 아이디로 로그인했을 시, 수정과 삭제버튼이 뜨게~! -->
 		<span id="noticeViewSpan">
-			<input type="button" value="공지글 수정"
-			onclick="location.href='/omakaseProject/board/notice/noticeUpdateForm?seq=${ seq }'" />
-			<input type="button" id="noticeDeleteBtn" value="공지글 삭제" />
+			<input type="button" value="Update"
+			onclick="location.href='/omakaseProject/board/notice/noticeUpdateForm?notSeq=${ notSeq }'" />
+			<input type="button" id="noticeDeleteBtn" value="Delete" />
 		</span>
 	</div>
 </form>
@@ -52,10 +52,10 @@ $('#noticeDeleteBtn').click(function(){
 	//	/omakaseProject/board/notice/getNoticeList
 		url: '/omakaseProject/board/notice/noticeDelete',
 		type: 'post',
-		data: 'seq=' + $('#seq').val(),
+		data: 'notSeq=' + $('#notSeq').val(),
 		success: function() {
-			alert("해당하는 공지사항 글이 삭제되었습니다^^");
-			location.href = "/omakaseProject/board/notice/noticeList";
+			alert("해당하는 공지사항 글이 삭제되었습니뚜앙^^");
+			location.href = "/omakaseProject/board/notice/noticeList?pg=1";
 		},
 		error: function(err){
 			console.log(err);
@@ -70,10 +70,10 @@ $(document).ready(function(){
 		data: 'notSeq=' + $('#notSeq').val(),
 		dataType: 'json',
 		success: function(data) {
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 			
 			$('#subjectSpan').text(data.notSubject);
-			$('#contentSpan').text(data.content);
+			$('#contentSpan').text(data.notContent);
 			
 			if($('#memId').val() == 'admin') {
 				$('#noticeViewSpan').show();

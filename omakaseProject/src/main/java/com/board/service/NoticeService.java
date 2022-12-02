@@ -10,10 +10,9 @@ public interface NoticeService {
 	
 	public List<NoticeDTO> getNoticeList();
 
-	public void update(NoticeDTO noticeDTO);
-
-	public void delete(String id);
-
 	public NoticeDTO getNoticeView(int notSeq);
 	
+	public void getNoticeUpdate(int notSeq);
+
+	public void noticeDelete(int notSeq);
 }

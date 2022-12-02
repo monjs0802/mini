@@ -4,27 +4,28 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="noticeSQL">
 	<insert id="noticeWrite" parameterType="notice">
- 		insert into noticeBoard values(seq_notice.nextval
-							          ,#{notSubject}
-							  		  ,#{notContent}
-							  		  ,0
-							  	      ,sysdate)
+ 		insert into noticeBoard(notSeq, notSubject, notContent, notHit, notLogtime)
+ 						 values(seq_notice.nextval
+					          , #{notSubject}
+					  		  , #{notContent}
+					  		  , 0
+					  	      , sysdate)
  	</insert>
  	
  	<select id="getNoticeList" resultType="notice">
- 		select * from noticeBoard
+ 		select notSeq, notSubject, notHit, TO_CHAR(notLogtime, 'YYYY-MM-DD HH:MI:SS') as notLogtime from noticeBoard
  	</select>
  	
  	<select id="getNoticeView" parameterType="int" resultType="notice">
  		select * from noticeBoard where notSeq=#{notSeq}
  	</select>
  	
- 	<update id="update" parameterType="java.util.Map">
+ 	<update id="getNoticeUpdate" parameterType="int">
  		update noticeBoard set notSubject=#{notSubject}, notContent=#{notContent} where notSeq=#{notSeq}
  	</update>
  	
- 	<delete id="delete" parameterType="String">
- 		delete noticeBoard where notSeq=#{notSeq}
+ 	<delete id="noticeDelete" parameterType="int">
+ 		delete from noticeBoard where notSeq=#{notSeq}
  	</delete>
  	
 </mapper>

@@ -23,25 +23,26 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public List<NoticeDTO> getNoticeList() {
+		//DB
 		return noticeDAO.getNoticeList();
 	}
-
-	@Override
-	public void update(NoticeDTO noticeDTO) {
-		//DB
-		noticeDAO.update(noticeDTO);
-	}
-
-	@Override
-	public void delete(String id) {
-		//DB
-		noticeDAO.delete(id);
-	}
-
+	
 	@Override
 	public NoticeDTO getNoticeView(int notSeq) {
 		//DB
 		return noticeDAO.getNoticeView(notSeq);
+	}
+	
+	@Override
+	public void getNoticeUpdate(int notSeq) {
+		//DB
+		noticeDAO.getNoticeUpdate(notSeq);
+	}
+
+	@Override
+	public void noticeDelete(int notSeq) {
+		//DB
+		noticeDAO.noticeDelete(notSeq);
 	}
 	
 }
