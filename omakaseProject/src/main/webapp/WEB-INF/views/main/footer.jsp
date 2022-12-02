@@ -6,7 +6,7 @@
 <footer class="d-flex flex-wrap justify-content-around align-items-center border-top p-2">
     <p class="col-md-4 mb-0 ml-auto text">
     	© 2022 miniproject han U makase<br><br>
-    	서울 강남구 강남대로94길 20 삼오빌딩 6층<br>
+    	서울 강남구 강남대로94길 20 삼오빌딩 6층<br> 
     	bitcamp@bit603.com<br>
     	02-1121-1209<br><br>
 
@@ -14,8 +14,8 @@
     	
     	</p>
 
-    <a href="#" class="col-md-4 d-flex align-items-center justify-content-around mb-0 mb-md-0 me-md-0 link-dark ">
-    <img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="300" alt="로고">
+    <a href="http://localhost:8080/omakaseProject/" class="col-md-4 d-flex align-items-center justify-content-around mb-0 mb-md-0 me-md-0 link-dark ">
+    <img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="200" alt="로고">
     </a>
 
     <ul class="nav col-md-3 justify-content-end">
@@ -29,6 +29,7 @@
   </footer>
   
   <!-- 개인정보처리방침(Personal information processing policy = pipp) 모달 -->
+  <!-- index2에서 동작 안함 (공사중) -->
 
 		<!-- Modal -->
 		<div class="modal fade" id="pipp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

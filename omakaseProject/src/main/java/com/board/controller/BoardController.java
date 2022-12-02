@@ -22,7 +22,7 @@ public class BoardController {
 	@Autowired
 	private NoticeService noticeService;
 	
-	@RequestMapping(value = "/noticeWriteForm")
+	@GetMapping(value = "/noticeWriteForm")
 	public String noticeWriteForm(Model model) {
 		model.addAttribute("display", "board/notice/noticeWriteForm.jsp");
 		model.addAttribute("nav", "main/boardNav.jsp");

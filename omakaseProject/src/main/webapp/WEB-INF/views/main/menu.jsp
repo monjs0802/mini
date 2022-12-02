@@ -2,44 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<style type="text/css">
-/* body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
-   margin: 0;
-   padding: 0;
-}
-#wrap{
-	width: 900px;
-	margin: 0 auto;
-}
-#header{
-	position: relative;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #cccccc;
-}
 
-.m-menu{
-	width: 900px;
-	height: 50px;
-	margin: 0 auto;
-}
-.gnb-menus{
-	float: left;
-	width: 25%;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-}
-.gnb-menus h3 a{
-	color: black;
-	text-decoration: none;
-}
-.gnb-menus h3 a:hover{
-	color: gray;
-	text-decoration: underLine;
-} */
-</style>
-
-<div id="header" class="header">
+<div id="header" class="header"> 
 
       		<!-- l-menu -->
 			<div class='l-menu'>
@@ -56,7 +20,7 @@
       <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center">
       		<h1 class="logo">
-      		<a href="http://localhost:8080/omakaseProject/index">
+      		<a href="http://localhost:8080/omakaseProject/">
       		<img src="http://localhost:8080/omakaseProject/resources/img/logo.png" width="200" alt="로고"></a></h1>
       
           <a href="" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
@@ -67,7 +31,7 @@
               <a href="../res/resForm" class="nav-link text-white">예약하기</a>
             </li>
             <li>
-              <a href="../board/noticeBoard" class="nav-link text-white">게시판</a>
+              <a href="../board/notice/noticeList?pg=1" class="nav-link text-white">게시판</a>
             </li>
             <li>
               <a href="../member/memberInfo" class="nav-link text-white">마이페이지</a>
