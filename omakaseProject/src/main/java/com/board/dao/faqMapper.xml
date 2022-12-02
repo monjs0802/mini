@@ -22,18 +22,7 @@
  	</insert>
  	
  	 <select id="getFaqList" resultType="faq">
- 		select * from faqBoard 
- 		
- 		<!-- select * from (
-			 	select rownum rnum, seq_faq, faqQuestionType,faqSubject,faqContent,sysdate
-			 		from (
-			 			select seq_faq, faqQuestionType,faqSubject,faqContent,sysdate
-			 			faqBoard 
-			 			order by no desc
- 						)  
- 		)
- 		where rnum between #{startRow} and #{endRow} -->
- 		  
+ 		select * from faqboard
  	</select>
  	
  	<select id="getFaqseq" parameterType="java.lang.Integer" resultType="faq">

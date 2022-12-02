@@ -22,14 +22,5 @@ public interface FaqService {
 	
 	public void faqDelete(int faqSeq);
 
-	
-//	//전체데이터 가져오기
-//	public Integer getCount();
-//	
-//	//게시판글보기
-//	public FaqDTO view(int faqSeq);
-//	
-//	//게시판글삭제
-//	public Integer delete(int faqSeq);
 
 }

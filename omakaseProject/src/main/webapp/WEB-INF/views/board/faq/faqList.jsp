@@ -4,72 +4,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ 
 <title>FAQ</title>
 <style type="text/css">
 .subjectA:link { color: black; text-decoration: none; }
 .subjectA:visited { color: black; text-decoration: none; }
 .subjectA:hover { color: green; text-decoration: underline; }
 .subjectA:active { color: black; text-decoration: none; }
+.wbtn:hover { background: #ff7f50; text-decoration: underline; }
+
+.table {background: whitegray; }
 </style>
 </head>
 <body>
-	<input type="text" id="memId" value="${ memId }">
-	<input type="text" id="pg" value="1">
-	    
+		    
 	<div class="container">
-	  <header class="blog-header lh-1 py-3">
-	      <div class="col-12 text-center">
-	        <a class="Header" href="#">NOTICE</a>
-	        
-	      </div>
-	  </header>
-	</div>
+		<input type="hidden" id="memId" value="${ memId }">
+		
+		<h2>FAQ 자주묻는질문</h2>
+		<br>
+		<p>자주 묻는 질문을 모아드립니다. 궁금하신 내용을 클릭해주세요.</p>  
+		<br>                                                                                    
+		
+		<div class="table-responsive">          
+			<table class="table" id="faqListTable">
+				<thead>
+					<tr>
+						<th>No</th>
+						<th>문의유형</th>
+						<th>제목</th>
+						<th>작성시간</th>
+					</tr>
+				</thead>
+			</table>
+		 
 	
-	<table class="table" id="faqListTable">
-	  <thead>
-	    <tr>
-	      <td scope="col" style="width: 100px">No</td>
-	      <td scope="col" style="width: 200px">문의유형</td>
-	      <td scope="col" style="width: 400px">제목</td>
-	      <td scope="col" style="width: 200px">작성시간</td>
-	    </tr>
-	  </thead>
-	<!--  
-	  <tbody>
-	  <c:if test="${empty list}">
-		  <tr>
-		  	<td colspan="4">데이터가 존재하지 않습니다.</td>
-		  </tr>
-	  </c:if>
-	  
-	  <c:if test="${ !empty list}">
-	  	<c:forEach items="${list}" var="faqDTO">
-	  		<tr>
-	  			<td>${faqDTO.faqSeq }</td>
-	  			<td>${faqDTO.faqQuestionType }</td>
-	  			<td>${faqDTO.faqSubject }</td>
-	  			<td>${faqDTO.faqLogtime }</td>
-	  		</tr>
-	  	</c:forEach>
-	  </c:if>
-	  </tbody>
-	  -->  
-	  
-
-	</table>
-		
-		<!-- 동적처리  -->
-		<div style="display: inline-block;">
-			<div id="pagingDiv"></div>
-		</div>
-		
-		
-		<!-- 관리자일 경우에만 보이게 설정 예정 -->
-	 	<button type="button" onclick="location.href='/omakaseProject/board/faq/faqWriteForm'">Write</button>
-
-	  
-		
+			
+			<!-- 동적처리  -->
+			<div style="display: inline-block;">
+				<div id="pagingDiv"></div>
+			</div>
+			
+			
+			<!-- 관리자일 경우에만 클릭가능 -->
+			<c:if test="${memId != 'admin'}">
+				<button type="hidden" onclick="location.href='/omakaseProject/board/faq/faqWriteForm'" class="wbtn">Write</button>
+			</c:if>
+				
+			<c:if test="${memId == 'admin'}">
+				<button type="button" onclick="location.href='/omakaseProject/board/faq/faqWriteForm'" class="wbtn">Write</button>
+			</c:if>
+	
+		 	  
+  		</div>
+	</div>		
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -82,14 +76,7 @@ $(function(){
 			dataType: 'json' ,
 			success: function(data){
 				//alert(JSON.stringify(data));
-											
-/* 				$.each(data, function(index, items){
-					$('<tr/>').append($('<td/>',{text: items.faqSeq}))
-							  .append($('<td/>',{text: items.faqQuestionType}))
-							  .append($('<td/>',{text: items.faqSubject}))									 
-							  .append($('<td/>',{text: items.faqLogtime}))
-							  .appendTo( $('#faqListTable') );	 	
-*/					
+				
  				$.each(data, function(index, items){
 						$('<tr/>').append($('<td/>',{align: 'center',text: items.faqSeq}))
 								  .append($('<td/>',{align: 'center',text: items.faqQuestionType}))

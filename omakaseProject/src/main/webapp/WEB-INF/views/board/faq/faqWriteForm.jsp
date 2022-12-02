@@ -15,6 +15,7 @@
 <body>
 <div class="container">
 	<h2>FAQ 작성</h2>
+	<br>
 	  
 	<form name="faqWriteForm" id="faqWriteForm">	
 		    
@@ -24,7 +25,7 @@
 			<textarea class="form-control" rows="1"  name="faqSubject" id="faqSubject" ></textarea>
 			<div id="faqSubjectDiv"></div>
 		</div>
-		
+		<br>
 		
 		<div class="form-group">
 			<label for="faqType">문의유형 :</label>
@@ -41,12 +42,12 @@
 			<textarea class="form-control" rows="10"  name="faqContent" id="faqContent" ></textarea>
 			<div id="faqContentDiv"></div>  
 		</div>
-	
+		<br>
 	    
 		<div class="form-group">        
-			<div class="col-sm-offset-2 col-sm-10">
+			<!-- <div class="col-sm-offset-2 col-sm-10"> -->
 				<button type="button" id="faqWriteBtn">작성하기</button>
-			</div>
+			<!-- </div> -->
 		</div>
 	    
 	</form>

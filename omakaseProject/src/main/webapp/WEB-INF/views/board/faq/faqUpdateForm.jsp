@@ -15,9 +15,10 @@
 <body>
 <div class="container">
 	<h2>FAQ 수정</h2>
-	  
+	<br>
+	
 	<form name="faqUpdateForm" id="faqUpdateForm">	
-		<input type="hidden" id="faqSeq" value="${param.faqSeq}" > 
+		<input type="hidden" name="faqSeq" id="faqSeq" value="${param.faqSeq}" > 
 		    
 		<div class="form-group">
 			<label for="faqSubject">제목 :</label>
@@ -44,9 +45,9 @@
 	
 	    
 		<div class="form-group">        
-			<div class="col-sm-offset-2 col-sm-10">
+			<!-- <div class="col-sm-offset-2 col-sm-10"> -->
 				<button type="button" id="faqUpdateBtn">수정하기</button>
-			</div>
+			<!-- </div> -->
 		</div>
 	    
 	</form>
@@ -66,7 +67,6 @@ $(document).ready(function(){
 			//alert(data.faqSubject);
 			
 			$('#faqSubject').text(data.faqSubject);
-			$('#faqQuestionType').text(data.faqQuestionType);
 			$('#faqContent').text(data.faqContent);		
 			
 		},
@@ -101,6 +101,18 @@ $('#faqUpdateBtn').click(function(){
 			url: '/omakaseProject/board/faq/faqUpdate',
 			type: 'post',
 			data: $('#faqUpdateForm').serialize(),
+			/* {
+				'faqSeq' = $('#faqSeq').val(),
+				'faqQuestionType' = $('#faqQuestionType').val(),
+				'faqSubject' = $('#faqSubject').val(),
+				'faqContent' = $('#faqContent').val(),	
+			} 
+ 		
+			'faqSeq' = $('#faqSeq').val()
+			+ '&faqQuestionType' = $('#faqQuestionType').val()
+			+ '&faqSubject' = $('#faqSubject').val()
+			+ '&faqContent' = $('#faqContent').val(),
+			*/
 			success: function() {
 				alert("FAQ 수정이 완료 되었습니다.");
 				location.href = "/omakaseProject/board/faq/faqList";

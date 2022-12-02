@@ -34,8 +34,10 @@ public class FaqController {
 		
 	//faq 작성폼
 	@GetMapping(value = "/faqWriteForm")
-	public String faqWriteForm() {
-		return "board/faq/faqWriteForm";
+	public String faqWriteForm(Model model) {
+		model.addAttribute("display", "board/faq/faqWriteForm.jsp");
+		model.addAttribute("nav", "main/boardNav.jsp");
+		return "index2";
 	}
 	
 	//faq 작성메소드
@@ -91,7 +93,7 @@ public class FaqController {
 	
 	@ResponseBody
 	@PostMapping(value="/faqDelete")
-	public void faqDelete(int faqSeq ) {
+	public void faqDelete(int faqSeq) {
 		faqService.faqDelete(faqSeq);
 		
 	}
