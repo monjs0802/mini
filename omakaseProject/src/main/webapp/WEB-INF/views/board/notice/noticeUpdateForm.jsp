@@ -15,15 +15,16 @@ form[name="noticeUpdateForm"] div {
 </head>
 <body>
 	<form name="noticeUpdateForm" id="noticeUpdateForm">
-	<input type="hidden" id="notSeq" value="${ notSeq }" />
+	<input type="hidden" name="notSeq" id="notSeq" value="${ notSeq }" />
 	<input type="hidden" name="memId" id="memId" value="${ memId }" />
-	<h2>글수정</h2>
+	<h2>UPDATE</h2>
 		<table border="1" cellpadding="5" cellspacing="0">
 			<tr>
 				<th>제목</th>
 				<td>
 					<input type="text" name="notSubject" id="notSubject" style="width: 200px;" placeholder="Insert title Babe~~">
 					<div id="subjectDiv"></div>
+					
 				</td>
 			</tr>
 			<tr>
@@ -35,8 +36,8 @@ form[name="noticeUpdateForm"] div {
 			</tr>
 			<tr>
 				<th colspan="2">
-					<button type="button" id="noticeUpdateBtn">글수정</button>
-					<button type="reset" onclick="location.reload()">다시작성</button>
+					<button type="button" id="noticeUpdateBtn">Complete</button>
+					<button type="reset" onclick="location.reload()">Reset</button>
 				</th>
 			</tr>
 		</table>
@@ -49,13 +50,14 @@ $(function(){
 	$.ajax({
 		type: 'post' ,
 		url: '/omakaseProject/board/notice/getNoticeView',
-		data : 'notSeq=' + '${notSeq}' ,
-		dataType: 'json' ,
+		data : 'notSeq=' + $('#notSeq').val(),
+		dataType: 'json',
 		success: function(data){
 			//alert(JSON.stringify(data));
-			
+			$('#notSeq').val(data.notSeq);
  			$('#notSubject').val(data.notSubject);
 			$('#notContent').val(data.notContent);
+			
 		},
 		error: function(err){
 			console.log(err)

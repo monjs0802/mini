@@ -18,7 +18,7 @@
 	Sans-Serif;
 }
 
-.header {
+.notHeader {
   font-size: 40px;
   font-weight: bold;
   color: black;
@@ -37,7 +37,7 @@
 	width: 900px;
 	margin-top: 10px;
 }
-#currentPaing:hover {
+#currentPaging:hover {
 	border: 1px solid blue;
 	padding: 5px 10px;
 	margin: 2px;
@@ -64,7 +64,7 @@ a.subjectA:active { color: black; text-decoration: none; }
 <div class="container">
   <header class="blog-header lh-1 py-3">
       <div class="col-12 text-center">
-        <a class="header">NOTICE</a>
+        <a class="notHeader">NOTICE</a>
       </div>
   </header>
 
@@ -111,16 +111,12 @@ $(document).ready(function(){ /* window.onload=function(){} 의 jquery문 형식
 		type: 'post',
 		dataType: 'json',
 		success: function(data) {
+			//alert(JSON.stringify(data));
 			
-			
-			//alert(data.list[0].id)
-			
-			$.each(data, function(index, items){ // 자바 for(NoticeDTO items : data.list)의 json For문 // jstl 형식은 <c:forEach var="items" items="${data.list}">
-				let data1 = new Date(items.notLogtime)
-			console.log(index, items.notSeq, items.notSubject, items.notHit, data1);
+			$.each(data, function(index, items){
+			console.log(index, items.notSeq, items.notSubject, items.notHit, items.notLogtime);
 				
-				console.log(data1)
-				$('<tr/>').append($('<td/>', { //$(A).append(B).append(C).append(D)~~ 메소드 체인방식
+				$('<tr/>').append($('<td/>', {
 					align: 'center',
 					text: items.notSeq
 				})).append($('<td/>', {
@@ -136,7 +132,7 @@ $(document).ready(function(){ /* window.onload=function(){} 의 jquery문 형식
 					text: items.notHit
 				})).append($('<td/>', {
 					align: 'center',
-					text: data1
+					text: items.notLogtime
 				})).appendTo($('.noticeBody'));
 				
 			}); //$.each
@@ -144,10 +140,10 @@ $(document).ready(function(){ /* window.onload=function(){} 의 jquery문 형식
 			//페이징 처리
 			$('#pagingDiv').html(data.pagingHTML);
 			
-				//로그인 여부
+				/* //로그인 여부
 				$('.subjectA').click(function(){
 					if($('#memId').val() == '')
-						alert('먼저 로그인하세요');
+						//alert('먼저 로그인하세요');
 					else {
 						//alert($(this).parent().prev().prop('tagName')); //this는 subjectA를 가리킴, parent()는 부모태그, prev()는 앞쪽의 <td>태그로 이동 & next()는 뒷쪽의 <td>태그로 이동
 						//alert($(this).parent().prev().text()); //제목을 클릭하면 해당 글의 글번호(seq)를 띄워줌
@@ -155,7 +151,7 @@ $(document).ready(function(){ /* window.onload=function(){} 의 jquery문 형식
 						var seq = $(this).parent().prev().text();
 						location.href = '/omakaseProject/board/notice/noticeView?seq=' + seq + "&pg=" + $('#pg').val();
 						}
-				});
+				}); */
 			
 		},
 		error: function(err) {

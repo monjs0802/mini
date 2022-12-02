@@ -1,6 +1,7 @@
 package com.board.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,9 +35,9 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 	
 	@Override
-	public void getNoticeUpdate(int notSeq) {
+	public void getNoticeUpdate(NoticeDTO noticeDTO) {
 		//DB
-		noticeDAO.getNoticeUpdate(notSeq);
+		noticeDAO.getNoticeUpdate(noticeDTO);
 	}
 
 	@Override

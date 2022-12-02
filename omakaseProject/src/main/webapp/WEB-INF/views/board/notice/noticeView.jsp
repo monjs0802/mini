@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>공지사항 뷰</title>
 </head>
 <body>
 <form>
 	<input type="hidden" id="notSeq" value="${ notSeq }" />
 	<input type="hidden" id="memId" value="${ memId }" />
 	
-	<h2>공지사항</h2>
+	<h2>NOTICE</h2>
 	<table width="900" border="1" cellpadding="5" frame="hsides" rules="rows">
 		
 		<tr>

@@ -20,7 +20,7 @@
  		select * from noticeBoard where notSeq=#{notSeq}
  	</select>
  	
- 	<update id="getNoticeUpdate" parameterType="int">
+ 	<update id="getNoticeUpdate" parameterType="notice">
  		update noticeBoard set notSubject=#{notSubject}, notContent=#{notContent} where notSeq=#{notSeq}
  	</update>
  	

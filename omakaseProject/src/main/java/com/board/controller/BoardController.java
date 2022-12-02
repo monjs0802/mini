@@ -1,15 +1,14 @@
 package com.board.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -22,7 +21,7 @@ public class BoardController {
 	@Autowired
 	private NoticeService noticeService;
 	
-	@GetMapping(value = "/noticeWriteForm")
+	@RequestMapping(value = "/noticeWriteForm")
 	public String noticeWriteForm(Model model) {
 		model.addAttribute("display", "board/notice/noticeWriteForm.jsp");
 		model.addAttribute("nav", "main/boardNav.jsp");
@@ -60,6 +59,7 @@ public class BoardController {
 	@PostMapping(value = "/getNoticeView")
 	@ResponseBody
 	public NoticeDTO getNoticeView(@RequestParam int notSeq) {
+		System.out.println(notSeq);
 		return noticeService.getNoticeView(notSeq);
 	}
 	
@@ -73,8 +73,8 @@ public class BoardController {
 	
 	@PostMapping(value = "/getNoticeUpdate")
 	@ResponseBody
-	public void getNoticeUpdate(@RequestParam int notSeq) {
-		noticeService.getNoticeUpdate(notSeq);
+	public void getNoticeUpdate(@ModelAttribute NoticeDTO noticeDTO) {
+		noticeService.getNoticeUpdate(noticeDTO);
 	}
 	
 	@PostMapping(value = "/noticeDelete")

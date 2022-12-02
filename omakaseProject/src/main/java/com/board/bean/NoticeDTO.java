@@ -1,7 +1,5 @@
 package com.board.bean;
 
-import java.util.Date;
-
 import lombok.Getter;
 import lombok.Setter;
 

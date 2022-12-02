@@ -1,6 +1,7 @@
 package com.board.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +28,16 @@ public class NoticeDAOMyBatis implements NoticeDAO {
 
 	@Override
 	public NoticeDTO getNoticeView(int notSeq) {
+		System.out.println(notSeq);
 		return sqlSession.selectOne("noticeSQL.getNoticeView", notSeq);
 	}
 	
 	@Override
-	public void getNoticeUpdate(int notSeq) {
-		sqlSession.update("noticeSQL.getNoticeUpdate", notSeq);
+	public void getNoticeUpdate(NoticeDTO noticeDTO) {
+		System.out.println(noticeDTO.getNotSubject());
+		System.out.println(noticeDTO.getNotContent());
+		System.out.println(noticeDTO.getNotSeq());
+		sqlSession.update("noticeSQL.getNoticeUpdate", noticeDTO);
 	}
 
 	@Override
