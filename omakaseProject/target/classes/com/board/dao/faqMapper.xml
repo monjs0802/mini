@@ -22,7 +22,7 @@
  	</insert>
  	
  	 <select id="getFaqList" resultType="faq">
- 		select * from faqboard
+ 		select * from faqBoard order by faqSeq
  	</select>
  	
  	<select id="getFaqseq" parameterType="java.lang.Integer" resultType="faq">
@@ -47,4 +47,6 @@
  	<select id="getTotal" resultType="int">
  		select count(*) from faqBoard
  	</select>
+ 	
+ 	
 </mapper>

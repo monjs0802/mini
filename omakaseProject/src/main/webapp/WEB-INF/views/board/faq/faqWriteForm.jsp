@@ -1,136 +1,100 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>FAQ작성</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
-  <style type="text/css">
-  
-  </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+#faqWriteBtn:hover { 
+	background: #ff7f50; text-decoration: underline; 
+	marjin-left: 50px;
+	}
+
+</style>
 </head>
 <body>
 <div class="container">
-	<h2>FAQ</h2>
-	<input type="hidden" id="faqSeq" value="${param.faqSeq}" > 
-	<input type="hidden" id="memId" value="${memId }" > 
+	<h2>FAQ 작성</h2>
+	<br>
 	  
-	<form name="faqViewForm" id="faqViewForm">
-	
+	<form name="faqWriteForm" id="faqWriteForm">	
+		    
 		<div class="form-group">
-			<label for="subject">제목 :</label>
-			<!-- <input type="text" class="form-control"  name="faqSubject" id="faqSubject"> -->
-			<textarea class="form-control" rows="1"  name="faqSubject" id="faqSubject" readonly ></textarea>
+			<label for="faqSubject">제목 :</label>
+		<!-- 	<input type="text" class="form-control"  name="faqSubject" id="faqSubject"> -->
+			<textarea class="form-control" rows="1"  name="faqSubject" id="faqSubject" ></textarea>
 			<div id="faqSubjectDiv"></div>
 		</div>
-	
+		<br>
+		
 		<div class="form-group">
-			<label for="type">문의유형 :</label>
-			<textarea class="form-control" rows="1"  name="faqQuestionType" id="faqQuestionType" readonly ></textarea>
-
+			<label for="faqType">문의유형 :</label>
+			<div> 
+				<label><input type="radio" name="faqQuestionType" id="faqQuestionType" checked value="예약관련 문의"> 예약관련 문의</label>
+				<label><input type="radio" name="faqQuestionType" id="faqQuestionType" value="결제 문의"> 결제 문의</label>
+				<label><input type="radio" name="faqQuestionType" id="faqQuestionType" value="업무시간 관련문의"> 업무시간 관련문의</label>
+			</div>
 		</div>
-	
-	
+		
+		
 		<div class="form-group">
-			<label for="content">내용:</label>
-			<textarea class="form-control" rows="10"  name="faqContent" id="faqContent" readonly ></textarea>
+			<label for="faqcontent">내용:</label>
+			<textarea class="form-control" rows="10"  name="faqContent" id="faqContent" ></textarea>
 			<div id="faqContentDiv"></div>  
 		</div>
-	
-	
+		<br>
 	    
 		<div class="form-group">        
-			<div class="col-sm-offset-2 col-sm-10">
-				<c:if test="${memId != 'admin'}">
-					<button type="button" id="faqListBtn">목록으로</button>
-				</c:if>
-				
-				<c:if test="${memId == 'admin'}">
-					<button type="button" id="faqListBtn">목록으로</button>
-					<button type="button" id="faqUpdateBtn">수정하기</button>
-					<button type="button" id="faqDeleteBtn">삭제하기</button>
-				</c:if>
-			</div>
+			<!-- <div class="col-sm-offset-2 col-sm-10"> -->
+				<button type="button" id="faqWriteBtn">작성하기</button>
+			<!-- </div> -->
 		</div>
 	    
 	</form>
 </div>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-
-	//alert( $('#faqseq').val());
-	$.ajax({
-		url: '/omakaseProject/board/faq/getFaqseq',
-		type: 'post',
-		data: 'faqSeq=' + $('#faqSeq').val(),
-		dataType: 'json',
-		success: function(data){
-			//alert(data.faqSubject);
-
-			$('#faqSubject').text(data.faqSubject);
-			$('#faqQuestionType').text(data.faqQuestionType);
-			$('#faqContent').text(data.faqContent);		
-			
-			
-		},
-		error: function(err){
-			console.log(err);
-		}
-		
-	});  //$.ajax 
 	
-});
-
-
-
-//목록으로
-$('#faqListBtn').click(function(){
-	location.href='/omakaseProject/board/faq/faqList';
-});
-
-//글수정
-$('#faqUpdateBtn').click(function(faqSeq){
-	var faqSeq = 'faqSeq='+$('#faqSeq').val(); 
-	location.href='/omakaseProject/board/faq/faqUpdateForm?'+faqSeq;
-});
-
-//글삭제
-$('#faqDeleteBtn').click(function(){
-	if(confirm("정말로 삭제하시겠습니까?")) {
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
+<script type="text/javascript">
+//글작성
+$('#faqWriteBtn').click(function(){
+	
+	$('#faqSubjectDiv').empty();
+	$('#faqContentDiv').empty();
+	
+	
+	if($('#faqSubject').val() == ''){
+		$('#faqSubjectDiv').text('제목을 입력하세요');
+		$('#faqSubject').focus();
 		
-		$.ajax({
-			url: '/omakaseProject/board/faq/faqDelete',
+	} else if ($('#faqContent').val() == ''){
+		$('#faqContentDiv').text('내용을 입력하세요');
+		$('#faqContent').focus();
+		
+	} else {
+		
+ 		$.ajax({
+			url: '/omakaseProject/board/faq/faqWrite',
 			type: 'post',
-			data: 'faqSeq='+$('#faqSeq').val(), 
-			success: function(){
-				alert("글 삭제 완료");
-				location.href='/omakaseProject/board/faq/faqList';
+			data: $('#faqWriteForm').serialize(),
+			success: function() {
+				alert("FAQ 작성이 완료 되었습니다.");
+				location.href = "/omakaseProject/board/faq/faqList";
 			},
 			error: function(err){
-				console.log(err)
+				console.log(err);
 			}
-			
-		});//$.ajax
+		}); //$.ajax
+		 
 	}
 });
-
-
-
-
-
-
 </script>
-
-
 
 </body>
 </html>

@@ -42,7 +42,7 @@
               <a href="/omakaseProject/board/notice/noticeList?pg=1" class="nav-link">NOTICE BOARD</a>
             </li>
             <li>
-              <a href="/omakaseProject/member/memberInfo" class="nav-link">MY PAGE</a>
+              <a href="/omakaseProject/member/loginForm" class="nav-link">MY PAGE</a>
             </li>
             <li>
               <a href="/omakaseProject/admin/adminRes" class="nav-link">ADMIN BOARD</a>

@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-ul{
+ul .month_sale{
 	visibility: hidden;
 }
 </style>
@@ -76,9 +76,9 @@ $(function(){
 	var year = date.getFullYear();
 	$('.year').val(year);
 		
-	for(var i=0; i<12; i++){
-		calcMonthSale(i);
-	}
+// 	for(var i=0; i<12; i++){
+// 		calcMonthSale(i);
+// 	}
 	
 });
 
@@ -156,29 +156,29 @@ var myChart = new Chart(context, {
     }
 });
 
-function calcMonthSale(i) {
-	var month;
-	if(i<10){
-		month = '0'+(i+1);
-	}else {
-		month = (i+1);
-	}
-	$.ajax({
-		url: '/omakaseProject/admin/getSales',
-		type: 'post',
-		data: 'resDate=' + $('.year').val() + month,
-		success: function(data){			
-			$.each(data, function(index, items){				
-				$('ul.month_sale li:eq('+i+') > .menuASale').text($('ul.month_sale li:eq('+i+') > .menuASale').text()*1+items.resMenuA);
-				$('ul.month_sale li:eq('+i+') > .menuBSale').text($('ul.month_sale li:eq('+i+') > .menuBSale').text()*1+items.resMenuB);
-			});
+// function calcMonthSale(i) {
+// 	var month;
+// 	if(i<10){
+// 		month = '0'+(i+1);
+// 	}else {
+// 		month = (i+1);
+// 	}
+// 	$.ajax({
+// 		url: '/omakaseProject/admin/getSales',
+// 		type: 'post',
+// 		data: 'resDate=' + $('.year').val() + month,
+// 		success: function(data){			
+// 			$.each(data, function(index, items){				
+// 				$('ul.month_sale li:eq('+i+') > .menuASale').text($('ul.month_sale li:eq('+i+') > .menuASale').text()*1+items.resMenuA);
+// 				$('ul.month_sale li:eq('+i+') > .menuBSale').text($('ul.month_sale li:eq('+i+') > .menuBSale').text()*1+items.resMenuB);
+// 			});
 					
-		},
-		error: function(err){
-			console.log(err);
-		}
-	});
-}
+// 		},
+// 		error: function(err){
+// 			console.log(err);
+// 		}
+// 	});
+// }
 </script>
 </body>
 </html>

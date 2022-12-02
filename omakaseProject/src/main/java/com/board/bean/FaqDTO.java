@@ -1,6 +1,5 @@
 package com.board.bean;
 
-import java.util.Date;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,8 +8,8 @@ import lombok.Setter;
 @Setter
 public class FaqDTO {
 	private int faqSeq;
-	private String faqCategory;
+	private String faqQuestionType;
 	private String faqSubject;
 	private String faqContent;
-	private Date faqLogtime;
+	private String faqLogtime;
 }

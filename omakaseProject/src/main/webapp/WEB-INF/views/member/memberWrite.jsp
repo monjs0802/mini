@@ -7,27 +7,25 @@
 <title>Insert title here</title>
 <style type="text/css">
 
+#wrap {
+	background-color: rgba(255, 247, 240, 0.7);
+	border-radius: 5px;
+}
 
-div#container {
-	margin-top: -10px;
-	margin-left: 50px;
-	width: 90%;
-	padding: 30px 0;
+#writeForm {
+	position: relative;
+	top: 100px;
+	left: 50px;
 }
 
 .contents_header {
-	margin-top: -20px;
+	width: 100px;
+	height: 100px;
+	margin-right: 30px;
 }
 
 .contents_body {
-	margin-left: 50px;
-}
 
-.contents_body span{
-    display: block;
-    padding: 8px 0 0 0;   
-    width: 130px;
-    margin-right: 0;
 }
 
 #table {
@@ -36,79 +34,87 @@ div#container {
 }
 
 
-#updateBtn ,#resetBtn {
-    top:50%;
-    background-color:#fcad68;
-    color: #fff;
-    border:none; 
-    border-radius:10px;   /* 테두리둥글게 */
-    padding: 7px;   /* 버튼의 위, 아래, 오른쪽, 왼쪽에 padding */
-    float: left;
-}
-
-#updateBtn:hover ,#resetBtn:hover{
-	text-decoration: underline;
-	color: grey;
-}
-
-
 </style>
 </head>
 <body>
 
-
-<div id="container">
-
-	<div class="contents_header">
-	<h3>회원가입</h3>
-	</div>
-		
-	<div class="contents_body">
-
-	<form id="writeTable">
-		<div id="table">
-			<span>이름</span>
-			<input type="text" id="name" name="name">
-			<div id="nameDiv"></div>
-			
-			<span>아이디</span>
-			<input type="text" id="id" name="id"> 
-			
-			<span>비밀번호</span>
-			<input type="password" id="pwd" name="pwd">
-			<div id="pwdDiv"></div>
-			
-			<span>비밀번호 재확인</span>
-			<input type="password" id="repwd">
-			<div id="repwdDiv"></div>
-		</div>
-		
-		<div id="table">
-			<span>이메일</span>
-			<input type="email" id="email" name="email">
-
-			<span>전화번호</span>
-			<input type="tel" id="tel" name="tel">
-
-			<span>생년원일</span>
-			<input type="text" id="birth" name="birth">
-			
-			<span>마케팅 수신동의</span>
-			<input type="checkbox" id="emailMarketing">이메일
-			<input type="checkbox" id="telMarketing">문자 메시지
-		</div>
-
-		<span>
-			<input type="button" id="writeBtn" value="저장하기">
-			<input type="button" id="resetBtn" value="다시작성">
-		</span>
-	</form>
-
-
+<div id="wrap">
+	<div id="writeForm" class="d-block justify-content-center p-3">
 	
-	</div>
-</div>  
-
+		<div class="contents_header">
+			<h3>회원가입</h3>
+		</div>
+			
+		<div class="contents_body">
+	
+			<form id="writeTable" class="table-primary">
+				<div id="table" style="width:250px; height:50px; margin: auto;">
+					<div class="form-floating">
+					  <input type="text" class="form-control" name="name" id="name" placeholder="이름">
+					  <label for="name">이름</label>
+					</div>
+					<div id="nameDiv"></div>
+					
+					<div class="form-floating">
+					  <input type="text" class="form-control" name="id" id="id" placeholder="아이디">
+					  <label for="id">아이디</label>
+					</div>
+					<div id="idDiv"></div>
+					
+					<div class="form-floating">
+					  <input type="password" class="form-control" name="pwd" id="pwd" placeholder="비밀번호">
+					  <label for="pwd">비밀번호</label>
+					</div>
+					<div id="pwdDiv"></div>
+					
+					<div class="form-floating">
+					  <input type="password" class="form-control" name="repwd" id="repwd" placeholder="비밀번호 확인">
+					  <label for="repwd">비밀번호 확인</label>
+					</div>
+					<div id="repwdDiv"></div>
+				</div>
+				
+				<div id="table" style="width:250px;">
+				
+					<div class="form-floating">
+					  <input type="email" class="form-control" name="email" id="email" placeholder="이메일">
+					  <label for="repwd">이메일</label>
+					</div>
+					
+					<div class="form-floating">
+					  <input type="tel" class="form-control" name="tel" id="tel" placeholder="전화번호">
+					  <label for="repwd">전화번호</label>
+					</div>
+					
+					<div class="form-floating">
+					  <input type="text" class="form-control" name="birth" id="birth" placeholder="생년월일">
+					  <label for="birth">생년월일</label>
+					</div>
+					
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="이메일" id="checkEmail">
+					  <label class="form-check-label" for="flexCheckDefault">
+					    이메일
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="문자메세지" id="checkSms">
+					  <label class="form-check-label" for="flexCheckDefault">
+					    문자메세지
+					  </label>
+					</div>
+		
+		
+					<div class="btn-group" role="group" aria-label="Basic outlined example">
+					  <button type="button" id="writeBtn" class="btn btn-outline-success">회원가입</button>
+					  <button type="button"	id="resetBtn" class="btn btn-outline-secondary">다시작성</button>
+					</div>
+				</div>
+			</form>
+		</div> <!-- contents body -->
+	</div> <!-- writeForm -->
+</div> <!-- wrap -->
+ 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 //회원정보 업데이트
@@ -145,7 +151,7 @@ $('#writeBtn').click(function(){
 			success: function(){
 				//alert( $('#writeTable').serialize());
 				alert('회원가입이 완료되었습니다.');
-				location.href = "../memberInfo";
+				location.href = "../index";
 			},
 			error: function(err){
 				console.log(err);

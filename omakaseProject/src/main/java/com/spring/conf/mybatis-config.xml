@@ -8,6 +8,5 @@
 		<typeAlias type="com.member.bean.UserDTO" alias="user"/>
 		<typeAlias type="com.board.bean.NoticeDTO" alias="notice"/>
 		<typeAlias type="com.board.bean.FaqDTO" alias="faq"/>
-		<typeAlias type="com.board.bean.CustomerDTO" alias="customer"/>
 	</typeAliases>
 </configuration>

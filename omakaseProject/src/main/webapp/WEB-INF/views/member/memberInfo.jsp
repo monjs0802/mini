@@ -116,7 +116,7 @@ $(function(){
 						 				 .append( $('<th/>').html('예약수정'))
 						 				 .append( $('<th/>').append($('<span>').append($('<button id="change'+i+'" onclick="resUpdate(\''+resNum+'\')">' ).html('예약변경')) )
 						 									.append($('<span>').append($('<button id="cancel'+i+'" onclick="resCancel(\''+resNum+'\')">' ).html('예약취소')) ) ))
-						 		   .append( $('<hr>'));		   
+						 		   .append( $('<br>'));		   
 					}//for	
 	 			} 
 

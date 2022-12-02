@@ -17,10 +17,21 @@
 .subjectA:visited { color: black; text-decoration: none; }
 .subjectA:hover { color: green; text-decoration: underline; }
 .subjectA:active { color: black; text-decoration: none; }
-.wbtn:hover { background: #ff7f50; text-decoration: underline; }
-.table {background: whitegray; }
-</style>
+.wbtn:hover { 
+	background: #ff7f50; text-decoration: underline; 
+	margin-left: 50px;
+	}
 
+.table {
+	background: whitegray;
+	margin-left:auto;
+	margin-right:auto;
+	width: 800px;
+	text-align: center;
+ }
+ 
+ 
+</style>
 </head>
 <body>
 		    
@@ -52,15 +63,16 @@
 			
 			
 			<!-- 관리자일 경우에만 클릭가능 -->
-			<c:if test="${memId != 'admin'}">
-				<button type="hidden" onclick="location.href='/omakaseProject/board/faq/faqWriteForm'" class="wbtn">Write</button>
-			</c:if>
+			
 				
 			<c:if test="${memId == 'admin'}">
 				<button type="button" onclick="location.href='/omakaseProject/board/faq/faqWriteForm'" class="wbtn">Write</button>
 			</c:if>
 		 	  
   		</div>
+
+	</div>		
+
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">

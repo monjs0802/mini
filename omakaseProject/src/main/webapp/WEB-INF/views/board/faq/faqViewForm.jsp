@@ -13,7 +13,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
   <style type="text/css">
-  
+#faqListBtn:hover, #faqUpdateBtn:hover,#faqDeleteBtn:hover { 
+	background: #ff7f50; text-decoration: underline; 
+	marjin-left: 50px;
+}
   </style>
 </head>
 <body>
@@ -47,7 +50,6 @@
 	
 	    
 		<div class="form-group">        
-			<div class="col-sm-offset-2 col-sm-10">
 				<c:if test="${memId != 'admin'}">
 					<button type="button" id="faqListBtn">목록으로</button>
 				</c:if>
@@ -57,7 +59,7 @@
 					<button type="button" id="faqUpdateBtn">수정하기</button>
 					<button type="button" id="faqDeleteBtn">삭제하기</button>
 				</c:if>
-			</div>
+				
 		</div>
 	    
 	</form>

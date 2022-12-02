@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 <style type="text/css">
 
 .ui-widget-header { border: 0px solid #dddddd; background: #fff; } 
@@ -85,13 +85,48 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 
 .inp:focus { outline: none; background-color: #eee;}
     
+.ui-datepicker-calendar .ui-state-active {
+  background: #6eafbf;
+  color: #e0e0e0;
+  text-shadow: 0px 1px 0px #4d7a85;
+  filter: dropshadow(color=#4d7a85, offx=0, offy=1);
+  border: 1px solid #55838f;
+  position: relative;
+  margin: -1px;
+}
+    
 /* container start */
+
+#wrap {
+	background-color: rgba(255, 247, 240, 0.7);
+}
+
+.hr {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  border: 0;
+  height: 3px;
+  margin-bottom: 0px;
+  margin-top: 60px;
+  overflow: visible;
+  text-align: center;
+}
+.hr:after {
+  background: white;
+  content: "Reservation";
+  display: inline-block;
+  font: "BodoniXT" !important;
+  font-size: 20pt;
+  color: black;
+  padding: 0 0.6em;
+  position: relative;
+  top: -0.7em;
+}
 
 #rescontainer{
 	width: 900px;
 	height: 600px;
 	position: relative;
-	left: 100px;
+	left: 80px;
 }
 .content1{
     width: 50%;   
@@ -161,11 +196,14 @@ dt {
 }
 
 /* container end */
-
+ 
 </style>
 </head>
 <body>
 <div id="wrap">
+
+<hr class="hr" />
+
 <div id="rescontainer" class="d-flex justify-content-center p-5">
 	<input type="hidden" class="date">
 	<input type="hidden" class="resNum" value=${param.resNum }>
@@ -357,6 +395,7 @@ dt {
 	</div><!-- 타임테이블 -->
 </div> <!-- container -->
 </div>
+
 
 <!-- 모달 -->
 
