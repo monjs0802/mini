@@ -19,7 +19,7 @@
     </a>
 
     <ul class="nav col-md-3 justify-content-end">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">고객센터</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQ</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-light">개인정보처리방침</a></li>
     </ul>
     

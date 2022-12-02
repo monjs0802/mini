@@ -74,7 +74,7 @@
     <a id="menu" class="nav-link bi bi-calendar-check" href="./res/resExp"> INFORMATION</a>
   </li>
   <li class="nav-item">
-    <a id="menu" class="nav-link bi bi-chat-left-text " href="/omakaseProject/board/notice/noticeList?pg=1"> NOTICE BOARD</a>
+    <a id="menu" class="nav-link bi bi-chat-left-text " href="#mini"> NOTICE BOARD</a>
   </li>
     <c:choose>
   	<c:when test="${sessionScope.memId != null}">
@@ -89,7 +89,7 @@
 	</c:when>
 	<c:otherwise>
 		<li class="nav-item">
-		<a id="menu" class="nav-link bi bi-emoji-smile" href="./member/loginForm"> 로그인</a>
+		<a id="menu" class="nav-link bi bi-emoji-smile" href="./member/loginForm"> LOGIN</a>
 		</li>
 	</c:otherwise>
   </c:choose>
@@ -138,12 +138,13 @@
 <article class="px-2 py-5">
 	<div id="gesipan" class="container px-4 py-5" >
    	 	<h2 class="pb-2 fw-bold">공지사항
-    	<a href="./res/resForm" class="btn btn-outline-danger btn-sm text-right">+</a>
+    	<a href="/omakaseProject/board/notice/noticeList?pg=1" class="btn btn-outline-danger btn-sm text-right">+</a>
    		 </h2>
+   		 
    		<hr>
    	
 	<!-- 공지 게시판 미니 -->
-    <div class="row row-cols-0 row-cols-md-2 align-items-center g-5">
+    <div class="row p-3 row-cols-0 row-cols-md-2 align-items-center">
       <div class="d-flex flex-column align-items-start gap-2">
         <h3 class="fw-bold">공지 게시판</h3>
         <br>
@@ -154,29 +155,14 @@
       </div>
       
       <!-- 자주 묻는 질문 미니 -->
-      <div class="row row-cols-0 row-cols-sm-2 g-1 my-3">
-      <a id="mini" href="http://localhost:8080/omakaseProject/board/noticeBoard" class="d-flex flex-column gap-2">
-        <div class="d-flex flex-column gap-2">
-          <div id="main2icon" class="feature-icon-small m-3 d-inline-flex align-items-center justify-content-center bg-gradient fs-1 rounded-3">
-            <svg class="bi" width="3em" height="3em">
-              <use xlink:href="#collection"></use>
-            </svg>
-          </div>
-          <h4 id="mini" class="fw-semibold p-3 mb-0">자주 묻는 질문</h4>
-          <p id="mini" class="text p-3">궁금하신게 있으신가요? 블라리블라더</p>
-        </div>
-        </a>
-        
-	 	<!-- 고객 센터 미니 -->
-	 	<a id="mini" href="http://localhost:8080/omakaseProject/board/noticeBoard" class="d-flex flex-column gap-2">
-        <div class="d-flex flex-column gap-2">        
-          <div id="main2icon" class="feature-icon-small m-3 d-inline-flex align-items-center justify-content-center bg-gradient fs-1 rounded-3">
-            <svg class="bi" width="3em" height="3em">
-             <use xlink:href="#gear-fill"></use>
-            </svg>
-          </div>
-          <h4 class="fw-semibold p-3 mb-0">고객센터</h4>
-          <p class="text p-3">1:1 문의가 필요하신가요? 랄라리랄라</p>
+      <div class="row row-cols-0 row-cols-sm-0 g-1 my-3">
+      
+      <a id="mini" href="/omakaseProject/board/noticeBoard" class="d-flex flex-column">
+        <div class="d-flex flex-column gap-4">
+        	<img src="http://localhost:8080/omakaseProject/resources/img/jaju.jpg" class="m-3 d-inline-flex justify-content-center rounded-3">
+         </div>
+          <h4 id="mini" class="text-center fw-semibold p-2">자주 묻는 질문</h4>
+          <p id="mini" class="text-center">궁금하신게 있으신가요?<br>자주 묻는 질문에 궁금하신 모든게 다 있습니다</p>
         </div>
         </a>
     </div>
@@ -203,7 +189,7 @@
     </a>
 
     <ul class="nav col-md-3 justify-content-end">
-      <li class="nav-item"><a href="http://localhost:8080/omakaseProject/board/noticeBoard" class="nav-link px-2 text-light">고객센터</a></li>
+      <li class="nav-item"><a href="http://localhost:8080/omakaseProject/board/noticeBoard" class="nav-link px-2 text-light">FAQ</a></li>
       <li class="nav-item"><a href="http://localhost:8080/omakaseProject/board/noticeBoard" class="nav-link px-2 text-light" data-bs-toggle="modal" data-bs-target="#pipp">개인정보처리방침</a></li>    
     </ul> 
     

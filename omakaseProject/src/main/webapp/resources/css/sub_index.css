@@ -38,7 +38,7 @@ ul{
 	background: none;
 }
 .l-menu ul li a{
-	color: white;
+	color: lightgrey;
 	font-size: 10px;
 	text-decoration: none;
 }
@@ -57,8 +57,14 @@ ul{
 #index2_menu {
 	background-color: rgba(200, 50, 0, 0.8);
 }
+#menu_nav li a{
 
+	color: khaki;
+}
+#menu_nav li a:hover{
 
+	color: DarkOliveGreen;
+}
 /* nav */
 
 #nav {

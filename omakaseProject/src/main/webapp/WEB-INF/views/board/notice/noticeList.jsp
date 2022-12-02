@@ -1,22 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항</title>
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style type="text/css">
 
-* {
+/* * {
 	margin: 0;
 	color: #666;
-	font: 14px/24px "Open Sans", 
-	"HelveticaNeue-Light", 
-	"Helvetica Neue Light", 
-	"Helvetica Neue", 
-	Helvetica, Arial, 
-	"Lucida Grande", 
-	Sans-Serif;
 }
 
 .header {
@@ -24,7 +18,6 @@
   font-weight: bold;
   color: black;
   text-align: center;
-  /*border-bottom: 0.1px solid black;*/
   padding: 15px;
   text-decoration: none;
 }
@@ -38,7 +31,7 @@
 	width: 900px;
 	margin-top: 10px;
 }
-#currentPaing:hover {
+#currentPaging:hover {
 	border: 1px solid blue;
 	padding: 5px 10px;
 	margin: 2px;
@@ -54,21 +47,22 @@
 a.subjectA:link { color: black; text-decoration: none; }
 a.subjectA:visited { color: black; text-decoration: none; }
 a.subjectA:hover { color: darkgreen; text-decoration: underline; }
-a.subjectA:active { color: black; text-decoration: none; }
-</style>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+a.subjectA:active { color: black; text-decoration: none; } */
 
+</style>
 </head>
+
 <body>
+
 <input type="text" id="memId" value="${ memId }">
 <input type="text" id="pg" value="${ pg }">
     
 <div class="container">
-  <header class="blog-header lh-1 py-3">
+  <div class="blog-header lh-1 py-3">
       <div class="col-12 text-center">
-        <a class="header" href="#">NOTICE</a>
+        <a class="notHeader" href="#">NOTICE</a>
       </div>
-  </header>
+  </div>
 
   <div class="nav-scroller py-1 mb-2" id="category">
     <nav class="nav d-flex justify-content-between">
@@ -126,10 +120,10 @@ $(document).ready(function(){ /* window.onload=function(){} 의 jquery문 형식
 			alert(JSON.stringify(data));
 			//alert(data.list[0].id)
 			
-			$.each(data.list, function(index, items){ // 자바 for(NoticeDTO items : data.list)의 json For문 // jstl 형식은 <c:forEach var="items" items="${data.list}">
+			$.each(data.list, function(index, items){
 				console.log(index, items.notSeq, items.notSubject, items.notHit, items.notLogtime);
 				
-				$('<tr/>').append($('<td/>', { //$(A).append(B).append(C).append(D)~~ 메소드 체인방식
+				$('<tr/>').append($('<td/>', {
 					align: 'center',
 					text: items.notSeq
 				})).append($('<td/>', {

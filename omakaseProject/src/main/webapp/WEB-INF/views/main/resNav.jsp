@@ -7,17 +7,17 @@
 
 <!-- 예약하기 내비 -->
 
-<div class="flex-shrink-0 p-3">
+<div class="flex-shrink-0 p-3 bg-gradient">
     <a href="../res/resForm" class="d-flex align-items-center link-dark pb-3 mb-3 text-decoration-none border-bottom">
-      <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-5 fw-semibold">예약 하기</span>
+      <svg class="bi pe-none me-2" width="13" height="24"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fw-semibold">RESERVATION</span>
     </a>
     
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
       
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-bold text-light collapsed" data-bs-toggle="collapse" data-bs-target="#yeyak" aria-controls="yeyak" aria-expanded="false">
-          예약하기
+          RESERVATION
         </button> 
         
         <div class="collapse show" id="yeyak">
@@ -30,7 +30,7 @@
       
       <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-bold collapsed" data-bs-toggle="collapse" data-bs-target="#board-collapse" aria-expanded="false">
-          게시판
+         NOTICE BOARD
         </button>
         
         <div class="collapse" id="board-collapse">
@@ -44,7 +44,7 @@
       
       <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-bold collapsed" data-bs-toggle="collapse" data-bs-target="#my-collapse" aria-expanded="false">
-          마이페이지
+          MY PAGE
         </button>
         <div class="collapse" id="my-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -59,7 +59,7 @@
       
       <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-bold collapsed" data-bs-toggle="collapse" data-bs-target="#admin-collapse" aria-expanded="false">
-          관리자 페이지
+          ADMIN PAGE
         </button>
         <div class="collapse" id="admin-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
