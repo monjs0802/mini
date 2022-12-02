@@ -100,19 +100,10 @@ $('#faqUpdateBtn').click(function(){
  		$.ajax({
 			url: '/omakaseProject/board/faq/faqUpdate',
 			type: 'post',
-			data: $('#faqUpdateForm').serialize(),
-			/* {
-				'faqSeq' = $('#faqSeq').val(),
-				'faqQuestionType' = $('#faqQuestionType').val(),
-				'faqSubject' = $('#faqSubject').val(),
-				'faqContent' = $('#faqContent').val(),	
-			} 
- 		
-			'faqSeq' = $('#faqSeq').val()
-			+ '&faqQuestionType' = $('#faqQuestionType').val()
-			+ '&faqSubject' = $('#faqSubject').val()
-			+ '&faqContent' = $('#faqContent').val(),
-			*/
+			data: 'faqseq=' + $('#faqSeq').val()
+				+ '&faqQuestionType=' + $('#faqQuestionType').val()
+				+ '&faqSubject=' + $('#faqSubject').val()
+				+ '&faqContent=' + $('#faqContent').val(),
 			success: function() {
 				alert("FAQ 수정이 완료 되었습니다.");
 				location.href = "/omakaseProject/board/faq/faqList";
