@@ -63,8 +63,8 @@
         </button>
         <div class="collapse" id="admin-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="../admin/adminSales" class="link-dark d-inline-flex text-decoration-none rounded">매출 현황</a></li>
-            <li><a href="../admin/adminRes" class="link-dark d-inline-flex text-decoration-none rounded">예약 현황</a></li>
+            <li><a href="../../admin/adminSales" class="link-dark d-inline-flex text-decoration-none rounded">매출 현황</a></li>
+            <li><a href="../../admin/adminRes" class="link-dark d-inline-flex text-decoration-none rounded">예약 현황</a></li>
             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">메뉴 관리</a></li>
           </ul>
         </div>
