@@ -14,14 +14,18 @@
             <ul class="list-unstyled header-util">
             <c:if test="${sessionScope.memId == null}">
                <li class="login"><a href="http://localhost:8080/omakaseProject/member/loginForm">로그인</a></li>
-            </c:if>
-            <c:if test="${sessionScope.memId == null}">
                <li class="join"><a href="http://localhost:8080/omakaseProject/member/memberWrite">회원가입</a></li>
             </c:if>
+             <c:if test="${sessionScope.memId != null}">
+               <li class="login"><a href="http://localhost:8080/omakaseProject/member/loginForm">${sessionScope.memId}님 로그인</a></li>
                <li class="logout"><a href="http://localhost:8080/omakaseProject/logout">로그아웃</a></li>
+            </c:if>
             </ul>
          </div>
 			
+			 
+            
+            
 	<!-- index2 메뉴바 -->		
 			
     <div id="index2_menu" class="px-3 py-2 bg-gradient">
@@ -41,12 +45,25 @@
             <li>
               <a href="/omakaseProject/board/notice/noticeList?pg=1" class="nav-link">NOTICE BOARD</a>
             </li>
-            <li>
-              <a href="/omakaseProject/member/loginForm" class="nav-link">MY PAGE</a>
-            </li>
-            <li>
-              <a href="/omakaseProject/admin/adminRes" class="nav-link">ADMIN BOARD</a>
-            </li>
+            
+      
+            <c:if test="${sessionScope.memId == null}"> <!-- 로그인 안했으면 로그인폼 -->
+	            <li>
+              		<a href="/omakaseProject/member/loginForm" class="nav-link">MY PAGE</a>
+            	</li>            
+            </c:if>
+            <c:if test="${sessionScope.memId != null}"> <!-- 로그인 했으면 memberInfo -->
+	            <li>
+              		<a href="/omakaseProject/member/memberInfo" class="nav-link">MY PAGE</a>
+            	</li>             
+            </c:if>
+            
+
+            <c:if test="${sessionScope.memId == 'admin'}">
+	            <li>
+	              <a href="/omakaseProject/admin/adminRes" class="nav-link">ADMIN BOARD</a>
+	            </li>             
+            </c:if>
           </ul>
         </div>
       </div> <!-- container -->

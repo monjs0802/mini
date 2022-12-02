@@ -8,109 +8,163 @@
 <style type="text/css">
 
 #wrap {
-	background-color: rgba(255, 247, 240, 0.7);
-	border-radius: 5px;
+	
+	position: relative;
+	margin: 0 auto;
+}
+
+#section {
+	position: relative;
 }
 
 #writeForm {
 	position: relative;
-	top: 100px;
-	left: 50px;
+	top: 50px;
+	left: 15px;
 }
 
-.contents_header {
-	width: 100px;
-	height: 100px;
-	margin-right: 30px;
+#writeTable{
+	background-color: rgba(255, 247, 240, 0.7);
+	border-radius: 5px;
+}
+
+.contents_header{
+	margin: auto auto;
 }
 
 .contents_body {
-
+	width: 700px;
+	height: 600px;
+	margin: auto auto;
 }
-
-#table {
-	 float: left;
-	 right-margin: 20px; 
-}
-
-
 </style>
 </head>
 <body>
 
 <div id="wrap">
-	<div id="writeForm" class="d-block justify-content-center p-3">
+
+	<div id="section">
+	<div id="writeForm" class="d-block justify-content-center">
 	
 		<div class="contents_header">
-			<h3>회원가입</h3>
+			<h3 align="center">회원가입</h3>
 		</div>
 			
 		<div class="contents_body">
-	
 			<form id="writeTable" class="table-primary">
-				<div id="table" style="width:250px; height:50px; margin: auto;">
-					<div class="form-floating">
-					  <input type="text" class="form-control" name="name" id="name" placeholder="이름">
-					  <label for="name">이름</label>
-					</div>
-					<div id="nameDiv"></div>
-					
-					<div class="form-floating">
-					  <input type="text" class="form-control" name="id" id="id" placeholder="아이디">
-					  <label for="id">아이디</label>
-					</div>
-					<div id="idDiv"></div>
-					
-					<div class="form-floating">
-					  <input type="password" class="form-control" name="pwd" id="pwd" placeholder="비밀번호">
-					  <label for="pwd">비밀번호</label>
-					</div>
-					<div id="pwdDiv"></div>
-					
-					<div class="form-floating">
-					  <input type="password" class="form-control" name="repwd" id="repwd" placeholder="비밀번호 확인">
-					  <label for="repwd">비밀번호 확인</label>
-					</div>
-					<div id="repwdDiv"></div>
-				</div>
-				
-				<div id="table" style="width:250px;">
-				
-					<div class="form-floating">
-					  <input type="email" class="form-control" name="email" id="email" placeholder="이메일">
-					  <label for="repwd">이메일</label>
-					</div>
-					
-					<div class="form-floating">
-					  <input type="tel" class="form-control" name="tel" id="tel" placeholder="전화번호">
-					  <label for="repwd">전화번호</label>
-					</div>
-					
-					<div class="form-floating">
-					  <input type="text" class="form-control" name="birth" id="birth" placeholder="생년월일">
-					  <label for="birth">생년월일</label>
-					</div>
-					
-					<div class="form-check">
-					  <input class="form-check-input" type="checkbox" value="이메일" id="checkEmail">
-					  <label class="form-check-label" for="flexCheckDefault">
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th style="width: 100px;" scope="col">#</th>
+				      <th style="width: 150px;" scope="col"></th>
+				      <th style="width: 150px;" scope="col"></th>
+				    </tr>
+				  </thead>
+				  
+				  <tbody>
+				    <tr>
+				      <th scope="row" >이름</th>
+				      <td>
+					      	<div class="form-floating">
+						  	<input type="text" class="form-control-sm" name="name" id="name" placeholder="이름">
+						 	<label for="name"></label>
+							</div>
+							<div id="nameDiv"></div>
+					  </td>
+				    </tr>
+				    
+				    <tr>
+				      <th scope="row">아이디</th>
+				      <td>
+				      	<div class="form-floating">
+					  	<input type="text" class="form-control-sm" name="id" id="id" placeholder="아이디">
+					  	<label for="id"></label>
+						</div>
+						<div id="idDiv"></div>
+				      </td>
+				    </tr>
+				    
+				    <tr>
+				      <th scope="row">비밀번호</th>
+				      <td>
+				      	<div class="form-floating">
+					 	<input type="password" class="form-control-sm" name="pwd" id="pwd" placeholder="비밀번호">
+					  	<label for="pwd"></label>
+						</div>
+						<div id="pwdDiv"></div>
+				      </td>
+				      <td>
+				      	<div class="form-floating">
+					  	<input type="password" class="form-control-sm" name="repwd" id="repwd" placeholder="비밀번호 확인">
+					  	<label for="repwd"></label>
+						</div>
+						<div id="repwdDiv"></div>
+				      </td>
+				    </tr>
+				    
+				  	<tr>
+				      <th scope="row">이메일</th>
+				      <td>
+						<div class="form-floating">
+						<input type="email" class="form-control-sm" name="email" id="email" placeholder="이메일">
+					  	<label for="repwd"></label>
+						</div>
+				      </td>
+				    </tr>
+				    
+				    <tr>
+				   	 <th scope="row">전화번호</th>
+				   	 <td>
+				  		<div class="form-floating">
+					  	<input type="tel" class="form-control-sm" name="tel" id="tel" placeholder="전화번호">
+					  	<label for="repwd"></label>
+						</div>
+					 </td>	
+				    </tr>
+				    
+				    <tr>
+				   	 <th scope="row">생년월일</th>
+				   	 <td>
+				  		<div class="form-floating">
+					  	<input type="text" class="form-control-sm" name="birth" id="birth" placeholder="생년월일">
+					 	<label for="birth"></label>
+						</div>
+					 </td>	
+				    </tr>
+				    
+				    <tr>
+				   	 <th scope="row">마케팅 수신동의</th>
+				   	 <td>
+				  		<div class="form-check">
+					  	<input class="form-check-input" type="checkbox" value="이메일" id="checkEmail">
+					  	<label class="form-check-label" for="flexCheckDefault">
 					    이메일
-					  </label>
-					</div>
-					<div class="form-check">
-					  <input class="form-check-input" type="checkbox" value="문자메세지" id="checkSms">
-					  <label class="form-check-label" for="flexCheckDefault">
+					  	</label>
+					  	</div>
+					 </td>
+					 <td> 	
+					  	<div class="form-check">
+					  	<input class="form-check-input" type="checkbox" value="문자메세지" id="checkSms">
+					  	<label class="form-check-label" for="flexCheckDefault">
 					    문자메세지
-					  </label>
-					</div>
-		
-		
+					 	</label>
+					 	</div>
+						
+					 </td>
+				    </tr>
+				    
+				    <tr>
+				    <td colspan="3" align="center">
 					<div class="btn-group" role="group" aria-label="Basic outlined example">
 					  <button type="button" id="writeBtn" class="btn btn-outline-success">회원가입</button>
 					  <button type="button"	id="resetBtn" class="btn btn-outline-secondary">다시작성</button>
 					</div>
-				</div>
+					</td>
+					</tr>
+				  </tbody>
+				</table>
 			</form>
+			</div>
 		</div> <!-- contents body -->
 	</div> <!-- writeForm -->
 </div> <!-- wrap -->
@@ -121,6 +175,7 @@
 $('#writeBtn').click(function(){
 	//alert("okok");
 	$('#nameDiv').empty();
+	$('#idDiv').empty();
 	$('#pwdDiv').empty();
 	$('#repwdDiv').empty();
 
@@ -130,7 +185,13 @@ $('#writeBtn').click(function(){
 		$('#nameDiv').css('font-size','8px');
 		$('#name').focus();
 		
+	else if( $('#id').val() ==''){
+		$('#idDiv').text('아이디를 입력하세요');
+		$('#idDiv').css('color','orange');
+		$('#idDiv').css('font-size','8px');
+		$('#id').focus();
 		
+	}	
 	}else if( $('#pwd').val() ==''){
 		$('#pwdDiv').text('비밀번호를 입력하세요');
 		$('#pwdDiv').css('color','orange');

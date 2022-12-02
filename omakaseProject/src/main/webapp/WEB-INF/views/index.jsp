@@ -150,7 +150,7 @@
       <!-- 자주 묻는 질문 미니 -->
       <div class="row row-cols-0 row-cols-sm-0 g-1 my-3">
       
-      <a id="mini" href="/omakaseProject/board/noticeBoard" class="d-flex flex-column">
+       <a id="mini" href="/omakaseProject/board/faq/faqList" class="d-flex flex-column">
         <div class="d-flex flex-column gap-4">
         	<img src="http://localhost:8080/omakaseProject/resources/img/jaju.jpg" class="m-3 d-inline-flex justify-content-center rounded-3">
          </div>
@@ -212,7 +212,6 @@
 				회사의 개인정보 처리방침은 정부의 법률 및 지침 변경이나 회사의 내부 방침 변경 등으로 인하여 수시로 변경될 수 있고, 이에 따른 개인정보 처리방침의 지속적인 개선을 위하여 필요한 절차를 정하고 있습니다. 그리고 개인정보 처리방침을 개정하는 경우나 개인정보 처리방침 변경될 경우 쇼핑몰의 첫페이지의 개인정보처리방침을 통해 고지하고 있습니다. 이용자들께서는 사이트 방문 시 수시로 확인하시기 바랍니다.<br>
 				<br>
 				한우마카세(han"U"omakase) 의 개인정보 처리방침은 다음과 같은 내용을 담고 있습니다.<br><br><br>
-				
 				<div style="font-color:black;">
 				1. 개인정보의 수집목적 및 이용목적<br>
 				2. 수집하는 개인정보 항목 및 수집방법<br>
