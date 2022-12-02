@@ -78,7 +78,7 @@
   </li>
    <c:if test="${sessionScope.memId != null}">
 	  	<li class="nav-item">
-			<a id="menu" class="nav-link bi bi-emoji-smile" href="./memberInfo"> MYPAGE</a>
+			<a id="menu" class="nav-link bi bi-emoji-smile" href="./member/memberInfo"> MYPAGE</a>
 		</li>
 	</c:if>
 	<c:if test="${sessionScope.memId == null}">

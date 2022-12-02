@@ -2,15 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-
-/* #container {
+ #container { 
 	margin-left: -10px;
 	width: 90%;
 	padding: 30px 0;
@@ -18,8 +16,7 @@
 .contents_header {
 	margin-top: -20px;
 }
-*/
-/* 
+
 .table tr th:first-child {
     background-color: #fb7d10;
     border-color: #8F1D1D;
@@ -28,14 +25,15 @@
 }
 
 .table {
-	margin: 20px; 
+	margin: auto; 
 	font-size: .9em; 
 	font-color: #000000;    
-	width: 600px;
+	width: 500px;
 	border-color: black;
    	border-collapse: collapse;   
- 	border-radius: 5px;  /* 테두리둥글게 */
+ 	
  	overflow: hidden;
+ 	text-align: center;
 }
 
 button {
@@ -46,7 +44,7 @@ button {
     border-radius:10px;   /* 테두리둥글게 */
     padding: 5px;   /* 버튼의 위, 아래, 오른쪽, 왼쪽에 padding */
 
-} */
+} 
 </style>
 </head>
 <body>
@@ -55,37 +53,16 @@ button {
 
 	<div class="contents_header">
 	<h3> <strong>${memId}</strong> 님의 예약정보</h3>
+	<br>
 	<input type="hidden" id="memId" value="${memId }" > 
-	<input type="hidden" id="memPwd" value="${memDTO.name}" >
+	
 	
 	</div>
 	
 	<div class="contents_body">
 	<form class="resTable">
 		<table class="table" id="table">
-<%-- 			 <tr>
-				<th>예약 번호 </th>
-				<th id="resNum"></th>
-			</tr>
-			<tr>
-				<th>예약일</th>
-				<th> data.resDate </th>
-			</tr>
-			<tr>
-				<th>예약시간</th>
-				<th>${resDTO.resTime }</th>
-			</tr>
-			<tr>
-				<th>인원</th>	
-				<th>총 ${resDTO.resAdult }+${resDTO.resKid } 명   (${resDTO.resAdult }명, ${resDTO.resKid }명)</th>
-			</tr> 
-			<tr> 
-				<th>예약변경</th>
-				<th>
-				<input class="button" type="button" value="예약변경">
-				<input class="button" type="button" value="예약취소">
-				</th>  
-			</tr>   --%>
+
 		</table>
 		</form>
 		<div class="result" id="result"></div>
@@ -131,7 +108,7 @@ $(function(){
 						 				.append( $('<th/>').html(resDate))) 
 						 		   .append( $('<tr/>')
 						 				 .append( $('<th/>').html('예약시간'))
-						 				 .append( $('<th/>').html(resTime))) 
+						 				 .append( $('<th/>').html(resTime +'시'))) 
 						 		   .append( $('<tr/>')
 						 				 .append( $('<th/>').html('예약인원'))
 						 				 .append( $('<th/>').html('총'+ (resAdult+resKid) +'명 (성인: ' +resAdult+ '명, 소아: '+resKid+'명)'))) 

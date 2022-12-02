@@ -59,7 +59,7 @@ div#container {
 				<div id="nameDiv"></div>
 				
 				<span>아이디</span>
-				<input type="text" id="id" name="id" value="ho" readonly> 
+				<input type="text" id="id" name="id" readonly> 
 				
 				<span>비밀번호</span>
 				<input type="text"  readonly style="background-color: gray;">

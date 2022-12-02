@@ -4,7 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>FAQ 수정</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -71,6 +77,7 @@ $(document).ready(function(){
 	});  //$.ajax 
 	
 });
+
 //글작성
 $('#faqUpdateBtn').click(function(){
 	alert($('#faqUpdateForm').serialize());
@@ -92,19 +99,11 @@ $('#faqUpdateBtn').click(function(){
  		$.ajax({
 			url: '/omakaseProject/board/faq/faqUpdate',
 			type: 'post',
-			data: $('#faqUpdateForm').serialize(),
-			/* {
-				'faqSeq' = $('#faqSeq').val(),
-				'faqQuestionType' = $('#faqQuestionType').val(),
-				'faqSubject' = $('#faqSubject').val(),
-				'faqContent' = $('#faqContent').val(),	
-			} 
- 		
-			'faqSeq' = $('#faqSeq').val()
-			+ '&faqQuestionType' = $('#faqQuestionType').val()
-			+ '&faqSubject' = $('#faqSubject').val()
-			+ '&faqContent' = $('#faqContent').val(),
-			*/
+			data: 'faqseq=' + $('#faqSeq').val()
+				+ '&faqQuestionType=' + $('#faqQuestionType').val()
+				+ '&faqSubject=' + $('#faqSubject').val()
+				+ '&faqContent=' + $('#faqContent').val(),
+
 			success: function() {
 				alert("FAQ 수정이 완료 되었습니다.");
 				location.href = "/omakaseProject/board/faq/faqList";

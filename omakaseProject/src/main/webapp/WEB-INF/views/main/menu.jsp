@@ -9,14 +9,18 @@
 
 <div id="header" class="header"> 
 
-      		<!-- l-menu -->
-			<div class='l-menu'>
-				<ul class="list-unstyled header-util">
-					<li class="login"><a href="http://localhost:8080/omakaseProject/member/loginForm">로그인</a></li>
-					<li class="join"><a href="http://localhost:8080/omakaseProject/member/memberWrite">회원가입</a></li>
-					<li class="logout"><a href="http://localhost:8080/omakaseProject/logout">로그아웃</a></li>
-				</ul>
-			</div>
+            <!-- l-menu -->
+         <div class='l-menu'>
+            <ul class="list-unstyled header-util">
+            <c:if test="${sessionScope.memId == null}">
+               <li class="login"><a href="http://localhost:8080/omakaseProject/member/loginForm">로그인</a></li>
+            </c:if>
+            <c:if test="${sessionScope.memId == null}">
+               <li class="join"><a href="http://localhost:8080/omakaseProject/member/memberWrite">회원가입</a></li>
+            </c:if>
+               <li class="logout"><a href="http://localhost:8080/omakaseProject/logout">로그아웃</a></li>
+            </ul>
+         </div>
 			
 	<!-- index2 메뉴바 -->		
 			
