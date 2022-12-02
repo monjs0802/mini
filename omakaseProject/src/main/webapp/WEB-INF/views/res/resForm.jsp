@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 <style type="text/css">
 
 .ui-widget-header { border: 0px solid #dddddd; background: #fff; } 
@@ -84,6 +84,16 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 .inp { padding: 10px 10px; background-color: #f1f1f1; border-radius: 4px; border: 0px; } 
 
 .inp:focus { outline: none; background-color: #eee;}
+    
+.ui-datepicker-calendar .ui-state-active {
+  background: #6eafbf;
+  color: #e0e0e0;
+  text-shadow: 0px 1px 0px #4d7a85;
+  filter: dropshadow(color=#4d7a85, offx=0, offy=1);
+  border: 1px solid #55838f;
+  position: relative;
+  margin: -1px;
+}
     
 /* container start */
 
@@ -400,7 +410,20 @@ dt {
 <script>
 $(function(){
 	var date = new Date();
-	var today = date.getFullYear() + '' + (date.getMonth()+1) + '' + date.getDate();
+	
+	if(date.getMonth()+1<10) {
+		var Month = '0' + date.getMonth()+1;
+	}else{
+		Month = date.getMonth()+1;
+	}
+	
+	if(date.getDate()<10) {
+		var Day = '0' + date.getDate();
+	}else{
+		Day = date.getDate();
+	}
+	
+	var today = date.getFullYear() + '' + Month + '' + Day;
 	$('.date').val(today);
 	
 	for(var i=0; i<9; i++){
@@ -453,7 +476,7 @@ $(function(){
                     	$('.date').val(date);
                      	for(var i=0; i<9; i++){
                      	$('#rescontainer .content2 li .seat strong:eq(' + i + ')').text(8);
-                     	$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "white", "color": "black"});
+                     	$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "transparent", "color": "black"});
                    }
                    $.ajax({
                      	url: '/omakaseProject/res/getReserve',
