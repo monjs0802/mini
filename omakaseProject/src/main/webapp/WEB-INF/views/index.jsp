@@ -136,15 +136,12 @@
    		 
    		<hr>
    	
-	<!-- 공지 게시판 미니 -->
     <div class="row p-3 row-cols-0 row-cols-md-2 align-items-center">
       <div class="d-flex flex-column align-items-start gap-2">
         <h3 class="fw-bold">공지 게시판</h3>
         <br>
-        <p class="text">게시글 1</p>
-        <p class="text">게시글 2</p>
-        <p class="text">게시글 3</p>
-        <p class="text">게시글 4</p>
+         <div class="noticeBody"> <!-- 이부분 추가 -->
+		 </div>
       </div>
       
       <!-- 자주 묻는 질문 미니 -->
@@ -284,6 +281,37 @@
    
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!--  CDN방식 -->
+<script type="text/javascript">
+$(function(){
+	//db에서 한페이지당 5개의 데이타를 가져와야 한다.
+	$.ajax({
+		url: '/omakaseProject/board/notice/getIndexNotice',
+		dataType: 'json',
+		success: function(data){
+ 			//console.log(JSON.stringify(data));
+			$.each(data, function(index, items){
+				$('<tr/>').append($('<td/>', {
+					
+					}).append($('<a/>', {
+						href: '/omakaseProject/board/notice/noticeView?notSeq=' + items.notSeq,
+						//href: '/omakaseProject/board/notice/noticeView',
+						text: items.notSubject,
+						class: 'subjectA'
+					}))
+				).appendTo($('.noticeBody'));
+				
+				
+				
+			}); //$.each
+			
+		},
+		error: function(err){
+			console.log(err);
+		}
+		
+	});
+});   
+</script> <!-- 제이쿼리 추가 -->
 </body>
 </html>

@@ -82,4 +82,10 @@ public class BoardController {
 		noticeService.noticeDelete(notSeq);
 	}
 	
+	@RequestMapping(value = "/getIndexNotice")
+	@ResponseBody
+	public List<NoticeDTO> getIndexNotice() {		
+		return noticeService.getIndexNotice();
+	} //추가부분
+	
 }

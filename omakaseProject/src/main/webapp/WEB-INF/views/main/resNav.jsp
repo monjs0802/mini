@@ -67,7 +67,6 @@
 	          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 	            <li><a href="http://localhost:8080/omakaseProject/admin/adminSales" class="link-dark d-inline-flex text-decoration-none rounded">매출 현황</a></li>
 	            <li><a href="http://localhost:8080/omakaseProject/admin/adminRes" class="link-dark d-inline-flex text-decoration-none rounded">예약 현황</a></li>
-	            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">메뉴 관리</a></li>
 	          </ul>
 	        </div>
 	      </li>

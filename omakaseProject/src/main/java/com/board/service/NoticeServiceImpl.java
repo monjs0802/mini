@@ -46,4 +46,9 @@ public class NoticeServiceImpl implements NoticeService {
 		noticeDAO.noticeDelete(notSeq);
 	}
 	
+	@Override
+	public List<NoticeDTO> getIndexNotice() {
+		return noticeDAO.getIndexNotice();
+	}
+	
 }

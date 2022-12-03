@@ -470,9 +470,9 @@ $(function(){
 						var num = items.resAdult + items.resKid;
 						var seat = $('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text();
 						$('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text(seat-num);
-						if($('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text() == 0) {
-								$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "transparent;", "color": "white"});
-						}//if
+// 						if($('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text() == 0) {
+// 								$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "transparent;", "color": "white"});
+// 						}//if
 					}//if
 				}//for
 			
@@ -517,9 +517,9 @@ $(function(){
                      							var num = items.resAdult + items.resKid;
                      							var seat = $('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text();
                      							$('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text(seat-num);
-                     							if($('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text() == 0) {
-                     								$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "grey", "color": "white"});
-                     							}//if
+//                      							if($('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text() == 0) {
+//                      								$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "grey", "color": "white"});
+//                      							}//if
                      						}//if
                      					}//for
                      				

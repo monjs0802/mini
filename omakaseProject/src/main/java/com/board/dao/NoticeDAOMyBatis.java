@@ -41,5 +41,10 @@ public class NoticeDAOMyBatis implements NoticeDAO {
 		sqlSession.delete("noticeSQL.noticeDelete", notSeq);
 	}
 	
+	@Override
+	public List<NoticeDTO> getIndexNotice() {
+		return sqlSession.selectList("noticeSQL.getIndexNotice");
+	}
+	
 
 }

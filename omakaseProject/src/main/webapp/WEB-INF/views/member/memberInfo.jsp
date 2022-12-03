@@ -62,6 +62,7 @@ button {
 	<div class="contents_body">
 	<form class="resTable">
 		<table class="table" id="table">
+		<!-- 동적처리 -->
 
 		</table>
 		</form>

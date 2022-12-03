@@ -117,7 +117,7 @@
 		<br>
 		
 		<div>
-			<button type="button" id="faqWriteBtn">FAQ 작성하기</button>
+			<button type="button" class="faqWriteBtn">FAQ 작성하기</button>
 		</div>
 		
 	</div>
@@ -210,7 +210,7 @@ $(function(){
 	   
 	});
 
-$('#faqWriteBtn').click(function(){
+$('.faqWriteBtn').click(function(){
 	location.href='/omakaseProject/board/faq/faqWriteForm';
 })
 

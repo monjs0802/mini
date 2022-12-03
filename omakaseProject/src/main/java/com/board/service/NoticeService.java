@@ -16,4 +16,6 @@ public interface NoticeService {
 	public void getNoticeUpdate(NoticeDTO noticeDTO);
 
 	public void noticeDelete(int notSeq);
+	
+	public List<NoticeDTO> getIndexNotice(); 
 }

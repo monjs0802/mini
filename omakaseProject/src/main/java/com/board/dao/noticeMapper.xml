@@ -28,4 +28,30 @@
  		delete from noticeBoard where notSeq=#{notSeq}
  	</delete>
  	
+ 	 	<select id="getIndexNotice" resultType="notice">
+		<!-- 1번 -->
+		select * from 
+		(select rownum rn, tt.* from 
+		(select * from noticeBoard order by notSeq desc)tt
+		)where rn between 1 and 5 
+		
+		
+		<!-- 2번 비추문장 -->
+<!-- 		select * from 
+		(select rownum rn, tt.* from 
+		(select * from board order by seq desc)tt)
+		where rn  >= #{startNum} rn &lt;= #{endNum}    -->
+		<!--  크기비교연산자  rn>=1 and rn<=5 를 태그로 인식한다. 다른코드를 써야대는데 잘 인식안해서 비추 -->
+		
+		
+		<!-- 3번 -->
+<!-- 		<![CDATA[
+		select * from 
+		(select rownum rn, tt.* from 
+		(select * from board order by seq desc)tt)
+		where rn  >= #{startNum} rn &lt;= #{endNum} 
+		]]>  -->
+ 	</select> <!-- 추가부분 -->
+ 	
+ 	
 </mapper>

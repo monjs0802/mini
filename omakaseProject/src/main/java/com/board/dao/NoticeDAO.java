@@ -17,4 +17,6 @@ public interface NoticeDAO {
 
 	public void noticeDelete(int notSeq);
 	
+	public List<NoticeDTO> getIndexNotice();
+	
 }
