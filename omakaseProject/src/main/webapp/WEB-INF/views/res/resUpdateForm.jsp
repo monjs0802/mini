@@ -10,6 +10,8 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="http://localhost:8080/omakaseProject/resources/css/sub_index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 <style type="text/css">
 
@@ -99,6 +101,7 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 /* container start */
 
 #wrap {
+	margin: 0 0 0 0em;
 	background-color: rgba(255, 247, 240, 0.7);
 }
 
@@ -128,6 +131,7 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 	height: 600px;
 	position: relative;
 	left: 80px;
+	right: 80px;
 }
 .content1{
     width: 50%;   
@@ -205,7 +209,7 @@ dt {
 
 <hr class="hr" />
 
-<div id="rescontainer" class="d-flex justify-content-center p-5" style="width: 700px;">
+<div id="rescontainer" class="d-flex justify-content-center p-5">
 	<input type="hidden" class="date">
 	<input type="hidden" class="resNum" value=${param.resNum }>
 	<c:if test="${not empty memId }">
@@ -460,7 +464,7 @@ $(function(){
 	
 	for(var i=0; i<9; i++){
 		$('#rescontainer .content2 li .seat strong:eq(' + i + ')').text(8);
-		$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "transparent", "color": "black"});	
+		$('#rescontainer .content2 li .time:eq('+ i +')').parents('button').attr({"class": "btn btn-warning"});	
 	}
 	
 	$.ajax({
@@ -475,7 +479,7 @@ $(function(){
 						var seat = $('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text();
 						$('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text(seat-num);
 						if($('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text() == 0) {
-								$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "transparent;", "color": "white"});
+							$('#rescontainer .content2 li .time:eq('+ i +')').parents('button').attr({"class": "btn btn-dark"});
 						}//if
 					}//if
 				}//for
@@ -508,7 +512,7 @@ $(function(){
                     	$('.date').val(date);
                      	for(var i=0; i<9; i++){
                      	$('#rescontainer .content2 li .seat strong:eq(' + i + ')').text(8);
-                     	$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "white", "color": "black"});
+                     	$('#rescontainer .content2 li .time:eq('+ i +')').parents('button').attr({"class": "btn btn-warning"});
                    }
                    $.ajax({
                      	url: '/omakaseProject/res/getReserve',
@@ -522,7 +526,7 @@ $(function(){
                      							var seat = $('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text();
                      							$('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text(seat-num);
                      							if($('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text() == 0) {
-                     								$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "grey", "color": "white"});
+                     								$('#rescontainer .content2 li .time:eq('+ i +')').parents('button').attr({"class": "btn btn-dark"});
                      							}//if
                      						}//if
                      					}//for

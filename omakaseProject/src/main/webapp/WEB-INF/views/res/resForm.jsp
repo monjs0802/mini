@@ -456,7 +456,7 @@ $(function(){
 	
 	for(var i=0; i<9; i++){
 		$('#rescontainer .content2 li .seat strong:eq(' + i + ')').text(8);
-		$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "transparent", "color": "black"});	
+		$('#rescontainer .content2 li .time:eq('+ i +')').parents('button').attr({"class": "btn btn-warning"});	
 	}
 	
 	$.ajax({
@@ -470,9 +470,9 @@ $(function(){
 						var num = items.resAdult + items.resKid;
 						var seat = $('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text();
 						$('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text(seat-num);
-// 						if($('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text() == 0) {
-// 								$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "transparent;", "color": "white"});
-// 						}//if
+						if($('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text() == 0) {
+							$('#rescontainer .content2 li .time:eq('+ i +')').parents('button').attr({"class": "btn btn-dark"});
+						}//if
 					}//if
 				}//for
 			
@@ -504,7 +504,7 @@ $(function(){
                     	$('.date').val(date);
                      	for(var i=0; i<9; i++){
                      	$('#rescontainer .content2 li .seat strong:eq(' + i + ')').text(8);
-                     	$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "transparent", "color": "black"});
+                     	$('#rescontainer .content2 li .time:eq('+ i +')').parents('button').attr({"class": "btn btn-warning"});
                    }
                    $.ajax({
                      	url: '/omakaseProject/res/getReserve',
@@ -517,9 +517,9 @@ $(function(){
                      							var num = items.resAdult + items.resKid;
                      							var seat = $('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text();
                      							$('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text(seat-num);
-//                      							if($('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text() == 0) {
-//                      								$('#rescontainer .content2 li .time:eq('+ i +')').parents('a').css({"background-color": "grey", "color": "white"});
-//                      							}//if
+                     							if($('#rescontainer .content2 li .time:eq('+ i +')').parents('dl').find('.seat strong').text() == 0) {
+                     								$('#rescontainer .content2 li .time:eq('+ i +')').parents('button').attr({"class": "btn btn-dark"});
+                     							}//if
                      						}//if
                      					}//for
                      				

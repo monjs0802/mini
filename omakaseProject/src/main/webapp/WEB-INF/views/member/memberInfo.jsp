@@ -8,13 +8,31 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
- #container { 
-	margin-left: -10px;
-	width: 90%;
-	padding: 30px 0;
+
+#wrap { 
+	position: relative;
+	margin: 0 auto;
+	width: 700px;
+
 }
+
+#section {
+	position: relative;
+}
+
 .contents_header {
-	margin-top: -20px;
+	position:top;
+margin: auto auto;
+}
+
+	
+.contents_body {
+	padding-top: 18px;
+	background-color: rgba(255, 247, 240, 0.7);
+	width: 650px;
+	margin: auto;
+	position: relative;
+
 }
 
 .table tr th:first-child {
@@ -31,7 +49,6 @@
 	width: 500px;
 	border-color: black;
    	border-collapse: collapse;   
- 	
  	overflow: hidden;
  	text-align: center;
 }
@@ -42,33 +59,39 @@ button {
     color: #fff;
     border:none; 
     border-radius:10px;   /* 테두리둥글게 */
-    padding: 5px;   /* 버튼의 위, 아래, 오른쪽, 왼쪽에 padding */
+    padding: 2px;   /* 버튼의 위, 아래, 오른쪽, 왼쪽에 padding */
 
 } 
+
+button:hover {
+	background: #006400; text-decoration: underline;
+	border: 1px solid black; 
+}
 </style>
 </head>
 <body>
 
-<div id="container">
-
-	<div class="contents_header">
-	<h3> <strong>${memId}</strong> 님의 예약정보</h3>
-	<br>
-	<input type="hidden" id="memId" value="${memId }" > 
+<div id="wrap">
+	<div id="section">
 	
+		<div class="contents_header">
+		<br>
+		<h3 align="center"> <strong style="text-decoration: underline;">${memId}</strong> 님의 예약정보</h3>
+		<br>
+		<input type="hidden" id="memId" value="${memId }" > 
+		</div>
+		
+		<div class="contents_body">
+		<form class="resTable">
+			<table class="table" id="table">
+			<!-- 동적처리 -->
 	
-	</div>
-	
-	<div class="contents_body">
-	<form class="resTable">
-		<table class="table" id="table">
-		<!-- 동적처리 -->
-
-		</table>
-		</form>
-		<div class="result" id="result"></div>
-	</div>
-</div>  
+			</table>
+			</form>
+			<div class="result" id="result"></div>
+		</div>
+	</div>  
+</div>
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
