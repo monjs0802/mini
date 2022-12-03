@@ -6,11 +6,6 @@
 <meta charset="UTF-8">
 <title>공지사항 리스트</title>
 <style type="text/css">
-* {
-	margin: 0;
-	color: #666;
-}
-
 .notHeader {
   font-size: 40px;
   font-weight: bold;
@@ -20,16 +15,12 @@
   text-decoration: none;
 }
 
-#category {
-  text-align: center;
-  /* border-bottom: 0.1px solid black; */
-}
-
-#pagingDiv {
+/* #pagingDiv {
 	text-align: center;
 	width: 900px;
 	margin-top: 10px;
 }
+
 #currentPaging:hover {
 	border: 1px solid blue;
 	padding: 5px 10px;
@@ -38,37 +29,35 @@
 	text-decoration: underline;
 	cursor: pointer;
 }
+
 #paging {
 	cursor: pointer;
 	padding: 5px 10px;
 	margin: 2px;
-}
+} */
+
 a.subjectA:link { color: black; text-decoration: none; }
 a.subjectA:visited { color: black; text-decoration: none; }
 a.subjectA:hover { color: darkgreen; text-decoration: underline; }
 a.subjectA:active { color: black; text-decoration: none; }
 </style>
+
 </head>
 
 <body>
 <input type="hidden" id="memId" value="${ memId }">
 <input type="hidden" id="pg" value="${ pg }">
-    
-<div class="container">
+
+
+<div id="wrap">    
+<div class="section">
+  
   <div class="blog-header lh-1 py-3">
       <div class="col-12 text-center">
         <a class="notHeader">NOTICE</a>
       </div>
   </div>
 
-  <div class="nav-scroller py-1 mb-2" id="category">
-    <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="/omakaseProject/board/notice/noticeList?pg=1">NOTICE</a>
-      <a class="p-2 link-secondary" href="/omakaseProject/board/faq/faqList?pg=1">FAQ</a>
-      <a class="p-2 link-secondary" href="/omakaseProject/board/customer/customerList?pg=1">1:1 문의하기</a>
-    </nav>
-  </div>
-</div>
 
 <table class="table" id="noticeListTable">
   <thead>
@@ -82,7 +71,7 @@ a.subjectA:active { color: black; text-decoration: none; }
   <tbody class="noticeBody">
   </tbody>
 </table>
-	
+</div> <!-- section -->
 	<!-- 동적처리 -->
 	<div style="display: inline-block;">
 		<div id="pagingDiv"></div>
@@ -90,6 +79,8 @@ a.subjectA:active { color: black; text-decoration: none; }
 	
 	<button type="button" class="noticeListBtn" onclick="location.href='/omakaseProject/board/notice/noticeWriteForm'">Write</button>
 
+
+</div><!-- wrap -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
 <script type="text/javascript">
 function boardPaging(pg) {

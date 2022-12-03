@@ -54,7 +54,7 @@ $('#noticeDeleteBtn').click(function(){
 		type: 'post',
 		data: 'notSeq=' + $('#notSeq').val(),
 		success: function() {
-			alert("해당하는 공지사항 글이 삭제되었습니뚜앙^^");
+			alert("해당 공지글이 삭제되었어요!");
 			location.href = "/omakaseProject/board/notice/noticeList?pg=1";
 		},
 		error: function(err){

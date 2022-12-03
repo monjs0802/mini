@@ -15,19 +15,19 @@ form[name="noticeWriteForm"] div {
 </head>
 <body>
 	<form name="noticeWriteForm" id="noticeWriteForm">
-	<h2>공지사항 작성</h2>
+	<h2>WRITE</h2>
 		<table border="1" cellpadding="5" cellspacing="0">
 			<tr>
 				<th>제목</th>
 				<td>
-					<input type="text" name="notSubject" id="notSubject" style="width: 200px;" placeholder="제목입력">
+					<input type="text" name="notSubject" id="notSubject" style="width: 200px;" placeholder="Insert Subject">
 					<div id="subjectDiv"></div>
 				</td>
 			</tr>
 			<tr>
 				<th>내용</th>
 				<td>
-					<textarea rows="5" cols="40" name="notContent" id="notContent" style="white-space: pre-wrap;" placeholder="내용입력"></textarea>
+					<textarea rows="5" cols="40" name="notContent" id="notContent" style="white-space: pre-wrap;" placeholder="Insert Content"></textarea>
 					<div id="contentDiv"></div>
 				</td>
 			</tr>
@@ -48,11 +48,11 @@ $('#noticeWriteBtn').click(function(){
 	$('#contentDiv').empty();
 	
 	if($('#notSubject').val() == ''){
-		$('#subjectDiv').text('제목을 입력하세요');
+		$('#subjectDiv').text('먼저, 제목을 입력하세요!');
 		$('#notSubject').focus();
 		
 	} else if ($('#notContent').val() == ''){
-		$('#contentDiv').text('내용을 입력하세요');
+		$('#contentDiv').text('먼저, 내용을 입력하세요!');
 		$('#notContent').focus();
 		
 	} else {
@@ -67,8 +67,8 @@ $('#noticeWriteBtn').click(function(){
 			//	'content': $('#content').val()
 			//},
 			success: function() {
-				alert("공지사항 작성 완료!");
-				location.href = "/omakaseProject/board/notice/noticeList";
+				alert("공지글을 작성 완료했어요!");
+				location.href = "/omakaseProject/board/notice/noticeList?pg=1";
 			},
 			error: function(err){
 				console.log(err);

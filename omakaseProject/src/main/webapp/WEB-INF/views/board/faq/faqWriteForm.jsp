@@ -8,21 +8,41 @@
 
 
 <style type="text/css">
+
+.div_container {
+	margin: auto;
+	width: 700px;
+}
+
+.outline {
+	width: 650px;
+	background-color: rgba(255, 247, 240, 0.7);  
+}
+
+#faqWriteForm {
+	width: 600px;
+	margin: auto;
+
+}
+
+
 #faqWriteBtn:hover { 
-	background: #ff7f50; text-decoration: underline; 
+	background: #cdcdcd; text-decoration: underline; 
 	marjin-left: 50px;
 	}
 
 </style>
 </head>
 <body>
-<div class="container">
-	<h2>FAQ 작성</h2>
+<div class="div_container">
+	<h3 align="center">FAQ 작성</h3>
 	<br>
 	  
+	 <div class="outline">
 	<form name="faqWriteForm" id="faqWriteForm">	
 		    
 		<div class="form-group">
+		<br>
 			<label for="faqSubject">제목 :</label>
 		<!-- 	<input type="text" class="form-control"  name="faqSubject" id="faqSubject"> -->
 			<textarea class="form-control" rows="1"  name="faqSubject" id="faqSubject" ></textarea>
@@ -52,8 +72,10 @@
 				<button type="button" id="faqWriteBtn">작성하기</button>
 			<!-- </div> -->
 		</div>
+		<br>
 	    
 	</form>
+	</div>
 </div>
 
 	

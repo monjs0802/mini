@@ -72,11 +72,11 @@ $('#noticeUpdateBtn').click(function(){
 	$('#contentDiv').empty();
 	
 	if($('#notSubject').val() == ''){
-		$('#subjectDiv').text('제목을 입력하시옹-_-');
+		$('#subjectDiv').text('수정할 제목을 입력하세요!');
 		$('#notSubject').focus();
 		
 	} else if ($('#notContent').val() == ''){
-		$('#contentDiv').text('내용을 입력하시옹-_-');
+		$('#contentDiv').text('수정할 내용을 입력하세요!');
 		$('#notContent').focus();
 	
 	} else {
@@ -86,7 +86,7 @@ $('#noticeUpdateBtn').click(function(){
 			type: 'post',
 			data: $('#noticeUpdateForm').serialize(),
 			success: function() {
-				alert("글이 수정되었습니다리 좋다리 신난다리");
+				alert("해당 공지글이 수정되었어요!");
 				location.href = "/omakaseProject/board/notice/noticeView?notSeq=" + $('#notSeq').val();
 			},
 			error: function(err){

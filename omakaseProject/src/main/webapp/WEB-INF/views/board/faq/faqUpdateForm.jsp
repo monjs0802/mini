@@ -6,51 +6,77 @@
 <meta charset="UTF-8">
 <title>FAQ 수정</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css">
 
+.faq_update_container {
+	margin: auto;
+	width: 700px;
+}
+
+.outline {
+	width: 650px;
+	background-color: rgba(255, 247, 240, 0.7);  
+}
+
+#faqUpdateForm {
+	width: 600px;
+	margin: auto;
+	
+
+}
+
+
+#faqUpdateBtn:hover { 
+	background: #cdcdcd; text-decoration: underline; 
+	marjin-left: 50px;
+	}
+	
+</style>
 </head>
 <body>
-<div class="container">
-	<h2>FAQ 수정</h2>
+<div class="faq_update_container ">
+	<h3 align="center">FAQ 수정</h3>
 	<br>
 	
+	<div class="outline">
 	<form name="faqUpdateForm" id="faqUpdateForm">	
-		<input type="hidden" name="faqSeq" id="faqSeq" value="${param.faqSeq}" > 
-		    
-		<div class="form-group">
-			<label for="faqSubject">제목 :</label>
-			<textarea class="form-control" rows="1"  name="faqSubject" id="faqSubject" ></textarea>
-			<div id="faqSubjectDiv"></div>
-		</div>
 		
-		
-		<div class="form-group">
-			<label for="faqType">문의유형 :</label>
-			<div> 
-				<label><input type="radio" name="faqQuestionType" id="faqQuestionType" checked value="예약관련 문의"> 예약관련 문의</label>
-				<label><input type="radio" name="faqQuestionType" id="faqQuestionType" value="결제 문의"> 결제 문의</label>
-				<label><input type="radio" name="faqQuestionType" id="faqQuestionType" value="업무시간 관련문의"> 업무시간 관련문의</label>
+			<input type="hidden" name="faqSeq" id="faqSeq" value="${param.faqSeq}" > 
+			   <br>
+			<div class="form-group" style="width:640;">
+				<label for="faqSubject">제목 :</label>
+				<textarea class="form-control" rows="1"  name="faqSubject" id="faqSubject" ></textarea>
+				<div id="faqSubjectDiv"></div>
 			</div>
-		</div>
-		
-		
-		<div class="form-group">
-			<label for="faqcontent">내용:</label>
-			<textarea class="form-control" rows="10"  name="faqContent" id="faqContent" ></textarea>
-			<div id="faqContentDiv"></div>  
+			
+			
+			<div class="form-group" style="width:640;">
+				<label for="faqType">문의유형 :</label>
+				<div> 
+					<label><input type="radio" name="faqQuestionType" id="faqQuestionType" checked value="예약관련 문의"> 예약관련 문의</label>
+					<label><input type="radio" name="faqQuestionType" id="faqQuestionType" value="결제 문의"> 결제 문의</label>
+					<label><input type="radio" name="faqQuestionType" id="faqQuestionType" value="업무시간 관련문의"> 업무시간 관련문의</label>
+				</div>
+			</div>
+			
+			
+			<div class="form-group" style="width:640;">
+				<label for="faqcontent">내용:</label>
+				<textarea class="form-control" rows="10"  name="faqContent" id="faqContent" ></textarea>
+				<div id="faqContentDiv"></div>  
 		</div>
 	
-	    
+	    <br>
 		<div class="form-group">        
 			<!-- <div class="col-sm-offset-2 col-sm-10"> -->
 				<button type="button" id="faqUpdateBtn">수정하기</button>
 			<!-- </div> -->
 		</div>
+		<br>
+		
 	    
 	</form>
+	</div>
 </div>
 
 
@@ -80,7 +106,7 @@ $(document).ready(function(){
 
 //글작성
 $('#faqUpdateBtn').click(function(){
-	alert($('#faqUpdateForm').serialize());
+	//alert($('#faqUpdateForm').serialize());
 	
 	$('#faqSubjectDiv').empty();
 	$('#faqContentDiv').empty();
