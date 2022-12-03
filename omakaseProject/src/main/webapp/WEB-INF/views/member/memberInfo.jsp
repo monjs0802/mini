@@ -164,7 +164,7 @@ function resUpdate(resNum){
 	//alert(resNum);
 	window.open("/omakaseProject/res/resUpdateForm?resNum="+resNum,
 				"/omakaseProject/res/resUpdateForm",               
-				"width=900, height=500, scrollbars=no, toolbar=no, menubar=no, status=no, location=no");
+				"width=1000, height=669, scrollbars=no, toolbar=no, menubar=no, status=no, location=no");
 }
 
 //예약취소 창열기

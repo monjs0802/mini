@@ -179,8 +179,8 @@
     </a>
 
     <ul class="nav col-md-3 justify-content-end">
-      <li class="nav-item"><a href="http://localhost:8080/omakaseProject/board/noticeBoard" class="nav-link px-2 text-light">FAQ</a></li>
-      <li class="nav-item"><a href="http://localhost:8080/omakaseProject/board/noticeBoard" class="nav-link px-2 text-light" data-bs-toggle="modal" data-bs-target="#pipp">개인정보처리방침</a></li>    
+      <li class="nav-item"><a href="http://localhost:8080/omakaseProject/board/faq/faqList" class="nav-link px-2 text-light">FAQ</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light" data-bs-toggle="modal" data-bs-target="#pipp">개인정보처리방침</a></li>    
     </ul> 
     
     <a id="topBtn" href="#" class="col-md-1 d-flex justify-content-end">
