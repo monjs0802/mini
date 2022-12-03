@@ -7,104 +7,167 @@
 <title>Insert title here</title>
 <style type="text/css">
 
-
-div#container {
-	margin-top: -10px;
-	margin-left: 50px;
-	width: 90%;
-	padding: 30px 0;
+#wrap {
+	
+	position: relative;
+	margin: 0 auto;
 }
 
-.contents_header {
-	margin-top: -20px;
+#section {
+	position: relative;
+}
+
+#updateForm {
+	position: relative;
+	top: 50px;
+	left: 15px;
+}
+
+#updateTable{
+	background-color: rgba(255, 247, 240, 0.7);
+	border-radius: 5px;
+}
+
+.contents_header{
+	margin: auto auto;
 }
 
 .contents_body {
-	margin-left: 50px;
+	width: 700px;
+	height: 600px;
+	margin: auto auto;
 }
-
-.contents_body span{
-    display: block;
-    padding: 8px 0 0 0;   
-    width: 130px;
-    margin-right: 0;
-}
-
-#table {
-	 float: left;
-	 right-margin: 20px; 
-}
-
-
-#updateBtn ,#resetBtn {
-    top:50%;
-    background-color:#fcad68;
-    color: #fff;
-    border:none; 
-    border-radius:10px;   /* 테두리둥글게 */
-    padding: 7px;   /* 버튼의 위, 아래, 오른쪽, 왼쪽에 padding */
-    float: left;
-}
-
-#updateBtn:hover ,#resetBtn:hover{
-	text-decoration: underline;
-	color: grey;
-}
-
-
 </style>
 </head>
 <body>
 
+<div id="wrap">
 
+	<div id="section">
+	<div id="updateForm" class="d-block justify-content-center">
 
-<div id="container">
-
-	<div class="contents_header">
-	<h3> <strong>${memId}</strong> 님의 회원정보</h3>
-	</div>
-	
-	<div class="contents_body">
-		<form id="updateTable">
-			<div id="table">
-				<span>이름</span>
-				<input type="text" id="name" name="name">
-				<div id="nameDiv"></div>
-				
-				<span>아이디</span>
-				<input type="text" id="id" name="id" readonly> 
-				
-				<span>새로운 비밀번호</span>
-				<input type="new-password" id="pwd" name="pwd">
-				<div id="pwdDiv"></div>
-				
-				<span>비밀번호 재확인</span>
-				<input type="new-password" id="repwd">
-				<div id="repwdDiv"></div>
+		<div class="contents_header">
+			<h3 align="center">회원정보 수정</h3>
+		</div>
+		
+		<div class="contents_body">
+			<form id="updateTable" class="table-primary">
+				<table class="table">
+				 <thead>
+				    <tr>
+				      <th style="width: 100px;" scope="col" colspan="2"><strong style="text-decoration: underline;">${memId}</strong> 님의 회원정보</th>
+				      
+				      <th style="width: 150px;" scope="col"></th>
+				    </tr>
+				  </thead>
+				  
+				   <tbody>
+				   	<tr>
+				      <th scope="row" >이름</th>
+				      <td>
+					      	<div class="form-floating">
+						  	<input type="text" class="form-control-sm" name="name" id="name">
+						 	<label for="name"></label>
+							</div>
+							<div id="nameDiv"></div>
+					  </td>
+				    </tr>
+				   	<tr>
+				      <th scope="row">아이디</th>
+				      <td>
+				      	<div class="form-floating">
+					  	<input type="text" class="form-control-sm" name="id" id="id" readonly>
+					  	<label for="id"></label>
+						</div>
+						<div id="idDiv"></div>
+				      </td>
+				    </tr>
+				   
+				   <tr>
+				      <th scope="row">새 비밀번호</th>
+				      <td>
+				      	<div class="form-floating">
+					 	<input type="new-password" class="form-control-sm" name="pwd" id="pwd" placeholder="새 비밀번호">
+					  	<label for="pwd"></label>
+						</div>
+						<div id="pwdDiv"></div>
+				      </td>
+				      <td>
+				      	<div class="form-floating">
+					  	<input type="new-password" class="form-control-sm" name="repwd" id="repwd" placeholder="비밀번호 확인">
+					  	<label for="repwd"></label>
+						</div>
+						<div id="repwdDiv"></div>
+				      </td>
+				    </tr>
+				    
+				    <tr>
+				      <th scope="row">이메일</th>
+				      <td>
+						<div class="form-floating">
+						<input type="email" class="form-control-sm" name="email" id="email">
+						<label for="repwd"></label>
+						</div>
+				      </td>
+				    </tr>
+				    
+				     <tr>
+				   	 <th scope="row">전화번호</th>
+				   	 <td>
+				  		<div class="form-floating">
+					  	<input type="tel" class="form-control-sm" name="tel" id="tel">
+					  	<label for="repwd"></label>
+						</div>
+					 </td>	
+				    </tr>
+				    
+				    <tr>
+				   	 <th scope="row">생년월일</th>
+				   	 <td>
+				  		<div class="form-floating">
+					  	<input type="text" class="form-control-sm" name="birth" id="birth">
+					 	<label for="birth"></label>
+						</div>
+					 </td>	
+				    </tr>
+				    
+				    <tr>
+				   	 <th scope="row">마케팅 수신동의</th>
+				   	 <td>
+				  		<div class="form-check">
+					  	<input class="form-check-input" type="checkbox" value="이메일" id="checkEmail">
+					  	<label class="form-check-label" for="flexCheckDefault">
+					    이메일
+					  	</label>
+					  	</div>
+					 </td>
+					 <td> 	
+					  	<div class="form-check">
+					  	<input class="form-check-input" type="checkbox" value="문자메세지" id="checkSms">
+					  	<label class="form-check-label" for="flexCheckDefault">
+					    문자메세지
+					 	</label>
+					 	</div>
+						
+					 </td>
+				    </tr>
+				    
+				     <tr>
+				    <td colspan="3" align="center">
+					<div class="btn-group" role="group" aria-label="Basic outlined example">
+					  <button type="button" id="updateBtn" class="btn btn-outline-success">회원정보수정</button>
+					  <button type="button"	id="resetBtn" class="btn btn-outline-secondary">다시작성</button>
+					</div>
+					</td>
+					</tr>
+				    
+				   </tbody>
+				  </table>
+				</form>
 			</div>
-			
-			<div id="table">
-				<span>이메일</span>
-				<input type="email" id="email" name="email">
-	
-				<span>전화번호</span>
-				<input type="tel" id="tel" name="tel">
-	
-				<span>생년원일</span>
-				<input type="text" id="birth" name="birth">
-				
-				<span>마케팅 수신동의</span>
-				<input type="checkbox" id="emailMarketing">이메일
-				<input type="checkbox" id="telMarketing">문자 메시지
-			</div>
-	
-			<span>
-				<input type="button" id="updateBtn" value="저장하기">
-				<input type="button" id="resetBtn" value="다시작성">
-			</span>
-		</form>
-	</div>
-</div>  
+		</div> <!-- contents body -->
+	</div> <!-- writeForm -->
+</div> <!-- wrap -->
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">

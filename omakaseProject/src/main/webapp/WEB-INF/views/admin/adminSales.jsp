@@ -63,8 +63,10 @@
 		<dd class="menuBSale"></dd>
 	</li>
 </ul>
+<div>
+	<button type="button" id="allBtn">매출계산</button>
+</div>
 
-<button type="button" id="allBtn" value="올해 매출 계산"></button>
 
 <div style="width: 900px; height: 900px;">
 	<!--차트가 그려질 부분-->
