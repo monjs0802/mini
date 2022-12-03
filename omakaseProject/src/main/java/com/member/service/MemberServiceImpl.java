@@ -33,8 +33,9 @@ public class MemberServiceImpl implements MemberService {
    }
 
    @Override
-   public void delete(String id) {
+   public void delete(String id,HttpSession session) {
       userDAO.delete(id);
+      session.invalidate();
       
    }
 

@@ -88,15 +88,14 @@
 				      <th scope="row">비밀번호</th>
 				      <td>
 				      	<div class="form-floating">
-					 	<input type="password" class="form-control-sm" name="pwd" id="pwd" placeholder="비밀번호">
+					 	<input type="new-password" class="form-control-sm" name="pwd" id="pwd" placeholder="비밀번호">
 					  	<label for="pwd"></label>
 						</div>
 						<div id="pwdDiv"></div>
 				      </td>
 				      <td>
 				      	<div class="form-floating">
-					  	<input type="password" class="form-control-sm" name="repwd" id="repwd" placeholder="비밀번호 확인">
-					  	<label for="repwd"></label>
+					  	<input type="new-password" class="form-control-sm" name="repwd" id="repwd" placeholder="비밀번호 확인">
 						</div>
 						<div id="repwdDiv"></div>
 				      </td>
@@ -106,8 +105,8 @@
 				      <th scope="row">이메일</th>
 				      <td>
 						<div class="form-floating">
-						<input type="email" class="form-control-sm" name="email" id="email" placeholder="이메일">
-					  	<label for="repwd"></label>
+						<input type="text" class="form-control-sm" name="email" id="email" placeholder="이메일">
+					  
 						</div>
 				      </td>
 				    </tr>
@@ -185,13 +184,12 @@ $('#writeBtn').click(function(){
 		$('#nameDiv').css('font-size','8px');
 		$('#name').focus();
 		
-	else if( $('#id').val() ==''){
+	}else if( $('#id').val() ==''){
 		$('#idDiv').text('아이디를 입력하세요');
 		$('#idDiv').css('color','orange');
 		$('#idDiv').css('font-size','8px');
 		$('#id').focus();
 		
-	}	
 	}else if( $('#pwd').val() ==''){
 		$('#pwdDiv').text('비밀번호를 입력하세요');
 		$('#pwdDiv').css('color','orange');

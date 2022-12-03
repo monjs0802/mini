@@ -47,7 +47,7 @@
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-bold text-light collapsed" data-bs-toggle="collapse" data-bs-target="#my-collapse" aria-expanded="false">
           MY PAGE
         </button>
-        <div class="collapse" id="my-collapse">
+        <div class="collapse show" id="my-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="http://localhost:8080/omakaseProject/member/memberInfo" class="link-dark d-inline-flex text-decoration-none rounded">예약현황</a></li>
             <li><a href="http://localhost:8080/omakaseProject/member/memberUpdate" class="link-dark d-inline-flex text-decoration-none rounded">회원정보수정</a></li>
@@ -63,7 +63,7 @@
 	        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 fw-bold collapsed" data-bs-toggle="collapse" data-bs-target="#admin-collapse" aria-expanded="false">
 	          ADMIN PAGE
 	        </button>
-	        <div class="collapse show" id="admin-collapse">
+	        <div class="collapse" id="admin-collapse">
 	          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 	            <li><a href="http://localhost:8080/omakaseProject/admin/adminSales" class="link-dark d-inline-flex text-decoration-none rounded">매출 현황</a></li>
 	            <li><a href="http://localhost:8080/omakaseProject/admin/adminRes" class="link-dark d-inline-flex text-decoration-none rounded">예약 현황</a></li>

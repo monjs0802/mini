@@ -85,8 +85,8 @@ public class MemberController {
 	
 	@RequestMapping(value="delete")
 	@ResponseBody
-	public void delete(@RequestParam String id) {
-		memberService.delete(id);
+	public void delete(@RequestParam String id,HttpSession session) {
+		memberService.delete(id,session);
 	}
 	
 

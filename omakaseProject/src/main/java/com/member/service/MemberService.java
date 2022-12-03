@@ -14,7 +14,7 @@ public interface MemberService {
 
 	public UserDTO getMember(String id);
 
-	public void delete(String id);
+	public void delete(String id,HttpSession session);
 
 	public void write(Map<String, Object> map);
 

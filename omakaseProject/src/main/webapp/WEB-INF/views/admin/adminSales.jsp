@@ -64,7 +64,7 @@
 	</li>
 </ul>
 <div>
-	<button type="button" id="allBtn">매출계산</button>
+	<button type="button" id="allBtn">판매현황</button>
 </div>
 
 

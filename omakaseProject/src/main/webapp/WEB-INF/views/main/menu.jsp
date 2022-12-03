@@ -17,7 +17,7 @@
                <li class="join"><a href="http://localhost:8080/omakaseProject/member/memberWrite">회원가입</a></li>
             </c:if>
              <c:if test="${sessionScope.memId != null}">
-               <li class="login"><a href="http://localhost:8080/omakaseProject/member/loginForm">${sessionScope.memId}님 로그인</a></li>
+               <li class="login"><a href="http://localhost:8080/omakaseProject/member/memberUpdate">${sessionScope.memId}님 로그인</a></li>
                <li class="logout"><a href="http://localhost:8080/omakaseProject/logout">로그아웃</a></li>
             </c:if>
             </ul>
