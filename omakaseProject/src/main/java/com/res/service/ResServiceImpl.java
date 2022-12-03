@@ -46,4 +46,11 @@ public class ResServiceImpl implements ResService {
 		resDAO.resCancel(resNum);
 		
 	}
+	
+	@Override
+	public List<ResDTO> getSales(String resDate) {
+		return resDAO.getSales(resDate); 
+		
+		
+	}
 }

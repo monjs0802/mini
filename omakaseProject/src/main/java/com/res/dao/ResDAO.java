@@ -18,5 +18,7 @@ public interface ResDAO {
 	public void resUpdate(ResDTO resDTO);
 
 	public void resCancel(String resNum);
+	
+	List<ResDTO> getSales(String resDate); 
 
 }

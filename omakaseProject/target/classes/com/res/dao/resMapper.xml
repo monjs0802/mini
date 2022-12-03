@@ -38,4 +38,10 @@
  	<delete id="resCancel" parameterType="String">
  		delete reservation where resNum=#{resNum}
  	</delete>
+ 	
+ 	<select id="getSales" parameterType="String" resultType="res">
+ 		<![CDATA[		
+ 		select * from reservation where resDate like #{resDate}||'%'
+ 		]]>
+ 	</select>
   </mapper>

@@ -18,4 +18,6 @@ public interface ResService {
 
 	public void resCancel(String resNum);
 	
+	public List<ResDTO> getSales(String resDate); 
+	
 }

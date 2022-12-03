@@ -47,6 +47,13 @@ public class ResDAOMyBatis implements ResDAO {
 		sqlSession.delete("resSQL.resCancel", resNum);
 		
 	}
+	
+	@Override
+	public List<ResDTO> getSales(String resDate) {
+		return sqlSession.selectList("resSQL.getSales", resDate);
+		
+		
+	} 
 
 	
 	

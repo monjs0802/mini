@@ -205,7 +205,7 @@ dt {
 
 <hr class="hr" />
 
-<div id="rescontainer" class="d-flex justify-content-center p-5">
+<div id="rescontainer" class="d-flex justify-content-center p-5" style="width: 700px;">
 	<input type="hidden" class="date">
 	<input type="hidden" class="resNum" value=${param.resNum }>
 	<c:if test="${not empty memId }">
@@ -213,12 +213,12 @@ dt {
 	</c:if>
 	
 	<!-- 달력 -->
-	<div class="content1 p-3 m-3 ">
+	<div class="content1 p-3 m-3 " style="float:left;">
 		<div id="datepicker"></div>
 	</div>
 	
 	<!-- 타임 테이블 -->
-	<div class="content2 p-5 m-3">
+	<div class="content2 p-5 m-3" style="float:left;">
 		<div class="time_select">
 			<ul class="list_time bg-transparent">
 				
