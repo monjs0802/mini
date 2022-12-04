@@ -110,7 +110,7 @@
                     <!-- 카카오 로그인 -->
                     <a class="p-2" href="https://kauth.kakao.com/oauth/authorize?client_id=d5eefc288eb394a4aab977f7c47a36e2
                     &redirect_uri=  
-                    http://localhost:8080/omakaseProject/index&response_type=code">
+					http://localhost:8080/omakaseProject/member/kakaoLogin&response_type=code">
             <!--    REST_API키 및 REDIRECT_URI는 본인걸로 수정하세요. -->
             <!--    본인걸로 수정 시 띄어쓰기 절대 하지 마세요. 오류납니다. -->
                     <img src="/omakaseProject/resources/img/klogin.png" style="width: 150px">

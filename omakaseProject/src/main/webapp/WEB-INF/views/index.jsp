@@ -128,16 +128,16 @@
 
 <!-- 메인2 -->
 <article class="px-2 py-5">
-	<div id="gesipan" class="container px-4 py-5" >
-   	 	<h2 class="pb-2 fw-bold">공지사항
+	<div id="gesipan" class="container px-4 py-2" >
+   	 	<h2 class="p-1 m-2 fw-bold">공지사항
     	<a href="/omakaseProject/board/notice/noticeList?pg=1" class="btn btn-outline-danger btn-sm text-right">+</a>
    		 </h2>
    		 
    		<hr>
    	
-    <div class="row p-3 row-cols-0 row-cols-md-2 align-items-center">
-      <div class="d-flex flex-column align-items-start gap-2">
-        <h3 class="fw-bold">공지 게시판</h3>
+    <div class="row p-1 row-cols-1 row-cols-md-2">
+    
+      <div id="gonggi" class="d-flex justify-content-center">
         <br>
          <div class="noticeBody"> <!-- 이부분 추가 -->
 		 </div>
@@ -284,34 +284,34 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!--  CDN방식 -->
 <script type="text/javascript">
 $(function(){
-	//db에서 한페이지당 5개의 데이타를 가져와야 한다.
-	$.ajax({
-		url: '/omakaseProject/board/notice/getIndexNotice',
-		dataType: 'json',
-		success: function(data){
- 			//console.log(JSON.stringify(data));
-			$.each(data, function(index, items){
-				$('<tr/>').append($('<td/>', {
-					
-					}).append($('<a/>', {
-						href: '/omakaseProject/board/notice/noticeView?notSeq=' + items.notSeq,
-						//href: '/omakaseProject/board/notice/noticeView',
-						text: items.notSubject,
-						class: 'subjectA'
-					}))
-				).appendTo($('.noticeBody'));
-				
-				
-				
-			}); //$.each
-			
-		},
-		error: function(err){
-			console.log(err);
-		}
-		
-	});
-});   
+	   //db에서 한페이지당 5개의 데이타를 가져와야 한다.
+	   $.ajax({
+	      url: '/omakaseProject/board/notice/getIndexNotice',
+	      dataType: 'json',
+	      success: function(data){
+	          //console.log(JSON.stringify(data));
+	         $.each(data, function(index, items){
+	            $('<tr/>').append($('<td/>', {
+	               
+	               }).append($('<a/>', {
+	                  href: '/omakaseProject/board/notice/noticeView?notSeq=' + items.notSeq,
+	                  //href: '/omakaseProject/board/notice/noticeView',
+	                  text: '· '+items.notSubject,
+	                  class: 'subjectA'
+	               }))
+	            ).appendTo($('.noticeBody'));
+	            
+	            
+	            
+	         }); //$.each
+	         
+	      },
+	      error: function(err){
+	         console.log(err);
+	      }
+	      
+	   });
+	});   
 </script> <!-- 제이쿼리 추가 -->
 </body>
 </html>

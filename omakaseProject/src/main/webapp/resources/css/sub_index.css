@@ -50,7 +50,6 @@ ul{
 /* header */
 
 #header {
-	border: 3px solid white;
 	height: 10%;
 	text-align: center;
 }
@@ -68,9 +67,7 @@ ul{
 /* nav */
 
 #nav {
-	border: 3px solid yellow;
 	background-color: rgba(188, 153, 101, 0.88);
-	/* width: 400px; */
 	width: 17%;
 	height: 100%;
 	float: left;
@@ -84,15 +81,12 @@ ul{
 /* container */
 
 #wrap {
-	border: 3px solid grey;
 	width: 900px;
 	margin: 0 auto;
 }
 
 #container {
-	
 	position: relative;
-	border: 3px solid magenta;
 	margin: auto;
 	height: 700px; 
 }
@@ -109,9 +103,6 @@ ul{
 
 #index2_section {
 	background-image: url('http://localhost:8080/omakaseProject/resources/img/article_bg.jpg');
-/* 	background-color: rgba(255, 246, 232, 0.97); */
-	border: 3px solid cyan;
-/* 	width: 70%; */
 	height: 100%;
 	display: flex;
 }
@@ -120,7 +111,6 @@ ul{
 /* footer */
 
 #footer {
-	border: 3px solid blue;
 	background-color: rgba(188, 153, 101, 0.6);
 	color: white;
 	font-size: 7px;
