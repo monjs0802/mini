@@ -79,6 +79,12 @@ body {
 	color: black;
 }
 
+.subjectA {
+   font-size: 1.5em;
+   color: black;
+   text-decoration: none;
+}
+
 /* 푸터 */
 #footer1 {
 	background-color: rgba(188, 153, 101, 0.6);
