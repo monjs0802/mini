@@ -19,7 +19,7 @@
 }
 
 form[name="noticeUpdateForm"] div {
-	color: red;
+	color: purple;
 	font-size: 8pt;
 	font-weight: bold;
 }
