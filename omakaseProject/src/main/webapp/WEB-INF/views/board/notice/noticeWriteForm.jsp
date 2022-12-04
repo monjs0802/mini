@@ -56,7 +56,10 @@ h2, .form-button {
 			</div>
 		</div>	
 		
-			<div class="form-button m-5">
+		 
+		<div class="form-button m-5">
+			 <button type="button" class="btn btn-outline-secondary" id="noticeListBtn" 
+			    onclick="location.href='/omakaseProject/board/notice/noticeList?pg=1'">Back to List</button>
 		    <button type="button" class="btn btn-outline-success" id="noticeWriteBtn">Complete</button>
 		    <button type="reset" class="btn btn-outline-danger">Reset</button>
 		    </div>

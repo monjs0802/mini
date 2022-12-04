@@ -6,6 +6,18 @@
 <meta charset="UTF-8">
 <title>공지사항 뷰</title>
 <style type="text/css">
+#wrap {
+	margin: auto;
+	background-color: rgba(255, 247, 240, 0.5);
+    border-radius: 10px;
+}
+
+#nbBody {
+	position: relative;
+	left: 100px;
+	width: 700px;
+}
+
 body {
 	text-align: center;
 }
@@ -13,40 +25,48 @@ body {
 
 </head>
 <body>
-<form>
-	<input type="hidden" id="notSeq" value="${ notSeq }" />
-	<input type="hidden" id="memId" value="${ memId }" />
+<div id="wrap">
+
+	<div id="section">
 	
-	<h2>NOTICE</h2>
-	<table width="900" border="1" cellpadding="5" frame="hsides" rules="rows">
-		
-		<tr>
-			<td colspan="2" width="500"><span id="subjectSpan"></span></td>
-			<td width="150"><span id="dateSpan"></span></td>
-		</tr>
-		
-		<tr>
-			<td colspan="2" height="250" valign="top">
-				<div style="width: 100%; height: 100%; overflow: auto"> <!-- 글 길이가 길어질때, 사이드에 스크롤바 띄우기 -->
-					<pre style="white-space: pre-line; word-break: break-all;">
-						<span id="contentSpan"></span>
-					</pre>
-				</div>
-			</td>
-		</tr>
-	</table>
-	<div style="margin-top: 3px;" class="form-button">
-	    <button type="button" class="btn btn-outline-secondary" id="noticeListBtn" 
-	    onclick="location.href='/omakaseProject/board/notice/noticeList?pg=1'">Back to List</button>
-	    
-	    <!-- 관리자 아이디로 로그인했을 시, 수정과 삭제버튼이 뜨게~! -->
-	    <span id="noticeViewSpan">
-	      <button type="button" class="btn btn-outline-success" 
-	      onclick="location.href='/omakaseProject/board/notice/noticeUpdateForm?notSeq=${ notSeq }'">Update</button>
-	      <button type="reset" class="btn btn-outline-danger" id="noticeDeleteBtn">Delete</button>
-	    </span>
-  	</div>
-</form>
+		<form>
+			<input type="hidden" id="notSeq" value="${ notSeq }" />
+			<input type="hidden" id="memId" value="${ memId }" />
+			
+			<div id="nbHeader" class="m-3 text-dark">
+				<h2>VIEW</h2>
+			</div>
+			
+			
+			<div id="nbBody" class="">	
+			   <div class="form-floating mt-5">
+			       <textarea class="form-control" readonly  id="subjectSpan"  style="width: 700px;"></textarea>
+			       <label for="floatingTextarea">Subject</label>
+			       <div id="subjectDiv"></div>
+			   </div>
+			 
+			   <div class="form-floating">
+			       <textarea class="form-control" readonly  id="contentSpan" style="width: 700px; height: 400px;"></textarea>
+			       <label for="floatingTextarea2">Insert Content</label>
+			       <div id="contentDiv"></div>
+			   </div>
+			 </div>	
+			
+			
+			<div style="margin-top: 3px;" class="form-button">
+			    <button type="button" class="btn btn-outline-secondary" id="noticeListBtn" 
+			    onclick="location.href='/omakaseProject/board/notice/noticeList?pg=1'">Back to List</button>
+			    
+			    <!-- 관리자 아이디로 로그인했을 시, 수정과 삭제버튼이 뜨게~! -->
+			    <span id="noticeViewSpan">
+			      <button type="button" class="btn btn-outline-success" 
+			      onclick="location.href='/omakaseProject/board/notice/noticeUpdateForm?notSeq=${ notSeq }'">Update</button>
+			      <button type="reset" class="btn btn-outline-danger" id="noticeDeleteBtn">Delete</button>
+			    </span>
+		  	</div>
+		</form>
+	</div>
+</div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
 <script type="text/javascript">

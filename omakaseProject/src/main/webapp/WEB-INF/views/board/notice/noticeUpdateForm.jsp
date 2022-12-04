@@ -6,6 +6,18 @@
 <meta charset="UTF-8">
 <title>공지사항 수정</title>
 <style type="text/css">
+#wrap {
+	margin: auto;
+	background-color: rgba(255, 247, 240, 0.5);
+    border-radius: 10px;
+}
+
+#nbBody {
+	position: relative;
+	left: 100px;
+	width: 700px;
+}
+
 form[name="noticeUpdateForm"] div {
 	color: red;
 	font-size: 8pt;
@@ -18,32 +30,39 @@ h2, .form-button {
 </style>
 </head>
 <body>
-	<form name="noticeUpdateForm" id="noticeUpdateForm">
-	<input type="hidden" name="notSeq" id="notSeq" value="${ notSeq }" />
-	<input type="hidden" name="memId" id="memId" value="${ memId }" />
-	<h2>UPDATE</h2>
-		<table border="1" cellpadding="5" cellspacing="0">
-			<tr>
-				<th>제목</th>
-				<td>
-					<input type="text" name="notSubject" id="notSubject" style="width: 200px;" placeholder="Insert Subject">
-					<div id="subjectDiv"></div>
-					
-				</td>
-			</tr>
-			<tr>
-				<th>내용</th>
-				<td>
-					<textarea rows="5" cols="40" name="notContent" id="notContent" placeholder="Insert Content"></textarea>
-					<div id="contentDiv"></div>
-				</td>
-			</tr>
-		</table>
-		<div class="form-button">
-			<button type="button" class="btn btn-outline-success" id="noticeUpdateBtn">Complete</button>
-	        <button type="reset" class="btn btn-outline-danger" onclick="location.reload()">Reset</button>
-        </div>
-	</form>
+<div id="wrap">
+
+	<div id="section">
+	
+		<form name="noticeUpdateForm" id="noticeUpdateForm">
+			<input type="hidden" name="notSeq" id="notSeq" value="${ notSeq }" />
+			<input type="hidden" name="memId" id="memId" value="${ memId }" />
+			
+			<div id="nbHeader" class="m-3 text-dark">
+				<h2>UPDATE</h2>
+			</div>
+		
+			<div id="nbBody" class="">	
+			  <div class="form-floating mt-5">
+			      <textarea class="form-control" placeholder="Insert Subject" name="notSubject" id="notSubject"  style="width: 700px;"></textarea>
+			      <label for="floatingTextarea">Insert Subject</label>
+			      <div id="subjectDiv"></div>
+			  </div>
+			
+			  <div class="form-floating">
+			      <textarea class="form-control" placeholder="Insert Content" name="notContent" id="notContent" style="width: 700px; height: 400px;"></textarea>
+			      <label for="floatingTextarea2">Insert Content</label>
+			      <div id="contentDiv"></div>
+			  </div>
+			</div>	
+			
+			<div class="form-button m-5">
+				<button type="button" class="btn btn-outline-success" id="noticeUpdateBtn">Complete</button>
+		        <button type="reset" class="btn btn-outline-danger" onclick="location.reload()">Reset</button>
+	        </div>
+		</form>
+	</div><!-- section -->
+</div><!-- wrap -->	
 	
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
 <script type="text/javascript">
