@@ -6,40 +6,64 @@
 <meta charset="UTF-8">
 <title>공지사항 작성</title>
 <style type="text/css">
+
+#wrap {
+	margin: auto;
+	background-color: rgba(255, 247, 240, 0.5);
+    border-radius: 10px;
+}
+
+#nbBody {
+	position: relative;
+	left: 100px;
+	width: 700px;
+}
+
 form[name="noticeWriteForm"] div {
-	color: red;
+	color: purple;
 	font-size: 8pt;
 	font-weight: bold;
+}
+
+h2, .form-button {
+	text-align: center;
 }
 </style>
 </head>
 <body>
-	<form name="noticeWriteForm" id="noticeWriteForm">
-	<h2>WRITE</h2>
-		<table border="1" cellpadding="5" cellspacing="0">
-			<tr>
-				<th>제목</th>
-				<td>
-					<input type="text" name="notSubject" id="notSubject" style="width: 200px;" placeholder="Insert Subject">
-					<div id="subjectDiv"></div>
-				</td>
-			</tr>
-			<tr>
-				<th>내용</th>
-				<td>
-					<textarea rows="5" cols="40" name="notContent" id="notContent" style="white-space: pre-wrap;" placeholder="Insert Content"></textarea>
-					<div id="contentDiv"></div>
-				</td>
-			</tr>
-			<tr>
-				<th colspan="2">
-					<button type="button" id="noticeWriteBtn">글작성</button>
-					<button type="reset">다시작성</button>
-				</th>
-			</tr>
-		</table>
-	</form>
+
+<div id="wrap">
+
+	<div id="section">
 	
+		<form name="noticeWriteForm" id="noticeWriteForm">
+		
+		<div id="nbHeader" class="m-3 text-dark">
+		<h2>WRITE</h2>
+		</div>
+		
+		<div id="nbBody" class="">	
+			<div class="form-floating mt-5">
+			    <textarea class="form-control" placeholder="Insert Subject" id="floatingTextarea" name="notSubject" style="width: 700px;"></textarea>
+			    <label for="floatingTextarea">Insert Subject</label>
+		    	<div id="subjectDiv"></div>
+			</div>
+	
+			<div class="form-floating">
+			    <textarea class="form-control" placeholder="Insert Content" id="floatingTextarea2" name="notContent" style="width: 700px; height: 400px;"></textarea>
+			    <label for="floatingTextarea2">Insert Content</label>
+			    <div id="contentDiv"></div>
+			</div>
+		</div>	
+		
+			<div class="form-button m-5">
+		    <button type="button" class="btn btn-outline-success" id="noticeWriteBtn">Complete</button>
+		    <button type="reset" class="btn btn-outline-danger">Reset</button>
+		    </div>
+		</form>
+		
+	</div><!-- section -->
+</div><!-- wrap -->	
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
 <script type="text/javascript">
 //글작성

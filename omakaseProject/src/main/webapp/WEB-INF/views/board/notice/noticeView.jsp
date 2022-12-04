@@ -5,6 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항 뷰</title>
+<style type="text/css">
+body {
+	text-align: center;
+}
+</style>
+
 </head>
 <body>
 <form>
@@ -29,17 +35,17 @@
 			</td>
 		</tr>
 	</table>
-	<div style="margin-top: 3px;">
-		<input type="button" value="Back to List" 
-		onclick="location.href='/omakaseProject/board/notice/noticeList?pg=1'" />
-		
-		<!-- 관리자 아이디로 로그인했을 시, 수정과 삭제버튼이 뜨게~! -->
-		<span id="noticeViewSpan">
-			<input type="button" value="Update"
-			onclick="location.href='/omakaseProject/board/notice/noticeUpdateForm?notSeq=${ notSeq }'" />
-			<input type="button" id="noticeDeleteBtn" value="Delete" />
-		</span>
-	</div>
+	<div style="margin-top: 3px;" class="form-button">
+	    <button type="button" class="btn btn-outline-secondary" id="noticeListBtn" 
+	    onclick="location.href='/omakaseProject/board/notice/noticeList?pg=1'">Back to List</button>
+	    
+	    <!-- 관리자 아이디로 로그인했을 시, 수정과 삭제버튼이 뜨게~! -->
+	    <span id="noticeViewSpan">
+	      <button type="button" class="btn btn-outline-success" 
+	      onclick="location.href='/omakaseProject/board/notice/noticeUpdateForm?notSeq=${ notSeq }'">Update</button>
+	      <button type="reset" class="btn btn-outline-danger" id="noticeDeleteBtn">Delete</button>
+	    </span>
+  	</div>
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->

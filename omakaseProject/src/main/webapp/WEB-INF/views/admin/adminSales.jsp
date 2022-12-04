@@ -6,12 +6,24 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+
+#wrap {
+	margin: auto;
+	background-color: rgba(255, 247, 240, 0.5);
+	border-radius: 10px;
+}
 .month_sale{
 	display: none; 
 } 
 </style>
 </head>
 <body>
+
+<div id="wrap">
+
+	<div id="section">
+
+<!-- 그래프 -->
 <input type="hidden" class="year">
 <ul class="month_sale">
 	<li class="1">
@@ -62,16 +74,23 @@
 		<dd class="menuASale"></dd>
 		<dd class="menuBSale"></dd>
 	</li>
-</ul>
-<div>
-	<button type="button" id="allBtn">판매현황</button>
+</ul> <!-- 그래프 -->
+
+
+
+<div class="d-grid gap-2 m-2 p-5">
+	<button type="button" class="btn btn-outline-success" id="allBtn">판매 현황</button>
 </div>
 
 
-<div style="width: 900px; height: 900px;">
+<div style="width: 900px;">
 	<!--차트가 그려질 부분-->
 	<canvas id="myChart"></canvas>
 </div>
+
+	</div><!-- section -->
+</div><!-- wrap -->
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script type="text/javascript">

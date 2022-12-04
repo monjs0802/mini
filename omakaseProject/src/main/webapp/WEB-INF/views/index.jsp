@@ -68,30 +68,29 @@
     <a id="menu" class="nav-link active bi bi-house-heart" aria-current="page" href="#brandImg"> BRAND</a>
   </li>
   <li class="nav-item">
-    <a id="menu" class="nav-link bi bi-stopwatch" href="./res/resForm"> RESERVATION</a>
+    <a id="menu" class="nav-link bi bi-stopwatch" href="/omakaseProject/res/resForm"> RESERVATION</a>
   </li>
   <li class="nav-item">
-    <a id="menu" class="nav-link bi bi-calendar-check" href="./res/resExp"> INFORMATION</a>
+    <a id="menu" class="nav-link bi bi-calendar-check" href="/omakaseProject/res/resExp"> INFORMATION</a>
   </li>
   <li class="nav-item">
-    <a id="menu" class="nav-link bi bi-chat-left-text " href="#mini"> NOTICE BOARD</a>
+    <a id="menu" class="nav-link bi bi-chat-left-text " href="#gesipan"> NOTICE BOARD</a>
   </li>
    <c:if test="${sessionScope.memId != null}">
 	  	<li class="nav-item">
-			<a id="menu" class="nav-link bi bi-emoji-smile" href="./member/memberInfo"> MYPAGE</a>
+			<a id="menu" class="nav-link bi bi-emoji-smile" href="/omakaseProject/member/memberInfo"> MYPAGE</a>
 		</li>
 	</c:if>
 	<c:if test="${sessionScope.memId == null}">
 		<li class="nav-item">
-		<a id="menu" class="nav-link bi bi-emoji-smile" href="./member/loginForm">LOGIN</a>
+		<a id="menu" class="nav-link bi bi-emoji-smile" href="/omakaseProject/member/loginForm">LOGIN</a>
 		</li>
 	</c:if>
-  
-<!--   관리자 계정만 보이게 할 예정
+	<c:if test="${sessionScope.memId == 'admin'}">
     <li class="nav-item">
-    <a id="menu" class="nav-link bi bi-emoji-sunglasses-fill text-center" href="#"> 관리자 페이지</a>
-  </li> -->
-  
+    <a id="menu" class="nav-link bi bi-emoji-sunglasses-fill text-center" href="/omakaseProject/admin/adminRes"> ADMINPAGE</a>
+  </li>
+  </c:if>
 </ul>
 </nav>
 </div>
@@ -196,20 +195,21 @@
 		  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h1 class="modal-title fs-5 " id="exampleModalLabel">개인정보처리방침<br>(Personal information processing policy)</h1>
+		        <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">개인정보처리방침<br>(Personal information processing policy)</h1>
 		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		      </div>
+		      
 		      <div class="modal-body">
 		        <p style="font-weight:bold">한우마카세(han"U"omakase) 개인정보 처리지침</p><br>
 
-				<div style="font-color:#D3D3D3; font-size:10px;">
+				<div style="color: black; font-size:10px;">
 				저희 한우마카세(han"U"omakase)는 이용자의 개인정보 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 하기 위하여 다음과 같은 처리방침을 두고 있습니다.<br>
 				개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.<br><br>
 				
 				회사의 개인정보 처리방침은 정부의 법률 및 지침 변경이나 회사의 내부 방침 변경 등으로 인하여 수시로 변경될 수 있고, 이에 따른 개인정보 처리방침의 지속적인 개선을 위하여 필요한 절차를 정하고 있습니다. 그리고 개인정보 처리방침을 개정하는 경우나 개인정보 처리방침 변경될 경우 쇼핑몰의 첫페이지의 개인정보처리방침을 통해 고지하고 있습니다. 이용자들께서는 사이트 방문 시 수시로 확인하시기 바랍니다.<br>
 				<br>
 				한우마카세(han"U"omakase) 의 개인정보 처리방침은 다음과 같은 내용을 담고 있습니다.<br><br><br>
-				<div style="font-color:black;">
+				<div style="color:black;">
 				1. 개인정보의 수집목적 및 이용목적<br>
 				2. 수집하는 개인정보 항목 및 수집방법<br>
 				3. 수집하는 개인정보의 보유 및 이용기간<br>

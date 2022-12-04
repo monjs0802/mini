@@ -65,7 +65,7 @@
 	        </button>
 	        <div class="collapse" id="admin-collapse">
 	          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-	            <li><a href="http://localhost:8080/omakaseProject/admin/adminSales" class="link-dark d-inline-flex text-decoration-none rounded">매출 현황</a></li>
+	            <li><a href="http://localhost:8080/omakaseProject/admin/adminSales" class="link-dark d-inline-flex text-decoration-none rounded">판매 현황</a></li>
 	            <li><a href="http://localhost:8080/omakaseProject/admin/adminRes" class="link-dark d-inline-flex text-decoration-none rounded">예약 현황</a></li>
 	          </ul>
 	        </div>

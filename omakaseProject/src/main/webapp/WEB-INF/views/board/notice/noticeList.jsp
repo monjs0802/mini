@@ -6,6 +6,18 @@
 <meta charset="UTF-8">
 <title>공지사항 리스트</title>
 <style type="text/css">
+
+#wrap{
+	margin: auto;
+	background-color: rgba(255, 247, 240, 0.5);
+    border-radius: 10px;
+	
+}
+
+.blog-header{
+	background-color: white;
+}
+
 .notHeader {
   font-size: 40px;
   font-weight: bold;
@@ -15,31 +27,14 @@
   text-decoration: none;
 }
 
-/* #pagingDiv {
-	text-align: center;
-	width: 900px;
-	margin-top: 10px;
-}
-
-#currentPaging:hover {
-	border: 1px solid blue;
-	padding: 5px 10px;
-	margin: 2px;
-	color: red;
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-#paging {
-	cursor: pointer;
-	padding: 5px 10px;
-	margin: 2px;
-} */
-
 a.subjectA:link { color: black; text-decoration: none; }
 a.subjectA:visited { color: black; text-decoration: none; }
 a.subjectA:hover { color: darkgreen; text-decoration: underline; }
 a.subjectA:active { color: black; text-decoration: none; }
+
+.form-button {
+	text-align: center;
+}
 </style>
 
 </head>
@@ -58,28 +53,30 @@ a.subjectA:active { color: black; text-decoration: none; }
       </div>
   </div>
 
-
+<div class="m-5">
 <table class="table" id="noticeListTable">
   <thead>
     <tr>
-      <td scope="col" style="width: 100px">No</td>
+      <td scope="col" style="width: 100px"><center>No</center></td>
       <td scope="col" style="width: 400px">제목</td>
-      <td scope="col" style="width: 100px">조회수</td>
-      <td scope="col" style="width: 200px">작성시간</td>
+      <td scope="col" style="width: 100px"><center>조회수</center></td>
+      <td scope="col" style="width: 200px"><center>작성시간</center></td>
     </tr>
   </thead>
   <tbody class="noticeBody">
   </tbody>
 </table>
+</div>
+
 </div> <!-- section -->
 	<!-- 동적처리 -->
 	<div style="display: inline-block;">
 		<div id="pagingDiv"></div>
 	</div>
 	
-	<button type="button" class="noticeListBtn" onclick="location.href='/omakaseProject/board/notice/noticeWriteForm'">Write</button>
-
-
+	<div class="form-button m-3">
+    	<button type="button" class="btn btn-outline-secondary" id="noticeListBtn" onclick="location.href='/omakaseProject/board/notice/noticeWriteForm'">Write</button>
+	</div>
 </div><!-- wrap -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
 <script type="text/javascript">
@@ -145,9 +142,9 @@ $(document).ready(function(){ /* window.onload=function(){} 의 jquery문 형식
 	
 	
 	if($('#memId').val()=='admin') {
-		$('.noticeListBtn').show();
+		$('#noticeListBtn').show();
 	} else {
-		$('.noticeListBtn').hide();
+		$('#noticeListBtn').hide();
 	}
 });
 </script>

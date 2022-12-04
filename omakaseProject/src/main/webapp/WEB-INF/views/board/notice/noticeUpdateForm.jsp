@@ -11,6 +11,10 @@ form[name="noticeUpdateForm"] div {
 	font-size: 8pt;
 	font-weight: bold;
 }
+
+h2, .form-button {
+	text-align: center;
+}
 </style>
 </head>
 <body>
@@ -22,7 +26,7 @@ form[name="noticeUpdateForm"] div {
 			<tr>
 				<th>제목</th>
 				<td>
-					<input type="text" name="notSubject" id="notSubject" style="width: 200px;" placeholder="Insert title Babe~~">
+					<input type="text" name="notSubject" id="notSubject" style="width: 200px;" placeholder="Insert Subject">
 					<div id="subjectDiv"></div>
 					
 				</td>
@@ -30,17 +34,15 @@ form[name="noticeUpdateForm"] div {
 			<tr>
 				<th>내용</th>
 				<td>
-					<textarea rows="5" cols="40" name="notContent" id="notContent"></textarea>
+					<textarea rows="5" cols="40" name="notContent" id="notContent" placeholder="Insert Content"></textarea>
 					<div id="contentDiv"></div>
 				</td>
 			</tr>
-			<tr>
-				<th colspan="2">
-					<button type="button" id="noticeUpdateBtn">Complete</button>
-					<button type="reset" onclick="location.reload()">Reset</button>
-				</th>
-			</tr>
 		</table>
+		<div class="form-button">
+			<button type="button" class="btn btn-outline-success" id="noticeUpdateBtn">Complete</button>
+	        <button type="reset" class="btn btn-outline-danger" onclick="location.reload()">Reset</button>
+        </div>
 	</form>
 	
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script> <!-- CDN 방식 -->
